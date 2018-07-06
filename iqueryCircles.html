@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <style type="text/css">
+        #circle {
+            background-color: green;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            margin: 10px;
+            float: left;
+        }
+
+        #red-square {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            margin: 10px;
+            float: left;
+        }
+
+        #red-square1 {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="circle"></div>
+    <div class="square" id="red-square"></div>
+    <div class="square" id="red-square1"></div>
+
+    <script type="text/javacript">
+                $("#circle").click(function(){
+                $(this).animate({
+                    width:"400px", 
+                    height:"400px",
+                    marginLeft:"100px",
+                    marginTop:"100px",
+                }, 2000, function(){
+                    $(this).css("backgroundColor","red");
+                });
+            });
+    </script>
+</body>
+
+</html>
