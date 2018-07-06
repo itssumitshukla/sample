@@ -1,12 +1,52 @@
-
 <html>
-    <head>
-        <title>TEset</title>
-    </head>
 
-    <body>
-        <p>Added body for merge testing</p>
-    </body>
+<head>
+    <style>
+          .circle{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        float: left;
+        margin: 50px;
+      }
+
+      #red-circle{
+        background-color: red;
+      }
+
+      #blue-circle{
+        background-color: blue;
+      }
+
+      #green-circle{
+        background-color: green;
+      }
+
+    </style>
+
+</head>
+
+<body>
+  <div class="circle" id="red-circle"></div>
+  <div class="circle" id="blue-circle"></div>
+  <div class="circle" id="green-circle"></div>
+
+</body>
+<script>
+        //red circle dissapear
+        document.getElementById('red-circle').onclick = function (){
+      document.getElementById('red-circle').style.display = "none";
+    }
+
+    //blue circle dissapear
+    document.getElementById('blue-circle').onclick = function (){
+      document.getElementById('blue-circle').style.display = "none";
+    }
+
+    //green circle dissapear
+    document.getElementById('green-circle').onclick = function (){
+      document.getElementById('green-circle').style.display = "none";
+    }
+</script>
 
 </html>
-
