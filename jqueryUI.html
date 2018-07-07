@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Draggable Squares</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #little {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+        }
+
+        #big {
+            background-color: blue;
+            height: 600px;
+            width: 600px;
+        }
+
+        p {
+            color: yellow;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+    <div id="little"></div>
+    <div id="big">
+        <p>You dropped this</p>
+    </div>
+    <script>
+        $(function () {
+            $("#little").draggable();
+            $("#big").droppable({
+                drop: function (event, ui) {
+                    $(this)
+                        .html("Dropped!")
+                        .css("color", "green");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
