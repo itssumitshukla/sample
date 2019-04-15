@@ -15,7 +15,12 @@ $("ul").on("click", "span", function(e){
 $("input[type='text']").keypress(function(e){
     if(e.which === 13){
         let toDoText =$(this).val();//get the input from user
-        $("ul").append("<li><span>X</span> " + toDoText + "</li>");//create a new LI
+        $("ul").append("<li><span><i class='fas fa-trash'></i></span> " + toDoText + "</li>");//create a new LI
         $(this).val('');// clear input
     }
+});
+
+// toggle the plus sign
+$(".fa-plus").click(function(){
+    $("input[type='text']").fadeToggle();
 });
