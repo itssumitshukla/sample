@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Patatap Clone Sumit</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script type="text/javascript" src="paper-full.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.js"></script>
-	<link rel="stylesheet" type="text/css" href="main.css">
-    <title>Patatap Clone</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/paperscript" canvas="myCanvas">
+    for(let x = 0; x < 1000; x+=100){
+        for(let y = 0; y < 1000; y+=100){
+            let circle = new Path.Circle(new Point(x,y), 10);
+            circle.fillColor = "red";
+        }
+    }
+    </script>
 </head>
 <body>
-    
+    <canvas id="myCanvas" resize></canvas>
 </body>
 </html>
