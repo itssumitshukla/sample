@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Case Statement</title>
+</head>
+
+<body>
+<div id="output"></div>
+    <script>
+        let myTime = prompt("What are you doing?");
+        let output = document.getElementById("output");
+        let html;
+
+        switch (myTime) {
+            case "Get Up":
+                html = "8:00AM";
+                break;
+            case "Lunch":
+                html = "12:00PM";
+                break;
+            case "Dinner":
+                html = "6:00PM";
+                break;
+            default:
+                html = "Not found";
+        }
+
+        output.innerHTML = html;
+    </script>
+</body>
+
+</html> 
