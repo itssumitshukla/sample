@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Do While Loop test</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <script>
+        let output = document.getElementById("output");
+        let answer = prompt("How many times do you want me to loop?");
+        answer = Number(answer);
+        let x = 0;
+        do {
+            x++;
+            output.innerHTML += "value x = " + x + "<br>";
+        }
+        while (x < answer);
+        output.innerHTML += "Final value of x = " + x + "<br>";
+        let output = document.getElementById("output");
+        let x = 0;
+        do {
+            if (x % 2 === 0) {
+                output.innerHTML += "value x = " + x + "<br>";
+            }
+            x++;
+        }
+        while (x < 30);
+        output.innerHTML += "Final value of x = " + x + "<br>";
+    </script>
+</body>
+
+</html>
