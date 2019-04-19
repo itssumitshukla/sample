@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Function Return</title>
+</head>
+<body>
+    <script>
+     let response = "55"; // global
+        myFun1(4,5,6);
+        
+        let a = "hello";
+        
+        
+        output.innerHTML = myFun2();
+        
+        
+        function myFun2(){
+            let b = a + " " + "world";
+            return b;
+        }
+        
+        
+        function myFun1(a,b,c){
+            response = a + b + c; //global
+            let response = a + b + c; //local
+            output.innerHTML = response;
+            return response;
+        }
+    </script>
+</body>
+</html>
