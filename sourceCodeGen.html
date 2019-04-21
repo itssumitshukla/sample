@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Word Guess</title>
+</head>
+<body>
+        <div id="output"></div>
+        <input type="button" onClick="start()" value="Start Game">
+        <script>
+            let secretWord = ["JavaScript", "html", "css", "website"];
+            let mysteryNum;
+            let output = document.getElementById("output");
+    
+            function start() {
+                mysteryNum = Math.floor(Math.random() * secretWord.length);
+                getSecret(prompt("what is the word?"));
+            }
+    
+            function getSecret(secret) {
+                if (secret == secretWord[mysteryNum]) {
+                    output.innerHTML = "You are correct";
+                }
+                else {
+                    getSecret(prompt("Guess Again?"));
+                }
+            }
+        </script>
+
+</body>
+</html>
