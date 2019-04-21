@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Name Generator</title>
+</head>
+
+<body>
+    <div id="output"></div>
+    <input type="button" onClick="myFun()" value="Click me">
+    <script>
+        let adj = ["super", "wonderful", "bad", "angry", "careful"];
+        let output = document.getElementById("output");
+
+        function myFun() {
+            let question = prompt("what is your name?");
+            let nameAdj = Math.floor(Math.random() * adj.length);
+            output.innerHTML += adj[nameAdj] + " " + question + "<br>";
+        }
+    </script>
+</body>
+
+</html>
