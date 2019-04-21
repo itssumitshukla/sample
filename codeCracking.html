@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Cracking Game</title>
+</head>
+<body>
+        Code :
+        <input type="text" id="code1">
+        <input type="text" id="code2">
+        <input type="text" id="code3">
+        <br>
+        <input type="button" onClick="crack()" value="Try Code">
+        <br>
+        <div id="output"></div>
+        <script>
+            let cCode = [];
+            let count = 0;
+            let output =  document.getElementById("output");
+            let c1 = document.getElementById("code1");
+            let c2 = document.getElementById("code2");
+            let c3 = document.getElementById("code3");
+            for(let x=0;x<3;x++){
+                cCode.push(Math.floor(Math.random() * 9));
+            }
+            //output.innerHTML = cCode;
+            
+            function crack(){
+                count=0;
+                let guess = [c1.value,c2.value,c3.value];
+                for(let x=0; x <cCode.length; x++){
+                    output.innerHTML += checkNum(guess[x],cCode[x]);
+                }
+                if(count == 3){
+                    output.innerHTML += " You Guessed it <br>";
+                }else{
+                    output.innerHTML += "<br>";
+                }
+                
+                
+            }
+            
+            function checkNum(a,b){
+                if(a>b){ return "L" ;}
+                if(a<b){ return "H" ;}
+                if(a==b){ 
+                    count++;
+                    return a;
+                }
+                
+            }
+            
+        </script>
+</body>
+</html>
