@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SetTimeout Function</title>
+</head>
+<body>
+        <div id="wrapper">Page 1</div> <a href="index3.html">Index3</a> <a href="index.html">Index</a> <a href="index2.html">Index2</a>
+        <input type="button" onclick="startInt()" value="start">
+        <input type="button" onclick="clearInt()" value="stop">
+
+        <script>
+                let output = document.getElementById('wrapper');
+                window.setTimeout(updateWrapper, 5000);
+                let myTimer;
+        
+                function startInt() {
+                    myPopup();
+                    myTimer = window.setTimeout(startInt, 1000);
+                }
+        
+                function updateWrapper() {
+                    document.getElementById('wrapper').innerHTML = "welcome to my website :)";
+                }
+        
+                function clearInt() {
+                    window.clearInterval(myTimer);
+                }
+        
+                function myPopup() {
+                    alert("Hello");
+                }
+            </script>
+</body>
+</html>
