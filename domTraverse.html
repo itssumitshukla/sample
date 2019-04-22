@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom Traverse 1</title>
+</head>
+<body>
+        <div id="wrapper">Page 1</div>
+        <form name="myForm">
+            <input type="button" onclick="myFun(this)" value="click 1">
+            <input type="button" onclick="myFun(this)" value="click 2">
+            <input type="button" onclick="myFun(this)" value="click 3"> </form>
+        <script>
+            let output = document.getElementById('wrapper');
+    
+            function myFun(t) {
+                console.dir(t);
+                output.innerHTML = t.value;
+                t.value = "CLICKED";
+            }
+        </script>
+</body>
+</html>
