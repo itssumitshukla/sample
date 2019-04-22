@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mouse Event Test</title>
+</head>
+<body>
+        <div id="wrapper">Page 1</div> <img id="imgSwap" onmouseover="cImg(this)" onmouseout="bImg(this)">
+        <script>
+          let imgHolder = "http://via.placeholder.com/350x150/ffff00/fff?text=Image10";
+          document.getElementById('imgSwap').onclick = function() {
+            message("clicked");
+          }
+          window.onload = function() {
+            document.getElementById('imgSwap').src = imgHolder;
+          }
+        
+          function cImg(t) {
+            message(t.src);
+            imgHolder = t.src;
+            t.src = "http://via.placeholder.com/350x150/ff0000/fff?text=Image2";
+          }
+        
+          function bImg(t) {
+            t.src = imgHolder;
+          }
+        
+          function message(m) {
+            document.getElementById('wrapper').innerHTML = m;
+          }
+        </script>
+</body>
+</html>
