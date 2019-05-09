@@ -27,6 +27,20 @@ let UIController = (function () {
 // Global app controller
 let controller = (function (budgetCtrl, UICtrl) {
 
+    let setupEventListner(){
+    //button selector
+    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
+    
+    // keypress for enter === 13
+    document.addEventListener('keypress', function (e) {
+
+        if (e.keyCode === 13 || event.which === 13) {
+            ctrlAddItem();
+        }
+
+    });
+    }
+
     //control add item
     let ctrlAddItem = function () {
         // get the input data
@@ -42,18 +56,9 @@ let controller = (function (budgetCtrl, UICtrl) {
         console.log('It works');
     };
 
-    //button selector
-    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
 
-    // keypress for enter === 13
-    document.addEventListener('keypress', function (e) {
-
-        if (e.keyCode === 13 || event.which === 13) {
-            ctrlAddItem();
-        }
-
-    });
 
 })(budgetPatter, UIController);
 
 console.log(budgetPatter);
+
