@@ -7,13 +7,15 @@
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     background-color: white;
     color: #555;
     font-family: 'Lato', 'Arial', 'sans-sarif';
     font-size: 20px;
     font-weight: 300px;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 .clearfix {
@@ -292,7 +294,7 @@ header {
 .works-step div {
     color: #e67e22;
     border: 2px solid #e67e22;
-    display: inline;
+    display: inline-block;
     border-radius: 50px;
     width: 55px;
     text-align: center;
