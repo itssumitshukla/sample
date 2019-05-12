@@ -19,7 +19,8 @@ html {
 .clearfix {
     zoom: 1;
 }
-.clearfix{
+
+.clearfix {
     content: '.';
     clear: both;
     display: block;
@@ -160,6 +161,7 @@ header {
     background-size: cover;
     background-position: center;
     height: 100vh;
+    background-attachment: fixed;
 }
 
 .hero-text-box {
@@ -270,11 +272,11 @@ header {
     margin-top: 70px;
 }
 
-.app-screen{
+.app-screen {
     width: 40%;
 }
 
-.works-step{
+.works-step {
     margin-bottom: 50px;
 }
 
@@ -282,7 +284,7 @@ header {
     margin-bottom: 80px;
 }
 
-.works-step div{
+.works-step div {
     color: #e67e22;
     border: 2px solid #e67e22;
     display: inline;
@@ -295,8 +297,96 @@ header {
     margin-right: 25px;
 }
 
-.btn-app img{
+.btn-app img {
     height: 50px;
     width: auto;
     margin: 10px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
+}
+
+/*----------------------------*/
+/* Cities */
+/*----------------------------*/
+
+.box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-feature {
+    margin-bottom: 5px;
+}
+
+.icon-small {
+    display: inline;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+/*----------------------------*/
+/* Generic Link */
+/*----------------------------*/
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/*----------------------------*/
+/* Testimonials */
+/*----------------------------*/
+.section-test {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(/images/back-customers.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+blockquote{
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+blockquote:before{
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -3;
+}
+
+cite img {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
 }
