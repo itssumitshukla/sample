@@ -99,6 +99,11 @@ body {
   color: #777;
 }
 
+.btn-create {
+  color: white;
+  background-color: #02c2fc;
+}
+
 .btn-privacy {
   color: white;
   background-color: #f12412;
@@ -106,7 +111,7 @@ body {
 
 .btn-support {
   color: white;
-  background-color: #3b5998;
+  background-color: #f19010;
 }
 
 /* Fallback for Edge

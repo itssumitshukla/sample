@@ -7,7 +7,7 @@ let emailAddress = document.getElementById('inputEmail'),
 mainButton.addEventListener('click', function (e) {
   e.preventDefault();
   if (emailAddress.value === 'test@test.com' && passWord.value === 'test') {
-    window.location.href = 'page2.html';
+    window.location.href = 'home.html';
   } else if (emailAddress.value === '') {
     window.location.href = 'errorPage.html';
   } else {
