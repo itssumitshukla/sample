@@ -12,6 +12,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
     integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="home.css">
   <title>Portal</title>
 </head>
 
@@ -67,12 +68,21 @@
   </nav>
   <!-- Jumbotron -->
   <div class="jumbotron">
-    <div class="justify-content-start">
-      <h2>Account ID: [MemberID]</h2>
-      <h3>Current Balance: [Current Balance]
+    <div class="container justify-content-start">
+      <h2 class="balanceNum">Account ID: [MemberID]</h2>
+      <h3 class="balanceNum">Current Balance: &#36;[Current Balance]
         <small>As of[getDate()]</small>
       </h3>
+      <h3 class="balanceNum">Next Scheduled Payment:
+        <small>Next Payment Date</small>
+      </h3>
     </div>
+  </div>
+  <div class="container">
+    <p>Dogs</p>
+  </div>
+  <div class="container d-flex flex-column">
+    <p>Recent Payment Activity</p>
 
   </div>
   <!-- Delete below this later -->

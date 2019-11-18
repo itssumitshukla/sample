@@ -1,0 +1,7 @@
+/* Small devices (tablets, 768px and up)*/
+@media (max-width: 768px) {
+  .balanceNum {
+    font-size: 1rem;
+    color: red;
+  }
+}
