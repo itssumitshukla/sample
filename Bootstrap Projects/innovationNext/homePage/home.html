@@ -16,7 +16,8 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="#">
       <img src="/images/orthobanc.svg" alt="" class="img-fluid">
     </a>
@@ -52,10 +53,28 @@
             <a class="dropdown-item" href="#">Account Info and Docs</a>
           </div>
         </li>
+        <!-- Privacy -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Privacy</a>
+        </li>
+        <!-- Support -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Support</a>
+        </li>
       </ul>
+      <span class="navbar-text justify-text-center">Hello [FirstName][Last Name]</span>
     </div>
   </nav>
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <div class="justify-content-start">
+      <h2>Account ID: [MemberID]</h2>
+      <h3>Current Balance: [Current Balance]
+        <small>As of[getDate()]</small>
+      </h3>
+    </div>
 
+  </div>
   <!-- Delete below this later -->
   <div class="container">
     <h2>Current breakpoint is:
@@ -81,7 +100,7 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <!-- userScript -->
-    <script src="script.js"></script>
+    <script src="homeScript.js"></script>
   </div>
 </body>
 
