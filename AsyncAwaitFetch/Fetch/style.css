@@ -6,3 +6,7 @@ button {
   border: 0;
   padding: 6px 10px;
 }
+
+.disdis {
+  display: none;
+}
