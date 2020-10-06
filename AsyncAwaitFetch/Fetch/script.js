@@ -8,9 +8,7 @@ button.addEventListener('click', function () {
     .then(data => {
       for (let ii of data.results) {
         divDiv.style.display = 'block';
-        divDiv.innerHTML += `${ii.name} <br>`
-        // updateUI(ii.name)
-        console.log(ii.name)
+        divDiv.innerHTML += `<strong>${ii.name}</strong> was born in ${ii.birth_year}! <br>`;
       }
 
     }) //print data to console
