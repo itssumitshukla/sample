@@ -10,8 +10,12 @@ let url = 'https://swapi.dev/api/people/1/';
 // });
 
 async function getPeople() {
-  let res = await axios.get(url);
-  console.log(res.data)
+  try {
+    let res = await axios.get(url);
+    console.log(res.data)
+  } catch (e) {
+    console.log('IN CATCH: ', e)
+  }
 }
 
 getPeople();
