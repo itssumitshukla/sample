@@ -6,10 +6,17 @@ class Timer{
     this.pauseButton = pauseButton;
 
     //setting up event listner
-    this.startButton.addEventListnere('click', this.start);
+    this.startButton.addEventListener('click', this.start);
   }
 
   start(){
     console.log('You started')
   }
 }
+
+//eventlistner from index
+let durationInput = document.querySelector("#duration");
+let startButton = document.querySelector("#start");
+let pauseButton = document.querySelector("#pause");
+
+const timer = new Timer(durationInput, startButton, pauseButton);
