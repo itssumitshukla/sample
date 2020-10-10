@@ -7,13 +7,16 @@ firstReq.addEventListener('load', function(){
   let filmUrl = dataBack.results[0].films[0];
   let filmReq = new XMLHttpRequest();
   filmReq.addEventListener('load', function(){
-    console.log(this)
+    console.log('Second request');
+    let newFilm = JSON.parse(this.responseText);
+    console.log(newFilm.title)
   });
 
-  filmReq.addEventListener('error', ()=>{
-    console.log('ERROR!!!!!')
+  filmReq.addEventListener('error', (e)=>{
+    console.log('ERROR!!!!!', e)
   });
-
+  filmReq.open('GET', filmUrl);
+  filmReq.send();
   //Looping over the result and getting just the name of the planets
   // for(let tt of dataBack.results){
   //   console.log(tt.name);
