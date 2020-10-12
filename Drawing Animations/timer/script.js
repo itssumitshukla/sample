@@ -1,3 +1,5 @@
+
+
 //setup timer
 class Timer{
   constructor(durationInput, startButton, pauseButton){
@@ -21,11 +23,22 @@ class Timer{
     clearInterval(this.interval);
   }
 
-  tick = ()=>{
-    let timeRemaining = parseFloat(this.durationInput.value);
-    this.durationInput.value = timeRemaining-1;
-    console.log('TICK')
-  }
+  tick = () => {
+    if(this.timeRemaining <= 0){
+      this.pause()
+    } else {
+      this.timeRemaining = this.timeRemaining - 1;
+    };
+    this.timeRemaining = this.timeRemaining-1;
+  };
+
+  get timeRemaining(){
+      return parseFloat(this.durationInput.value);
+    }
+
+    set timeRemaining(time){
+      this.durationInput.value = time;
+    }
 }
 
 //eventlistner from index
