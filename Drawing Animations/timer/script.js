@@ -22,6 +22,8 @@ class Timer{
   }
 
   tick = ()=>{
+    let timeRemaining = parseFloat(this.durationInput.value);
+    this.durationInput.value = timeRemaining-1;
     console.log('TICK')
   }
 }
