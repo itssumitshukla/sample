@@ -5,11 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Animation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!--SVG-->
+  <div class="timer">
+    <div class="controls">
+      <input id="duration" value="3" />
+      <div>
+        <button id="start"><i class="fas fa-play"></i></button>
+        <button id="pause"><i class="fas fa-pause"></i></button>
+      </div>
+    </div>
+    <!-- SVG -->
+    <svg class="dial">
+      <circle
+        fill="transparent"
+        stroke="green"
+        stroke-width="15"
+        r="190"
+        cx="0"
+        cy="200"
+        transform="rotate(-90 100 100)"
+      />
+    </svg>
+  </div>
+
+  <!-- SVG
   <svg height="400" width="400">
     <circle r="190" 
     cx="200" 
@@ -19,11 +42,11 @@
     stroke-width="15"
     transform ="rotate(-90 200 200)"
     />
-  </svg>
+  </svg> -->
   <!-- Inputs -->
-  <input id="duration"/>
-  <button id="start">Start</button>
-  <button id="pause">Pause</button>
+ <!-- <input id="duration"/>
+  <button id="start"><i class="fas fa-play"></i></button>
+  <button id="pause"><i class="fas fa-pause"></i></button> -->
 
   <script src="timer.js"></script>
   <script src="script.js"></script>
