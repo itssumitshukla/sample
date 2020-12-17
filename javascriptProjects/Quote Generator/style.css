@@ -79,6 +79,10 @@ button:active {
   color: #38a1f3;
 }
 
+#new-quote:hover {
+  color: red;
+}
+
 .fa-twitter {
   font-size: 1.5rem;
 }

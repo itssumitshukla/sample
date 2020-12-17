@@ -51,6 +51,7 @@ async function getQuotes() {
     newQuote();
   } catch (error) {
     // Catch Error Here
+    console.log(`Yoooo there is an error and its ${error}`)
   }
 }
 
