@@ -8,10 +8,25 @@ const fetchData = async(searchTerm) =>{
   });
 
   console.log(response.data);
-  console.log(response.data.Plot);
 };
 
 const input = document.querySelector('input');
-input.addEventListener('input', (event)=>{
+
+const debounce = (func, delay)=>{
+  let timeoutId;
+  return (...args)=>{
+    if(timeoutId){
+      clearTimeout(timeoutId);
+    }
+    setTimeout(()=>{
+      func.apply(null, args)
+    }, delay)
+  };
+};
+
+
+const onInput = event=>{
   fetchData(event.target.value);
-});
+};
+
+input.addEventListener('input', debounce(onInput, 500));
