@@ -34,6 +34,10 @@ const resultWrapper = document.querySelector('.results');
 const onInput = async (event) => {
   const movies = await fetchData(event.target.value);
 
+  if(!movies.length){
+    dropdown.classList.remove('is-active');
+  }
+
   resultWrapper.innerHTML = '';
   dropdown.classList.add("is-active");
   for (let movie of movies) {
@@ -51,3 +55,12 @@ const onInput = async (event) => {
 };
 
 input.addEventListener('input', debounce(onInput, 500));
+
+//global event listner
+
+document.addEventListener('click', (e)=>{
+  if(!root.contains(e.target)){
+    dropdown.classList.remove('is-active');
+  }
+  console.log(e.target);
+});
