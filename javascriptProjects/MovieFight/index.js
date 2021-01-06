@@ -69,7 +69,6 @@ document.addEventListener('click', (e)=>{
   if(!root.contains(e.target)){
     dropdown.classList.remove('is-active');
   }
-  console.log(e.target);
 });
 
 //
@@ -80,7 +79,6 @@ const onMovieSelect = async (movie) =>{
       i: movie.imdbID
     }
   });
-  console.log(response.data)
   document.querySelector('#summary').innerHTML = movieTemplate(response.data);
 };
 
