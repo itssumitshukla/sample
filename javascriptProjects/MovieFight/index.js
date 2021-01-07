@@ -23,7 +23,12 @@ createAutoComplete({
     <img src ="${movie.Poster}"  />
     ${movie.Title} (${movie.Year})
     `;
-
+  },
+  onOptionSelect(movie){
+    onMovieSelect(movie);
+  },
+  inputValue(movie){
+    return movie.Title;
   }
 });
 //
