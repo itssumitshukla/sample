@@ -1,8 +1,5 @@
-//API
-
-//Calling createautocomplete from js
-createAutoComplete({
-  root: document.querySelector('.autocomplete'),
+//New autocomplete
+const autoCompelteConfig = {
   renderOption(movie){
     const imgSrc = movie.Poster === 'N/A' ? '' : movie.Poster;
 
@@ -15,6 +12,7 @@ createAutoComplete({
     onMovieSelect(movie);
   },
   inputValue(movie){
+    document.querySelector('.tutorial').classList.add('is-hidden');
     return movie.Title;
   },
 
@@ -31,8 +29,19 @@ createAutoComplete({
     }
     return response.data.Search;
   }
+};
 
+//Calling createautocomplete from js
+createAutoComplete({
+  ...autoCompelteConfig,
+  root: document.querySelector('#left-autocomplete'),
 });
+//Calling createautocomplete from js
+createAutoComplete({
+  ...autoCompelteConfig,
+  root: document.querySelector('#right-autocomplete'),
+});
+
 //
 const onMovieSelect = async (movie) =>{
   const response = await axios.get('http://www.omdbapi.com/', {
