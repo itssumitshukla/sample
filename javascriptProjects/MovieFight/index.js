@@ -1,17 +1,4 @@
 //API
-const fetchData = async (searchTerm) => {
-  const response = await axios.get('http://www.omdbapi.com/', {
-    params: {
-      apikey: 'ec3a8c4d',
-      s: searchTerm,
-    }
-  });
-
-  if (response.data.Error) {
-    return [];
-  }
-  return response.data.Search;
-};
 
 //Calling createautocomplete from js
 createAutoComplete({
@@ -29,7 +16,22 @@ createAutoComplete({
   },
   inputValue(movie){
     return movie.Title;
+  },
+
+  async fetchData(searchTerm) {
+    const response = await axios.get('http://www.omdbapi.com/', {
+      params: {
+        apikey: 'ec3a8c4d',
+        s: searchTerm,
+      }
+    });
+  
+    if (response.data.Error) {
+      return [];
+    }
+    return response.data.Search;
   }
+
 });
 //
 const onMovieSelect = async (movie) =>{
