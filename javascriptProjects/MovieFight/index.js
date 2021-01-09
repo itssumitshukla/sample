@@ -33,7 +33,7 @@ createAutoComplete({
   ...autoCompelteConfig,
   root: document.querySelector('#left-autocomplete'),
   onOptionSelect(movie){
-    onMovieSelect(movie, document.querySelector('#left-summary'));
+    onMovieSelect(movie, document.querySelector('#left-summary'),'left');
   },
 });
 //Calling createautocomplete from js
@@ -41,12 +41,15 @@ createAutoComplete({
   ...autoCompelteConfig,
   root: document.querySelector('#right-autocomplete'),
   onOptionSelect(movie){
-    onMovieSelect(movie, document.querySelector('#right-summary'));
+    onMovieSelect(movie, document.querySelector('#right-summary'),'right');
   },
 });
 
+let leftMovie;
+let rightMovie;
+
 //
-const onMovieSelect = async (movie, summaryElement) =>{
+const onMovieSelect = async (movie, summaryElement, side) =>{
   const response = await axios.get('http://www.omdbapi.com/', {
     params: {
       apikey: 'ec3a8c4d',
@@ -54,6 +57,19 @@ const onMovieSelect = async (movie, summaryElement) =>{
     }
   });
   summaryElement.innerHTML = movieTemplate(response.data);
+
+    if(side === 'left'){
+      leftMovie = response.data;
+    } else {
+      rightMovie = response.data;
+    }
+    if(leftMovie && rightMovie){
+      runComparison();
+    }
+};
+
+const  runComparison = () => {
+  console.log('Time for comparison')
 };
 
 const movieTemplate = (movieDetail) => {
