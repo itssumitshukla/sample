@@ -78,18 +78,18 @@ const movieTemplate = (movieDetail) => {
   const imdbScore = parseFloat(movieDetail.imdbRating);
   const imdbVotes = parseInt(movieDetail.imdbVotes.replace(/,/g, ''));
 
-  let count = 0;
-  const awards = movieDetail.Awards.split(' ').forEach((word) => {
+
+  const awards = movieDetail.Awards.split(' ').reduce((prev, word) => {
     const value = parseInt(word);
 
     if(isNaN(value)){
-      return;
+      return prev;
     } else {
-      count = count + value;
+      return prev + value;
     }
-  });
+  }, 0);
 
-  console.log(count)
+  console.log(awards)
 
   return `
   <article class="media">
