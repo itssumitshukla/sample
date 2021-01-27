@@ -55,7 +55,14 @@ function clearTasks() {
 };
 
 //Filter Tasks
-function filterTasks(d) {
-  let text = d.target.value;
-  console.log(text)
-};
+function filterTasks(e) {
+  let text = e.target.value.toLowerCase();
+  document.querySelectorAll('.collection-item').forEach(function (task) {
+      let item = task.firstChild.textContent;
+      if (item.toLowerCase().indexOf(text) !== -1) {
+        task.style.display = 'block';
+      } else {
+        task.style.display = 'none';
+      }
+    })
+  }
