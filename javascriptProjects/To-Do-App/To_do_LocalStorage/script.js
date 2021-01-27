@@ -13,6 +13,10 @@ function loadEventListeners() {
   form.addEventListener('submit', addTask);
   //Remove task event
   taskList.addEventListener('click', removeTask);
+  //Clear Task
+  clearBtn.addEventListener('click',clearTasks);
+  //Filter Task Event
+  filter.addEventListener('keyup', filterTasks);
 }
 
 // //Add task
@@ -43,4 +47,15 @@ function removeTask(e) {
     e.target.parentElement.parentElement.remove();
     console.log('YOOO')
   }
-}
+};
+
+//Clear Task
+function clearTasks() {
+  taskList.innerHTML = '';
+};
+
+//Filter Tasks
+function filterTasks(d) {
+  let text = d.target.value;
+  console.log(text)
+};
