@@ -9,6 +9,8 @@ loadEventListeners();
 
 //Load all event listenrs
 function loadEventListeners() {
+  //Create DOM Load Event
+  document.addEventListener('DOMContentLoaded', getTasks);
   //Add task event
   form.addEventListener('submit', addTask);
   //Remove task event
@@ -17,7 +19,31 @@ function loadEventListeners() {
   clearBtn.addEventListener('click',clearTasks);
   //Filter Task Event
   filter.addEventListener('keyup', filterTasks);
-}
+};
+
+//Get Tasks From LS
+function getTasks() {
+  let tasks;
+  if(localStorage.getItem('tasks') === null){
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.forEach(function (task) {
+    //create li element
+  const li = document.createElement('li');
+  //add Class
+  li.className = 'collection-item';
+  li.appendChild(document.createTextNode(task));
+  const link = document.createElement('a');
+  link.className = 'delete-item secondary-content';
+  link.innerHTML = '<i class="fas fa-times" ></i>'
+  li.appendChild(link);
+  taskList.appendChild(li);
+  })
+
+};
 
 // //Add task
 function addTask(e) {
