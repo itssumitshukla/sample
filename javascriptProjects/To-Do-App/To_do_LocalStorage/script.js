@@ -16,7 +16,7 @@ function loadEventListeners() {
   //Remove task event
   taskList.addEventListener('click', removeTask);
   //Clear Task
-  clearBtn.addEventListener('click',clearTasks);
+  clearBtn.addEventListener('click', clearTasks);
   //Filter Task Event
   filter.addEventListener('keyup', filterTasks);
 };
@@ -24,7 +24,7 @@ function loadEventListeners() {
 //Get Tasks From LS
 function getTasks() {
   let tasks;
-  if(localStorage.getItem('tasks') === null){
+  if (localStorage.getItem('tasks') === null) {
     tasks = [];
   } else {
     tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -32,15 +32,15 @@ function getTasks() {
 
   tasks.forEach(function (task) {
     //create li element
-  const li = document.createElement('li');
-  //add Class
-  li.className = 'collection-item';
-  li.appendChild(document.createTextNode(task));
-  const link = document.createElement('a');
-  link.className = 'delete-item secondary-content';
-  link.innerHTML = '<i class="fas fa-times" ></i>'
-  li.appendChild(link);
-  taskList.appendChild(li);
+    const li = document.createElement('li');
+    //add Class
+    li.className = 'collection-item';
+    li.appendChild(document.createTextNode(task));
+    const link = document.createElement('a');
+    link.className = 'delete-item secondary-content';
+    link.innerHTML = '<i class="fas fa-times" ></i>'
+    li.appendChild(link);
+    taskList.appendChild(li);
   })
 
 };
@@ -70,9 +70,9 @@ function addTask(e) {
 };
 
 //Local Storage
-function storeTaskInLocalStorage(task){
+function storeTaskInLocalStorage(task) {
   let tasks;
-  if(localStorage.getItem('tasks') === null){
+  if (localStorage.getItem('tasks') === null) {
     tasks = [];
   } else {
     tasks.JSON.parse(localStorage.getItem('tasks'));
@@ -86,11 +86,32 @@ function storeTaskInLocalStorage(task){
 function removeTask(e) {
   if (e.target.parentElement.classList.contains('delete-item')) {
     e.target.parentElement.parentElement.remove();
-    console.log('YOOO')
+    
+    //Remove from ls
+    removeTaskFromLocalStorage(e.target.parentElement.parentElement);
   }
 };
 
-//Clear Task
+//Remove from LS
+function removeTaskFromLocalStorage(taskItem) {
+  let tasks;
+  if (localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.forEach(function (task, index) {
+    if(taskItem.textContent === task) {
+      tasks.splice(index, 1);
+    }
+  });
+
+  localStorage.setItem('tasks',JSON.stringify(tasks));
+
+}
+
+//Clear Task”
 function clearTasks() {
   taskList.innerHTML = '';
 };
@@ -99,11 +120,11 @@ function clearTasks() {
 function filterTasks(e) {
   let text = e.target.value.toLowerCase();
   document.querySelectorAll('.collection-item').forEach(function (task) {
-      let item = task.firstChild.textContent;
-      if (item.toLowerCase().indexOf(text) !== -1) {
-        task.style.display = 'block';
-      } else {
-        task.style.display = 'none';
-      }
-    })
-  }
+    let item = task.firstChild.textContent;
+    if (item.toLowerCase().indexOf(text) !== -1) {
+      task.style.display = 'block';
+    } else {
+      task.style.display = 'none';
+    }
+  })
+}
