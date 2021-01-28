@@ -75,7 +75,7 @@ function storeTaskInLocalStorage(task) {
   if (localStorage.getItem('tasks') === null) {
     tasks = [];
   } else {
-    tasks.JSON.parse(localStorage.getItem('tasks'));
+    tasks = JSON.parse(localStorage.getItem('tasks'));
   }
   tasks.push(task);
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -114,6 +114,14 @@ function removeTaskFromLocalStorage(taskItem) {
 //Clear Task”
 function clearTasks() {
   taskList.innerHTML = '';
+
+  //Clear from LS
+  clearTasksFromLocalStorage();
+};
+
+//Clear Tasks
+function clearTasksFromLocalStorage() {
+  localStorage.clear();
 };
 
 //Filter Tasks
