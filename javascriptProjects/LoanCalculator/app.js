@@ -1,8 +1,16 @@
 // listen to submit
-document.getElementById('loan-form').addEventListener('submit', calculateResults);
+document.getElementById('loan-form').addEventListener('submit', function(e) {
+  //hide results
+  document.getElementById('results').style.display = 'none';
+  //show loader
+  document.getElementById('loading').style.display = 'block';
+  setTimeout(calculateResults, 2000);
+
+  e.preventDefault();
+});
 
 //Calculate results
-function calculateResults(e) {
+function calculateResults() {
   let amount = document.getElementById('amount');
   let interest = document.getElementById('interest');
   let years = document.getElementById('years');
@@ -11,21 +19,24 @@ function calculateResults(e) {
   let totalInterest = document.getElementById('total-interest');
 
   let principal = parseFloat(amount.value);
-  let calculatedInterest = parseFloat(interest.value)/ 100 / 12;
+  let calculatedInterest = parseFloat(interest.value) / 100 / 12;
   let calculatedPayments = parseFloat(years.value) * 12;
 
   //compute monthly payments
-  let x = Math.pow( 1 + calculatedInterest, calculatedPayments);
-  let monthly = (principal * x * calculatedInterest)/(x-1);
+  let x = Math.pow(1 + calculatedInterest, calculatedPayments);
+  let monthly = (principal * x * calculatedInterest) / (x - 1);
 
-  if(isFinite(monthly)){
+  if (isFinite(monthly)) {
     monthlyPayment.value = monthly.toFixed(2);
     totalPayment.value = (monthly * calculatedPayments).toFixed(2);
     totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
+    //show results
+    document.getElementById('results').style.display = 'block';
+    //hide spinner
+    document.getElementById('loading').style.display = 'none';
   } else {
     showError('Please Check your numbers');
   }
-  e.preventDefault();
 };
 
 //Shor error function
