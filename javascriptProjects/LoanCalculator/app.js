@@ -42,6 +42,10 @@ function calculateResults() {
 //Shor error function
 
 function showError(error) {
+      //show results
+      document.getElementById('results').style.display = 'none';
+      //hide spinner
+      document.getElementById('loading').style.display = 'none';
   let errorDiv = document.createElement('div');
   let card = document.querySelector('.card');
   let heading = document.querySelector('.heading');
