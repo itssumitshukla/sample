@@ -11,6 +11,14 @@ function UI() {
 
 // Event Listners
 document.getElementById('book-form').addEventListener('submit', function (e) {
-  console.log('test');
+  //Get form values
+  let title = document.getElementById('title').value,
+      author = document.getElementById('author').value,
+      isbn = document.getElementById('isbn').value;
+      
+      //Instantiate book
+      const book = new Book(title,author,isbn);
+
+      console.log(book)
   e.preventDefault();
 })
