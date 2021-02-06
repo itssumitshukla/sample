@@ -26,6 +26,23 @@ UI.prototype.addBookToList = function (book) {
 };
 
 //Show Alert
+UI.prototype.showAlert = function(message, className) {
+  //Create div
+  const div = document.createElement('div');
+  //Add classes
+  div.className = `alert ${className}`;
+  //Add text
+  div.appendChild(document.createTextNode(message));
+  //Get parent
+  const container = document.querySelector('.container');
+  const form = document.querySelector('#book-form');
+  //Insert Alert
+  container.insertBefore(div,form);
+  //Timeout
+  setTimeout(function () {
+    document.querySelector('.alert').remove;
+  }, 3000);
+};
 
 //Clear field function
 UI.prototype.clearFields = function (params) {
@@ -50,8 +67,7 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
       //Validate 
       if(title==='' || author === '' || isbn ===''){
         //Error
-        UI.showAlert('Please fill in all fields', 'error')
-        console.log('NOPE')
+        ui.showAlert('Please fill in all fields', 'error')
       } else {
       //Add book to list
       ui.addBookToList(book);
