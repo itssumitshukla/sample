@@ -40,8 +40,8 @@ UI.prototype.showAlert = function(message, className) {
   container.insertBefore(div,form);
   //Timeout
   setTimeout(function () {
-    document.querySelector('.alert').remove;
-  }, 3000);
+    document.querySelector('.alert').remove();
+  }, 2000);
 };
 
 //Clear field function
@@ -67,10 +67,13 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
       //Validate 
       if(title==='' || author === '' || isbn ===''){
         //Error
-        ui.showAlert('Please fill in all fields', 'error')
+        ui.showAlert('Please fill in all fields', 'error');
       } else {
       //Add book to list
       ui.addBookToList(book);
+      //Show successful add
+      ui.showAlert('Book Added!', 'success');
+
       //Clear fields
       ui.clearFields();
       }
