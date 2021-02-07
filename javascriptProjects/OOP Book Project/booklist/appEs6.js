@@ -20,6 +20,22 @@ class UI {
    `;
 
     list.appendChild(row);
+  };
+
+  //Local Storage
+  class Store {
+    static displayBook(){
+
+    }
+    static displayBooks(){
+
+    }
+    static addBooks(){
+
+    }
+    static removeBook(){
+
+    }
   }
 
   showAlert(message, className) {
