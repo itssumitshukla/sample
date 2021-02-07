@@ -18,7 +18,7 @@ class UI {
       <td>${book.isbn}</td>
       <td><a href="#" class="delete">X<a></td>
     `;
-  
+
     list.appendChild(row);
   }
 
@@ -37,13 +37,13 @@ class UI {
     container.insertBefore(div, form);
 
     // Timeout after 3 sec
-    setTimeout(function(){
+    setTimeout(function () {
       document.querySelector('.alert').remove();
     }, 3000);
   }
 
   deleteBook(target) {
-    if(target.className === 'delete') {
+    if (target.className === 'delete') {
       target.parentElement.parentElement.remove();
     }
   }
@@ -59,7 +59,7 @@ class UI {
 class Store {
   static getBooks() {
     let books;
-    if(localStorage.getItem('books') === null) {
+    if (localStorage.getItem('books') === null) {
       books = [];
     } else {
       books = JSON.parse(localStorage.getItem('books'));
@@ -71,8 +71,8 @@ class Store {
   static displayBooks() {
     const books = Store.getBooks();
 
-    books.forEach(function(book){
-      const ui  = new UI;
+    books.forEach(function (book) {
+      const ui = new UI;
 
       // Add book to UI
       ui.addBookToList(book);
@@ -90,10 +90,10 @@ class Store {
   static removeBook(isbn) {
     const books = Store.getBooks();
 
-    books.forEach(function(book, index){
-     if(book.isbn === isbn) {
-      books.splice(index, 1);
-     }
+    books.forEach(function (book, index) {
+      if (book.isbn === isbn) {
+        books.splice(index, 1);
+      }
     });
 
     localStorage.setItem('books', JSON.stringify(books));
@@ -104,11 +104,11 @@ class Store {
 document.addEventListener('DOMContentLoaded', Store.displayBooks);
 
 // Event Listener for add book
-document.getElementById('book-form').addEventListener('submit', function(e){
+document.getElementById('book-form').addEventListener('submit', function (e) {
   // Get form values
   const title = document.getElementById('title').value,
-        author = document.getElementById('author').value,
-        isbn = document.getElementById('isbn').value
+    author = document.getElementById('author').value,
+    isbn = document.getElementById('isbn').value
 
   // Instantiate book
   const book = new Book(title, author, isbn);
@@ -119,7 +119,7 @@ document.getElementById('book-form').addEventListener('submit', function(e){
   console.log(ui);
 
   // Validate
-  if(title === '' || author === '' || isbn === '') {
+  if (title === '' || author === '' || isbn === '') {
     // Error alert
     ui.showAlert('Please fill in all fields', 'error');
   } else {
@@ -131,7 +131,7 @@ document.getElementById('book-form').addEventListener('submit', function(e){
 
     // Show success
     ui.showAlert('Book Added!', 'success');
-  
+
     // Clear fields
     ui.clearFields();
   }
@@ -140,7 +140,7 @@ document.getElementById('book-form').addEventListener('submit', function(e){
 });
 
 // Event Listener for delete
-document.getElementById('book-list').addEventListener('click', function(e){
+document.getElementById('book-list').addEventListener('click', function (e) {
 
   // Instantiate UI
   const ui = new UI();
