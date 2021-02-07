@@ -22,22 +22,6 @@ class UI {
     list.appendChild(row);
   };
 
-  //Local Storage
-  class Store {
-    static displayBook(){
-
-    }
-    static displayBooks(){
-
-    }
-    static addBooks(){
-
-    }
-    static removeBook(){
-
-    }
-  }
-
   showAlert(message, className) {
     //Create div
     const div = document.createElement('div');
@@ -69,6 +53,30 @@ class UI {
   }
 };
 
+  //Local Storage
+  class Store {
+    static displayBook() {
+      let books;
+      if (localStorage.getItem('books' === null)) {
+        books = [];
+      } else {
+        books = JSON.parse(localStorage.getItem('books'));
+      }
+      return books;
+    }
+    static displayBooks() {
+
+    }
+    static addBooks(book) {
+      let books = Store.getBooks();
+      books.push(book);
+      localStorage.setItem('books', JSON.stringify(books));
+    }
+    static removeBook() {
+
+    }
+  }
+
 // Event Listners
 document.getElementById('book-form').addEventListener('submit', function (e) {
   //Get form values
@@ -89,6 +97,10 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
   } else {
     //Add book to list
     ui.addBookToList(book);
+
+    //Add to Local Storage
+    Store.addBook(book);
+
     //Show successful add
     ui.showAlert('Book Added!', 'success');
 
