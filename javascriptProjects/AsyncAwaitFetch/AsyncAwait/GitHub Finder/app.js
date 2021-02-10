@@ -1,3 +1,6 @@
+//Init Github
+let gitHub = new GitHub;
+
 //Search input
 let searchUser = document.getElementById('searchUser');
 
@@ -6,6 +9,10 @@ searchUser.addEventListener('keyup', (e)=>{
   let userText = e.target.value;
 
   if(userText !== ''){
-    console.log(userText)
+    //make Hhtp call
+    gitHub.getUser(userText)
+      .then(data => {
+        console.log(data);
+      })
   }
 })
