@@ -32,6 +32,11 @@ class UI {
   <div id="repos"></div>
     `;
   }
+  //Show repos
+  showRepos(repos){
+    let output = '';
+  }
+
   //Show alert
   showAlert(message, className) {
     this.clearAlert();
@@ -42,12 +47,16 @@ class UI {
     let container = document.querySelector('.searchContainer');
     const search = document.querySelector('.search');
     container.insertBefore(div, search);
+    //Timeout
+    setTimeout(() => {
+      this.clearAlert()
+    }, 2000);
   }
 
   //Clear alert method
-  clearAlert(){
+  clearAlert() {
     let currentAlert = document.querySelector('.alert');
-    if(currentAlert){
+    if (currentAlert) {
       currentAlert.remove();
     }
   }
