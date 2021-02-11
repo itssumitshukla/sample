@@ -32,4 +32,17 @@ class UI {
   <div id="repos"></div>
     `;
   }
+  //Show alert
+  showAlert(message, className) {
+    //Create Div
+    let div = document.createElement('div');
+    div.className = className;
+    div.appendChild(document.createTextNode(message));
+    let container = document.querySelector();
+  }
+
+  //Clear profile
+  clearProfile() {
+    this.profile.innerHTML = '';
+  }
 }
