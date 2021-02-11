@@ -34,11 +34,22 @@ class UI {
   }
   //Show alert
   showAlert(message, className) {
+    this.clearAlert();
     //Create Div
     let div = document.createElement('div');
     div.className = className;
     div.appendChild(document.createTextNode(message));
-    let container = document.querySelector();
+    let container = document.querySelector('.searchContainer');
+    const search = document.querySelector('.search');
+    container.insertBefore(div, search);
+  }
+
+  //Clear alert method
+  clearAlert(){
+    let currentAlert = document.querySelector('.alert');
+    if(currentAlert){
+      currentAlert.remove();
+    }
   }
 
   //Clear profile
