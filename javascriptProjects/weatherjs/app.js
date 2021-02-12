@@ -2,10 +2,13 @@
 
 let weather = new Weather('Honolulu');
 
-weather.getWeather()
-  .then(results => {
-    console.log(results)
-  })
-  .catch(err => console.log(err))
-;
-console.log()
+//Get weather on dom load
+document.addEventListener('DOMContentLoaded', getWeather);
+
+function getWeather() {
+  weather.getWeather()
+    .then(results => {
+      console.log(results)
+    })
+    .catch(err => console.log(err));
+}
