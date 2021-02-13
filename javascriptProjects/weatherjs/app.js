@@ -19,7 +19,7 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
   weather.changeLocation(city, state)
 
   //set location in local storage
-  //storage.setLocationData(city, state)
+  storage.setLocationData(city, state)
 
   //get and display weather
   getWeather();
