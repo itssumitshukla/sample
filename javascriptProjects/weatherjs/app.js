@@ -1,8 +1,10 @@
-//Init UI
+//Init UI/Storage
 let ui = new UI();
+let storage = new Storage();
+let weatherLocation = storage.getLocationData();
 
 //Init weather
-let weather = new Weather('Honolulu');
+let weather = new Weather(weatherLocation.city, weatherLocation.state);
 
 //Get weather on dom load
 document.addEventListener('DOMContentLoaded', getWeather);
