@@ -7,21 +7,23 @@ let weather = new Weather('Honolulu');
 //Get weather on dom load
 document.addEventListener('DOMContentLoaded', getWeather);
 
-document.getElementById('w-change-btn').addEventListener('click', e => {
-  const city = document.getElementById('city').value
-  const country = document.getElementById('country').value
+//Change location Event
+document.getElementById('w-change-btn').addEventListener('click', (e) => {
+  const city = document.getElementById('city').value;
+  const country = document.getElementById('state').value;
 
+  console.log(city, country)
   //change location
-  weather.changeLocation(city, country)
+  weather.changeLocation(city, state)
 
   //set location in local storage
-  storage.setLocationData(city, country)
+  //storage.setLocationData(city, state)
 
   //get and display weather
-  getWeather()
+  getWeather();
 
   //close modal
-  $('#locModal').modal('hide')
+  $('#locModal').modal('hide');
 })
 
 function getWeather() {
