@@ -9,6 +9,9 @@ class UI{
   }
 
   paint(weather){
-    this.location.textContent = weather.AdministrativeArea.EnglishName;
+    this.location.textContent = weather.name;
+    this.desc.textContent = weather.weather;
+    this.string.textContent = weather.temperatture_string;
+    this.icon.setAttribute('src', weather.icon_url);
   }
 }
