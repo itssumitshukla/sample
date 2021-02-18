@@ -54,7 +54,7 @@ function nextProfile() {
 }
 
 // Profile Iterator
-function profileIterator(...profiles) {
+function profileIterator(profiles) {
   let nextIndex = 0;
 
   return {
