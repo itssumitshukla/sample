@@ -77,15 +77,38 @@ const VoiceRSS = {
 
 
 //Actual Code
-function test() {
-  VoiceRSS.speech({
-    key: '75811966d4af44c7be876265c7901f1b',
-    src: 'Loo Doo Loo Doo Loo Doo',
-    hl: 'en-us',
-    r: 0,
-    c: 'mp3',
-    f: '44khz_16bit_stereo',
-    ssml: false
-  });
+// function test() {
+//   VoiceRSS.speech({
+//     key: '75811966d4af44c7be876265c7901f1b',
+//     src: 'Loo Doo Loo Doo Loo Doo',
+//     hl: 'en-us',
+//     r: 0,
+//     c: 'mp3',
+//     f: '44khz_16bit_stereo',
+//     ssml: false
+//   });
+// };
+// test();
+
+//Get Jokes from API
+async function getJokes() {
+  let joke = '';
+
+  //API
+  const apiUrl = 'https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    if(data.setup){
+      joke = `${data.setup} .... ${data.delivery}`;
+    } else {
+      joke = data.joke;
+    }
+    console.log(joke);
+  } catch (err) {
+    //catch Error
+    console.log('Whoops', err);
+  }
 };
-test();
+
+getJokes();
