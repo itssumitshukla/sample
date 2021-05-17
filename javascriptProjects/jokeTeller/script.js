@@ -80,7 +80,7 @@ const VoiceRSS = {
 function test() {
   VoiceRSS.speech({
     key: '75811966d4af44c7be876265c7901f1b',
-    src: 'Hello World',
+    src: 'Loo Doo Loo Doo Loo Doo',
     hl: 'en-us',
     r: 0,
     c: 'mp3',
