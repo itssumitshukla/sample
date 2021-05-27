@@ -11,8 +11,7 @@ const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 
 // Music
-const songs = [
-  {
+const songs = [{
     name: 'jacinto-1',
     displayName: 'Electric Chill Machine',
     artist: 'Jacinto Design',
@@ -55,3 +54,13 @@ function pauseSong() {
 
 // Play or Pause Event Listener
 playBtn.addEventListener('click', () => (isPlaying ? pauseSong() : playSong()));
+
+// Update DOM
+function loadSong(song) {
+  title.textContent = song.displayName;
+  artist.textContent = song.artist;
+  music.src = `music/${song.name}.mp3`;
+  image.src = `img/${song.name}.jpg`;
+}
+
+loadSong(songs[3])
