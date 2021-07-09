@@ -229,11 +229,24 @@ body {
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
-  background-color: red;
-  height: 50rem;
-  transition: all .8s; }
-  .card:hover {
+  position: relative; }
+  .card__side {
+    background-color: red;
+    color: white;
+    height: 50rem;
+    transition: all .8s;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .card__side--front {
+      background-color: red; }
+    .card__side--back {
+      background-color: green;
+      transform: rotateY(180deg); }
+  .card:hover .card__side--front {
     transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
 
 .row {
   max-width: 114rem;
