@@ -2,6 +2,7 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
+  height: 50rem;
 
   &__side {
     background-color: red;
@@ -11,13 +12,24 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 
+    .15);
 
     &--front {
-      background-color: red;
+      background-color: $color-white;
+
+//       $color-secondary-light: #ffb900;
+// $color-secondary-dark: #ff7730;
     }
     &--back {
-      background-color: green;
       transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
     }
 
   }
