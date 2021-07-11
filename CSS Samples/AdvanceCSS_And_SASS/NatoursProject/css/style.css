@@ -291,6 +291,8 @@ body {
         color: #ffb900; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute; }
 
 .row {
   max-width: 114rem;
