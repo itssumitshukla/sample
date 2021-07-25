@@ -267,6 +267,9 @@ body {
   width: 49%;
   display: inline-block; }
 
+.form__radio-input {
+  display: none; }
+
 .form__radio-label {
   font-size: 1.6rem;
   cursor: pointer;
@@ -281,7 +284,7 @@ body {
   display: inline-block;
   position: absolute;
   left: 0;
-  top: -4rem; }
+  top: -.4rem; }
   .form__radio-button::after {
     content: "";
     display: block;
@@ -293,7 +296,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #55c57a;
-    opacity: 0; }
+    opacity: 0;
+    transition: opacity .2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .card {
   perspective: 150rem;
