@@ -263,6 +263,14 @@ body {
   visibility: hidden;
   transform: translateY(-4rem); }
 
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer; }
+
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
