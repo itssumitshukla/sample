@@ -1,26 +1,49 @@
-.footer{
+.footer {
   background-color: $color-grey-dark-3;
   padding: 10rem 0;
   font-size: 1.4rem;
 
-  &__logo-box{
+  &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
   }
-  &__logo{
+
+  &__logo {
     width: 15rem;
     height: auto;
   }
-  &__navigation{
 
-  }
-  &__navigation{
+  &__navigation {}
 
-  }
-  &__list{
+  &__navigation {}
 
+  &__list {
+    list-style: none;
   }
-  &__link{
+
+  &__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+
+    &:link,
+    &:visited {
+      color: $color-grey-light-1;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, .4);
+    }
 
   }
 }
