@@ -24,18 +24,18 @@
     right: 6.5rem;
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 1000;
-    transition: transform .8s;
+    transition: transform .8s cubic-bezier(0.86,0,0.07,1);
   }
 
   &__nav {
     height: 100vh;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 1500;
     opacity: 0;
     width: 0;
-    transition: opacity .8s;
+    transition: all .8s;
   }
 
   &__list {
@@ -45,6 +45,7 @@
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
+    width: 100%;
   }
 
   &__item {
