@@ -13,6 +13,8 @@
     border-radius: 50%;
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    text-align: center;
+    cursor: pointer;
   }
 
   &__background {
@@ -24,7 +26,7 @@
     right: 6.5rem;
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 1000;
-    transition: transform .8s cubic-bezier(0.86,0,0.07,1);
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   &__nav {
@@ -35,7 +37,7 @@
     z-index: 1500;
     opacity: 0;
     width: 0;
-    transition: all .8s cubic-bezier(0.68,-0.55,0.0265,1.55);
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.0265, 1.55);
   }
 
   &__list {
@@ -53,8 +55,9 @@
   }
 
   &__link {
+
     &:link,
-    &:visited{
+    &:visited {
       display: inline-block;
       font-size: 3rem;
       font-weight: 300;
@@ -66,7 +69,7 @@
       background-size: 230%;
       transition: all .4s;
     }
-    
+
     &:hover,
     &:active {
       background-position: 100%;
@@ -74,28 +77,53 @@
       transform: translateX(1re)m;
     }
   }
-  &__checkbox:checked ~ &__background{
+
+  &__checkbox:checked~&__background {
     transform: scale(80);
   }
-  &__checkbox:checked ~ &__nav{
+
+  &__checkbox:checked~&__nav {
     opacity: 1;
     width: 100%;
   }
 
   //Icon
-  &__icon{
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
     &,
     &::before,
-    &::after{
+    &::after {
       width: 3rem;
       height: 2px;
       background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before {
+      top: -.8rem;
+    }
+
+    &::after {
+      top: .8rem;
     }
   }
 
-  &::before,
-  &::after{
-    content: "";
+  &__button:hover &__icon::before {
+    top: -1rem;
   }
-}
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
 }
