@@ -494,6 +494,13 @@ body {
   .popup__img {
     display: block;
     width: 100%; }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #eee;
+    hyphens: auto; }
 
 .row {
   max-width: 114rem;
