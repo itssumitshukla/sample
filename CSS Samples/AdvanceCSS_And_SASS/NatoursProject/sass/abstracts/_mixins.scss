@@ -28,3 +28,9 @@
 1200-1800px: Normal styles apply
 1800px+ : big desktop
 */
+
+@mixin respond-phone {
+  @media (max-width: 600px) {
+    @content
+  }
+}
