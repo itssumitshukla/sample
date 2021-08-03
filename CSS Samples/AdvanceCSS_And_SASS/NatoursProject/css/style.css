@@ -610,6 +610,9 @@ body {
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
+  @media (max-width: 56.25em) {
+    .footer {
+      margin-bottom: 8rem; } }
   .footer__logo {
     width: 15rem;
     height: auto; }
@@ -801,6 +804,9 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+  @media (max-width: 56.25em) {
+    .section-about {
+      padding: 20rem 0; } }
 
 .section-features {
   padding: 20rem 0;
