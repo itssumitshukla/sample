@@ -236,6 +236,10 @@ body {
     z-index: 10;
     transition: all 0.2;
     outline-offset: 2rem; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        float: left;
+        position: relative; } }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
