@@ -25,6 +25,7 @@ img {
   display: block;
   height: auto;
   margin: 0 auto;
+  box-shadow: rgba(255, 217, 0, 0.712) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 #main {
@@ -52,4 +53,9 @@ li {
   display: block;
   height: auto;
   margin: 0 auto;
+  box-shadow: rgba(174, 191, 136, 0.973) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.timelineImg:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
