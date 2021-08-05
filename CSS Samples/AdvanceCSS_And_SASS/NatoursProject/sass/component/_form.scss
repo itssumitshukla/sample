@@ -17,6 +17,10 @@
     display: block;
     transition: all .3s;
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2 rem rgba($color-black, .1);
@@ -52,20 +56,25 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input {
     display: none;
-  }  
+  }
 
-  &__radio-label{
+  &__radio-label {
     font-size: $default-font-size;
     cursor: pointer;
     position: relative;
     padding-left: 4.5rem;
   }
 
-  &__radio-button{
+  &__radio-button {
     height: 3rem;
     width: 3rem;
     border: 5px solid $color-primary;
@@ -76,9 +85,9 @@
     top: -.4rem;
 
 
-     &::after{
-       content: "";
-       display: block;
+    &::after {
+      content: "";
+      display: block;
       height: 1rem;
       width: 1rem;
       border-radius: 50%;
@@ -89,10 +98,10 @@
       background-color: $color-primary;
       opacity: 0;
       transition: opacity .2s;
-     }
+    }
   }
 
-  &__radio-input:checked ~ &__radio-label &__radio-button::after{
+  &__radio-input:checked~&__radio-label &__radio-button::after {
     opacity: 1;
   }
 }
