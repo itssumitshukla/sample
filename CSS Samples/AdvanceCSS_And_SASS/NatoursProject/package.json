@@ -4,12 +4,18 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "prefix:css":"postcss --use autoprefixer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^6.0.1"
+    "autoprefixer": "^10.3.1",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.6",
+    "browserslist": "last 10 versions"
   }
 }
