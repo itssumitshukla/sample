@@ -17,7 +17,7 @@
   <div class="video-overlay"></div>
   <!-- container -->
   <div class="container">
-    <div class="input-contianer" id="input-container">
+    <div class="input-contianer" id="input-container" hidden>
       <h1>Create a Custom Countdown</h1>
       <form class="form" id="countdownForm">
         <label for="title">Title</label>
@@ -27,7 +27,17 @@
         <button type="submit">Submit</button>
       </form>
     </div>
-
+    <!-- Countdown -->
+    <div class="countdown" id="countdown">
+      <h1 id="countdown-title">Countdown Value</h1>
+      <ul>
+        <li><span>3</span>Days</li>
+        <li><span>5</span>Hours</li>
+        <li><span>33</span>Minutes</li>
+        <li><span>32</span>Seconds</li>
+      </ul>
+      <ul id="countdown-button">Reset</ul>
+    </div>
   </div>
   <!-- Script -->
   <script src="script.js"></script>
