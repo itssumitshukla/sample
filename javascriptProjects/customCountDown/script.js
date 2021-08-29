@@ -14,6 +14,7 @@ let countdownTitle = '';
 let countdownDate = '';
 let countdownValue = Date;
 let countdownActive;
+let savedCountdown;
 
 const second = 1000;
 const minute = second * 60;
@@ -56,7 +57,6 @@ function updateDOM() {
       completeEl.hidden = true;
       countdownEl.hidden = false;
     }
-
   }, second)
 }
 
@@ -67,13 +67,14 @@ function updateCountdown(e) {
   countdownTitle = e.srcElement[0].value;
   countdownDate = e.srcElement[1].value;
   console.log(countdownDate, countdownTitle);
-  //Get number version of date
-  countdownValue = new Date(countdownDate).getTime();
-  console.log('Countdown Value: ', countdownValue);
+
   //Check for valid date
   if (countdownDate === '') {
     alert('Please Select a date')
   } else {
+    //Get number version of date
+    countdownValue = new Date(countdownDate).getTime();
+    console.log('Countdown Value: ', countdownValue);
     updateDOM();
   }
 }
@@ -82,6 +83,7 @@ function updateCountdown(e) {
 function reset() {
   //Hide countdowns, show input
   countdownEl.hidden = true;
+  completeEl.hidden = true;
   inputContainer.hidden = false;
   clearInterval(countdownActive);
   countdownTitle = '';
@@ -91,3 +93,4 @@ function reset() {
 //Event Listner
 countdownForm.addEventListener('submit', updateCountdown);
 countdownBtn.addEventListener('click', reset);
+completeBtn.addEventListener('click', reset);
