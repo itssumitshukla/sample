@@ -58,11 +58,16 @@ function updateCountdown(e) {
   //Get number version of date
   countdownValue = new Date(countdownDate).getTime();
   console.log('Countdown Value: ', countdownValue);
-  updateDOM();
+  //Check for valid date
+  if (countdownDate === '') {
+    alert('Please Select a date')
+  } else {
+    updateDOM();
+  }
 }
 
 //Rest all values
-function reset(){
+function reset() {
   //Hide countdowns, show input
   countdownEl.hidden = true;
   inputContainer.hidden = false;
