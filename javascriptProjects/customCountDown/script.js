@@ -69,7 +69,6 @@ function updateCountdown(e) {
     date: countdownDate,
   }
 
-  console.log(savedCountdown);
   //save to local storage
   localStorage.setItem('countdown', JSON.stringify(savedCountdown));
 
@@ -94,7 +93,22 @@ function reset() {
   countdownDate = '';
 }
 
+//Restore PRevios countdown
+function restorePreviousCountdown(){
+  if(localStorage.getItem('countdown')){
+    inputContainer.hidden = true;
+    savedCountdown = JSON.parse(localStorage.getItem('countdown'));
+    countdownTitle = savedCountdown.title;
+    countdownDate = savedCountdown.date;
+    countdownValue = new Date(countdownDate).getTime();
+    updateDOM();
+  }
+}
+
 //Event Listner
 countdownForm.addEventListener('submit', updateCountdown);
 countdownBtn.addEventListener('click', reset);
 completeBtn.addEventListener('click', reset);
+
+//On load, check local storage
+restorePreviousCountdown();
