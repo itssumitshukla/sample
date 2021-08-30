@@ -91,6 +91,7 @@ function reset() {
   clearInterval(countdownActive);
   countdownTitle = '';
   countdownDate = '';
+  localStorage.removeItem('countdown');
 }
 
 //Restore PRevios countdown
