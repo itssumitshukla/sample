@@ -34,3 +34,30 @@ h1 {
 h1:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
+/* Bookmark */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.item {
+  background: #fff;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 15px;
+  box-shadow: 1px 1px 10px rgba(99, 99, 99, 0.2);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
