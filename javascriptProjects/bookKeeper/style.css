@@ -46,7 +46,7 @@ h1:hover {
 }
 
 .item {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.781);
   border-radius: var(--border-radius);
   padding: 20px;
   margin: 15px;
@@ -61,3 +61,39 @@ h1:hover {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
+a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ff0606;
+}
+
+a:link,
+a:visited {
+  color: green text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  cursor: pointer;
+  float: right;
+  z-index: 2;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
