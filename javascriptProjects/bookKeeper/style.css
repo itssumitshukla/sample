@@ -40,16 +40,16 @@ h1:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   margin: 0 auto;
 }
 
 .item {
   background: rgba(255, 255, 255, 0.781);
   border-radius: var(--border-radius);
-  padding: 30px;
-  margin: 15px;
+  padding: 20px;
+  margin: 10px;
   box-shadow: 1px 1px 10px rgba(99, 99, 99, 0.2);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -80,7 +80,7 @@ a:active {
   text-decoration: underline;
 }
 
-.fa-times {
+.fa-times-circle {
   cursor: pointer;
   float: right;
   z-index: 2;
@@ -110,7 +110,7 @@ a:active {
   bottom: 0;
 }
 
-.show-modal{
+.show-modal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,20 +154,22 @@ h3 {
   margin: 0;
 }
 
-.modal-content{
+.modal-content {
   padding: 20px;
   background: whitesmoke;
 }
 
 /* Form */
 
-.form-group{
+.form-group {
   height: 55px;
 }
-.form-input{
+
+.form-input {
   width: 97%;
   padding: 5px;
   border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
   display: block;
   outline: none;
 }
@@ -177,9 +179,10 @@ h3 {
   display: block;
 }
 
-button{
+button {
   cursor: pointer;
   color: white;
+  background: var(--primary-color);
   height: 30px;
   width: 100px;
   border: none;
@@ -187,10 +190,11 @@ button{
   margin-top: 10px;
 }
 
-button:hover{
+button:hover {
   filter: brightness(100%);
 }
-button:focus{
+
+button:focus {
   outline: none;
 }
 
