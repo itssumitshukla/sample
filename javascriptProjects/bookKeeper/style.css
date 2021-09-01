@@ -164,6 +164,35 @@ h3 {
 .form-group{
   height: 55px;
 }
+.form-input{
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  display: block;
+  outline: none;
+}
+
+.form-label {
+  color: var(--primary-color);
+  display: block;
+}
+
+button{
+  cursor: pointer;
+  color: white;
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+button:hover{
+  filter: brightness(100%);
+}
+button:focus{
+  outline: none;
+}
 
 /* Media Queries */
 @media screen and (max-width: 600px) {
