@@ -15,3 +15,10 @@ function showModal() {
 
 //Modal Event listner
 modalShow.addEventListener('click', showModal);
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('show-modal');
+});
+
+window.addEventListener('click', (e)=>{
+  console.log(e.target)
+})
