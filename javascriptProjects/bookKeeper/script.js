@@ -45,6 +45,23 @@ function validate(nameValue, urlValue) {
   return true;
 }
 
+//Fetch from Local storage
+function fetchBookmarks() {
+  //Get bookmarks if its available
+  if (localStorage.getItem('bookmarks')) {
+    bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  } else {
+    //Create a bookmarks array in localStorage
+    bookmarks = [{
+      name: 'Sumit',
+      url: 'https://www.cnn.com'
+    }];
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  }
+}
+
+console.log(bookmarks)
+
 //Handle Data from Form
 function storeBookmark(e) {
   e.preventDefault();
@@ -59,11 +76,14 @@ function storeBookmark(e) {
     url: urlValue,
   };
   bookmarks.push(bookmark);
-  console.log(bookmarks);
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  fetchBookmarks();
   bookmarkForm.reset();
   websiteNameEl.focus();
 }
 
 //Event Listner
 bookmarkForm.addEventListener('submit', storeBookmark);
+
+//On load fetch bookmakrs
+fetchBookmarks();
