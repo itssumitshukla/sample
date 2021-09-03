@@ -60,6 +60,7 @@ function storeBookmark(e) {
   };
   bookmarks.push(bookmark);
   console.log(bookmarks);
+  localStorage.setItem('bookmarks', bookmarks);
   bookmarkForm.reset();
   websiteNameEl.focus();
 }
