@@ -45,6 +45,19 @@ function validate(nameValue, urlValue) {
   return true;
 }
 
+//Build Bookmars Dom
+function buildBookmarks() {
+  bookmarks.forEach((bookmark)=>{
+     const { name, url } = bookmark;
+     //Itme
+     const item = document.createElement('div');
+     item.classList.add('item');
+     //close icon
+     const closeIcon = document.createElement('i');
+     closeIcon.classList.add('fas', 'fa-times');
+  });
+}
+
 //Fetch from Local storage
 function fetchBookmarks() {
   //Get bookmarks if its available
@@ -58,9 +71,9 @@ function fetchBookmarks() {
     }];
     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
   }
+  buildBookmarks();
 }
 
-console.log(bookmarks)
 
 //Handle Data from Form
 function storeBookmark(e) {
