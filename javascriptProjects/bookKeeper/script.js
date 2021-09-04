@@ -47,32 +47,37 @@ function validate(nameValue, urlValue) {
 
 //Build Bookmars Dom
 function buildBookmarks() {
+  //Remove all bookmark elements
+  bookmarksContainer.textContent = "";
   bookmarks.forEach((bookmark) => {
     const {
       name,
       url
-    } = bookmark;
-    //Itme
-    const item = document.createElement('div');
-    item.classList.add('item');
-    //close icon
-    const closeIcon = document.createElement('i');
-    closeIcon.classList.add('fas', 'fa-times');
-    closeIcon.setAttribute('title', 'Delete Bookmark');
-    closeIcon.setAttribute('onclick', `deleteBookmark('${url}')`);
-    //Favicon / link container
-    const linkInfo = document.createElement('div');
-    linkInfo.classList.add('name');
-    //Favicn
-    const favicon = document.createElement('img');
-    favicon.setAttribute('src', `https://s2.googleusercontent.com/s2/favicons?sz=64&domain=${url}`);
-    favicon.setAttribute('alt', 'Favicon');
+    } = bookmark; //destructuring
+    //Item
+    const item = document.createElement("div");
+    item.classList.add("item");
+    //Close Icon
+    const closeIcon = document.createElement("i");
+    closeIcon.classList.add("fas", "fa-times-circle");
+    closeIcon.setAttribute("title", "Delete Bookmark");
+    closeIcon.setAttribute("onclick", `deleteBookmark('${url}')`);
+
+    //Favicon / Link Container
+    const linkInfo = document.createElement("div");
+    linkInfo.classList.add("name");
+    const favicon = document.createElement("img");
+    favicon.setAttribute(
+      "src",
+      `https://s2.googleusercontent.com/s2/favicons?sz=64&domain_url=${url}`
+    );
+    favicon.setAttribute("alt", "Favicon");
     //Link
-    const link = document.createElement('a');
-    link.setAttribute('href', `${url}`);
-    link.setAttribute('target', '_blank');
+    const link = document.createElement("a");
+    link.setAttribute("href", `${url}`);
+    link.setAttribute("target", "_blank");
     link.textContent = name;
-    //Append to bookmark container
+    // Append bookmarks container
     linkInfo.append(favicon, link);
     item.append(closeIcon, linkInfo);
     bookmarksContainer.appendChild(item);
@@ -81,17 +86,18 @@ function buildBookmarks() {
 
 //Fetch from Local storage
 function fetchBookmarks() {
-  //Get bookmarks if its available
-  if (localStorage.getItem('bookmarks')) {
-    bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  // Get bookmars from localStorage if available
+  if (localStorage.getItem("bookmarks")) {
+    bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
   } else {
-    //Create a bookmarks array in localStorage
+    //Create bookmarks array in localStorage
     bookmarks = [{
-      name: 'Sumit',
-      url: 'https://www.cnn.com'
-    }];
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+      name: "sthss",
+      url: "https://facebook.com",
+    }, ];
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   }
+
   buildBookmarks();
 }
 
