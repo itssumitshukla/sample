@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
-      <!-- Car Racing (1080P)-->
-    <!-- https://pixabay.com/videos/download/video-41758_source.mp4?attachment -->
-    <!-- Lake (4K) -->
-    <!-- https://pixabay.com/videos/download/video-28745_source.mp4?attachment -->
-    <!-- Ocean (720P)-->
-    <!-- https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment -->
-    <div class="player">
-      <video src="https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment" class="video" playsinline></video>
-    </div>
+  <!-- Car Racing (1080P)-->
+  <!-- https://pixabay.com/videos/download/video-41758_source.mp4?attachment -->
+  <!-- Lake (4K) -->
+  <!-- https://pixabay.com/videos/download/video-28745_source.mp4?attachment -->
+  <!-- Ocean (720P)-->
+  <!-- https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment -->
+  <div class="player">
+    <video src="https://pixabay.com/videos/download/video-31377_tiny.mp4?attachment" class="video" playsinline></video>
 
-    <!-- Script -->
-    <script src="script.js"></script>
+    <div class="show-controls">
+      <!-- Controls Containers -->
+      <div class="controls-container">
+        <!-- Progress Bar -->
+        <div class="progress-range" title="Seek">
+          <div class="progress-bar">
+
+          </div>
+          <div class="control-group">
+            <!-- Left Controls -->
+            <div class="controls-left"></div>
+            <!-- Right Controls -->
+            <div class="controls-right"></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- Show Controls -->
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
+
 </html>
