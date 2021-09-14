@@ -11,13 +11,24 @@ const fullscreenBtn = document.querySelector('.fullscreen');
 
 //{Play or paused
 
+function showPlayIcon() {
+  playBtn.classList.replace('fa-pause', 'fa-play');
+  playBtn.setAttribute('title', 'play');
+};
+
 function togglePlay() {
-  if(video.paused){
+  if (video.paused) {
     video.play();
+    playBtn.classList.replace('fa-play', 'fa-pause');
+    playBtn.setAttribute('title', 'pause');
   } else {
     video.pause();
+    showPlayIcon();
   }
 };
+
+//On video End, Show play button icon
+video.addEventListener('ended', showPlayIcon);
 
 //Event Listners
 playBtn.addEventListener('click', togglePlay);
