@@ -55,9 +55,23 @@ function setProgress(e) {
   console.log(newTime);
 }
 
+//Volume Bar
+function changeVolume(e) {
+  let volume = e.offsetX / volumeRange.offsetWidth;
+  //Volume value rounding
+  if(volume < 0.1){
+    volume = 0;
+  }
+  if(volume > 0.9){
+    volume = 1;
+  }
+  console.log(volume)
+}
+
 //Event Listners
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
 video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
 progressRange.addEventListener('click', setProgress);
+volumeRange.addEventListener('click', changeVolume);
