@@ -59,13 +59,23 @@ function setProgress(e) {
 function changeVolume(e) {
   let volume = e.offsetX / volumeRange.offsetWidth;
   //Volume value rounding
-  if(volume < 0.1){
+  if (volume < 0.1) {
     volume = 0;
   }
-  if(volume > 0.9){
+  if (volume > 0.9) {
     volume = 1;
   }
-  console.log(volume)
+  volumeBar.style.width = `${volume * 100}%`;
+  video.volume = volume;
+  //Change icon of volume
+  volumeIcon.className = '';
+  if (volume > 0.7) {
+    volumeIcon.classList.add('fas', 'fa-volume-up');
+  } else if ((volume < 0.7) && (volume > 0)) {
+    volumeIcon.classList.add('fas', 'fa-volume-down');
+  } else if (volume === 0) {
+    volumeIcon.classList.add('fas', 'fa-volume-off');
+  }
 }
 
 //Event Listners
