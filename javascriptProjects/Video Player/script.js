@@ -86,9 +86,13 @@ function changeVolume(e) {
 
 //Mute and Unmute
 function toggleMute() {
-  if(video.volume){
+  if (video.volume) {
     lastVolume = video.volume;
     video.volume = 0;
+    volumeBar.style.width = 0;
+  } else {
+    video.volume = lastVolume;
+    volumeBar.style.width = `${lastVolume * 100}%`;
   }
 }
 
@@ -99,3 +103,4 @@ video.addEventListener('timeupdate', updateProgress);
 video.addEventListener('canplay', updateProgress);
 progressRange.addEventListener('click', setProgress);
 volumeRange.addEventListener('click', changeVolume);
+volumeIcon.addEventListener('click', toggleMute);
