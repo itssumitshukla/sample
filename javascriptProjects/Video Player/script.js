@@ -96,6 +96,8 @@ function toggleMute() {
   } else {
     video.volume = lastVolume;
     volumeBar.style.width = `${lastVolume * 100}%`;
+    volumeIcon.classList.add('fas', 'fa-volume-up');
+    volumeIcon.setAttribute('title', 'mute');
   }
 }
 
