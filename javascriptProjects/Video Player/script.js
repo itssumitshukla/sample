@@ -55,6 +55,11 @@ function setProgress(e) {
   console.log(newTime);
 }
 
+//Volume controls
+let lastVolume = 1;
+
+
+
 //Volume Bar
 function changeVolume(e) {
   let volume = e.offsetX / volumeRange.offsetWidth;
@@ -75,6 +80,15 @@ function changeVolume(e) {
     volumeIcon.classList.add('fas', 'fa-volume-down');
   } else if (volume === 0) {
     volumeIcon.classList.add('fas', 'fa-volume-off');
+  }
+  lastVolume = volume;
+}
+
+//Mute and Unmute
+function toggleMute() {
+  if(video.volume){
+    lastVolume = video.volume;
+    video.volume = 0;
   }
 }
 
