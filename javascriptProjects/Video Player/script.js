@@ -104,8 +104,7 @@ function toggleMute() {
 
 // Change Playback
 function changeSpeed() {
-  console.log('Video Playback Rate', video.playbackRate);
-  console.log('Video Playback Rate', speed.value);
+  video.playbackRate = speed.value;
 }
 
 //Event Listners
