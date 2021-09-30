@@ -31,11 +31,23 @@ function validateForm() {
     return;
   }
   //If form is valid and passwords match
-  if(isValid && passwordsMatch){
+  if (isValid && passwordsMatch) {
     message.textContent = 'Successfuly Registered!';
     message.style.color = 'green';
     messageContainer.style.borderColor = 'green';
   }
+}
+
+function storeFormData() {
+  const user = {
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    website: form.website.value,
+    password: form.password.value
+  }
+  //Check user data on console
+  console.log(user);
 }
 
 function processFormData(e) {
@@ -43,6 +55,10 @@ function processFormData(e) {
 
   //Method
   validateForm();
+  //Submit Data if Valid
+  if(isValid && passwordsMatch){
+    storeFormData();
+  }
 }
 
 //Event Listners
