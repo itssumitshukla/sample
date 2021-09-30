@@ -16,22 +16,22 @@
             <!-- FullName -->
             <div class="form-group">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Full Name">
+                <input type="text" id="name" placeholder="Full Name" required minlength="3" maxlength="100">
             </div>
             <!-- Phone -->
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" placeholder="555-555-5555">
+                <input type="tel" id="phone" placeholder="555-555-5555" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
             </div>
             <!-- Email -->
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="test@test.com">
+                <input type="email" id="email" placeholder="test@test.com" required>
             </div>
             <!-- URL -->
             <div class="form-group">
                 <label for="website">Full Website</label>
-                <input type="url" id="website" placeholder="http://www.google.com">
+                <input type="url" id="website" placeholder="http://www.google.com" required>
             </div>
             <!-- Password -->
             <div class="form-group">
