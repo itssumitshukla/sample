@@ -25,7 +25,9 @@ body {
 
 .header {
   background: dodgerblue;
-
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +52,22 @@ h2 {
   User-select: none;
 }
 
+#player .far,
+#player .choice {
+  color: dodgerblue;
+  cursor: pointer;
+}
 
+#computer .far,
+#computer .choice {
+  color: rgb(175, 33, 33);
+  cursor: pointer;
+}
+
+#player .far:last-of-type,
+#computer .far:last-of-type {
+  margin-right: 0;
+}
 
 .reset-icon {
   font-size: 30px;
@@ -99,6 +116,7 @@ h2 {
 /* Media Query: iPhone (Vertical) */
 @media screen and (max-width: 376px) {
   .game-container {
+    width: 95%;
     height: 550px;
   }
 
