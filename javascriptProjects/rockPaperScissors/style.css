@@ -7,13 +7,20 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-
+  background: whitesmoke;
   font-family: Lato, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.game-container {
+  width: 530px;
+  height: 600px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .5);
+}
 
 
 .header {
