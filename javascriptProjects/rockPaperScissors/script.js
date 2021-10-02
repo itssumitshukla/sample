@@ -47,5 +47,27 @@ let computerChoice = '';
 
 //Passing player selected
 function select(playerChoice) {
-  console.log(playerChoice);
+  //Add selected styling and playerchoice
+  switch (playerChoice) {
+    case 'rock':
+      playerRock.classList.add('selected');
+      playerChoiceEl.textContent = ' --- Rock';
+      break;
+    case 'paper':
+      playerRock.classList.add('selected');
+      playerChoiceEl.textContent = ' --- Paper';
+      break;
+    case 'scissors':
+      playerRock.classList.add('selected');
+      playerChoiceEl.textContent = ' --- Scissors';
+      break;
+    case 'lizard':
+      playerRock.classList.add('selected');
+      playerChoiceEl.textContent = ' --- Lizard';
+      break;
+    case 'spock':
+      playerRock.classList.add('selected');
+      playerChoiceEl.textContent = ' --- Spock';
+      break;
+  }
 }
