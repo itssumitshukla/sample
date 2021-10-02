@@ -45,29 +45,38 @@ let playerScoreNumber = 0;
 let computerScoreNumber = 0;
 let computerChoice = '';
 
+// Reset all 'selected' icons, remove confetti
+function resetSelected() {
+  allGameIcons.forEach((icon) => {
+    icon.classList.remove('selected');
+  });
+}
+
 //Passing player selected
 function select(playerChoice) {
-  //Add selected styling and playerchoice
+  // Add 'selected' styling & playerChoice
   switch (playerChoice) {
     case 'rock':
       playerRock.classList.add('selected');
       playerChoiceEl.textContent = ' --- Rock';
       break;
     case 'paper':
-      playerRock.classList.add('selected');
+      playerPaper.classList.add('selected');
       playerChoiceEl.textContent = ' --- Paper';
       break;
     case 'scissors':
-      playerRock.classList.add('selected');
+      playerScissors.classList.add('selected');
       playerChoiceEl.textContent = ' --- Scissors';
       break;
     case 'lizard':
-      playerRock.classList.add('selected');
+      playerLizard.classList.add('selected');
       playerChoiceEl.textContent = ' --- Lizard';
       break;
     case 'spock':
-      playerRock.classList.add('selected');
+      playerSpock.classList.add('selected');
       playerChoiceEl.textContent = ' --- Spock';
+      break;
+    default:
       break;
   }
 }
