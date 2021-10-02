@@ -40,3 +40,12 @@ const choices = {
     defeats: ['scissors', 'rock']
   },
 };
+
+let playerScoreNumber = 0;
+let computerScoreNumber = 0;
+let computerChoice = '';
+
+//Passing player selected
+function select(playerChoice) {
+  console.log(playerChoice);
+}
