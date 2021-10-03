@@ -52,9 +52,20 @@ function resetSelected() {
   });
 }
 
+// Random computer choice
+function computerRandomChoice() {
+  const computerChoiceNumber = Math.random();
+}
+
+//call functions to process turn
+function checkResult() {
+  resetSelected();
+  computerRandomChoice();
+}
+
 //Passing player selected
 function select(playerChoice) {
-  resetSelected();
+  checkResult()
   // Add 'selected' styling & playerChoice
   switch (playerChoice) {
     case 'rock':
