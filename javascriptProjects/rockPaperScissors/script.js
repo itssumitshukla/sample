@@ -96,6 +96,13 @@ function displayComputerChoice() {
   }
 }
 
+// Check result, increase scores, update resultText
+function updateScore(playerChoice) {
+  if (playerChoice === computerChoice) {
+    resultText.textContent = "It's a tie.";
+  } 
+}
+
 //call functions to process turn
 function checkResult() {
   resetSelected();
