@@ -33,7 +33,7 @@ body {
 
 
 /* Navigation */
-/* .navigation-container {
+.navigation-container {
   position: fixed;
   top: 0;
 }
@@ -42,7 +42,7 @@ body {
   display: flex;
   justify-content: center;
 }
-
+/* 
 .background {
   background: whitesmoke;
   position: fixed;
