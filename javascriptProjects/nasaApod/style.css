@@ -43,15 +43,25 @@ body {
   display: flex;
   justify-content: center;
 }
-/* 
+
 .background {
-  background: whitesmoke;
   position: fixed;
   right: 0;
   width: 100%;
+  background: whitesmoke;
   height: 60px;
+  z-index: -1;
+}
 
-} */
+.clickable {
+  color: dodgerblue;
+  cursor: pointer;
+  user-select: none;
+}
+
+.clickable:hover {
+  color: rgb(0, 99, 199);
+}
 
 
 /* Hidden */
