@@ -48,10 +48,17 @@ function updateDOM() {
     //Date
     const date = document.createElement('strong');
     date.textContent = result.date;
-        // Copyright
-        const copyrightResult = result.copyright === undefined ? '' : result.copyright;
-        const copyright = document.createElement('span');
-        copyright.textContent = ` ${copyrightResult}`;
+    // Copyright
+    const copyrightResult = result.copyright === undefined ? '' : result.copyright;
+    const copyright = document.createElement('span');
+    copyright.textContent = ` ${copyrightResult}`;
+    //Append
+    footer.append(date, copyright);
+    cardBody.append(cardTitle, saveText, cardText, footer);
+    link.appendChild(image);
+    card.append(link, cardBody);
+    imagesContainer.appendChild(card);
+    console.log(card)
   });
 }
 
