@@ -85,12 +85,14 @@ function saveFavorite(itemUrl) {
   resultsArray.forEach((item) => {
     if (item.url.includes(itemUrl) && (!favorites[itemUrl])) {
       favorites[itemUrl] = item;
-      console.log(favorites)
+      console.log(JSON.stringify(favorites))
       //Show save button
       saveConfirmed.hidden = false;
       setTimeout(() => {
         saveConfirmed.hidden = true
       }, 2000);
+      //Set fav in local storage
+      localStorage.setItem('nasaFavorites', JSON.stringify(favorites))
     }
   })
 }
