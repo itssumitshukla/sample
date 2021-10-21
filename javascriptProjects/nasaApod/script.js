@@ -5,9 +5,9 @@ const saveConfirmed = document.querySelector('.save-confirmed');
 const loader = document.querySelector('.loader');
 
 //Nasa API
-// const count = 10;
-// const apiKey = 'DEMO_KEY';
-// const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${count}`;
+const count = 10;
+const apiKey = 'DEMO_KEY';
+const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${count}`;
 
 let resultsArray = [];
 let favorites = {};
@@ -81,7 +81,13 @@ async function getNasaPictures() {
 
 //Add result to Favorites
 function saveFavorite(itemUrl){
-  console.log(itemUrl)
+  //Loop through Results array
+  resultsArray.forEach((item)=>{
+    if(item.url.includes(itemUrl)){
+      favorites[itemUrl] = item;
+      console.log(favorites)
+    }
+  })
 }
 
 //on Load
