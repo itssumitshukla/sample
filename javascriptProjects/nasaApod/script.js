@@ -14,8 +14,10 @@ let favorites = {};
 
 
 //Create DOM Nodes
-function createDomNodes() {
-  resultsArray.forEach((result) => {
+function createDomNodes(page) {
+  const currentArray = page === 'results' ? resultsArray : Object.values(favorites);
+  console.log('Current Array', page, currentArray);
+  currentArray.forEach((result) => {
     //Card COntainer
     const card = document.createElement('div');
     card.classList.add('card');
@@ -65,13 +67,13 @@ function createDomNodes() {
 }
 
 //Update DOM
-function updateDOM() {
+function updateDOM(page) {
   //Get Fav from local storage
   if(localStorage.getItem('nasaFavorites')){
     favorites = JSON.parse(localStorage.getItem('nasaFavorites'));
     console.log("FROM LOCAL STORAGE", favorites)
   }
-  createDomNodes();
+  createDomNodes(page);
 }
 
 //Get 10 images from Nasa Api
@@ -80,7 +82,7 @@ async function getNasaPictures() {
     const response = await fetch(apiUrl);
     resultsArray = await response.json();
     console.log(resultsArray);
-    updateDOM();
+    updateDOM('favorites');
   } catch (error) {
     //
     console.log(error)
