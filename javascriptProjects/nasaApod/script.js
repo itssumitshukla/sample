@@ -13,8 +13,8 @@ let resultsArray = [];
 let favorites = {};
 
 
-//Update DOM
-function updateDOM() {
+//Create DOM Nodes
+function createDomNodes() {
   resultsArray.forEach((result) => {
     //Card COntainer
     const card = document.createElement('div');
@@ -61,8 +61,17 @@ function updateDOM() {
     link.appendChild(image);
     card.append(link, cardBody);
     imagesContainer.appendChild(card);
-    console.log(card)
   });
+}
+
+//Update DOM
+function updateDOM() {
+  //Get Fav from local storage
+  if(localStorage.getItem('nasaFavorites')){
+    favorites = JSON.parse(localStorage.getItem('nasaFavorites'));
+    console.log("FROM LOCAL STORAGE", favorites)
+  }
+  createDomNodes();
 }
 
 //Get 10 images from Nasa Api
