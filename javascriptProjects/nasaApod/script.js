@@ -78,6 +78,7 @@ function updateDOM(page) {
     favorites = JSON.parse(localStorage.getItem('nasaFavorites'));
     console.log("FROM LOCAL STORAGE", favorites)
   }
+  imagesContainer.textContent = '';
   createDomNodes(page);
 }
 
@@ -117,7 +118,9 @@ function saveFavorite(itemUrl) {
 
 function removeFavorite(itemUrl) {
   if (favorites[itemUrl]) {
-    delete favorites[itemUrl]
+    delete favorites[itemUrl];
+    localStorage.setItem('nasaFavorites', JSON.stringify(favorites));
+    updateDOM('favorites');
   }
 }
 
