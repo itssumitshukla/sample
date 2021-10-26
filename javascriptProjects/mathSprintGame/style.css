@@ -51,7 +51,6 @@ body {
   height: 600px;
 }
 
-
 /* Splash Page -------------------- */
 input[type="radio"] {
   opacity: 0;
@@ -75,4 +74,75 @@ input[type="radio"] {
   cursor: pointer;
   border: 2px solid black;
   border-radius: 5px;
+}
+
+label {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+}
+
+.selected-label {
+  background: var(--select-color);
+  color: white;
+}
+
+.best-score {
+  position: relative;
+  top: -100px;
+  left: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  max-width: fit-content;
+}
+
+.best-score span {
+  margin: 0;
+}
+
+.best-score span:last-child {
+  font-size: 24px;
+}
+
+.selection-footer {
+  top: 134px;
+}
+
+/* Game Page -------------------------- */
+.height-240 {
+  height: 240px;
+  width: 100%;
+}
+
+.height-500 {
+  height: 500px;
+  width: 100%;
+}
+
+.item-container {
+  height: 552px;
+  overflow-y: scroll;
+  position: relative;
+  -ms-overflow-style: none;
+}
+
+.item-container::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  height: 80px;
+  margin: 0 50px;
+  user-select: none;
+}
+
+.finished>h1 {
+  opacity: 0.5;
 }
