@@ -189,3 +189,12 @@ button:hover {
 button:active {
   transform: scale(0.99);
 }
+
+/* Countdown Page ---------------------- */
+.countdown {
+  margin-top: 45%;
+  font-size: 100px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
