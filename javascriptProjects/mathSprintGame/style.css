@@ -218,3 +218,21 @@ button:active {
   user-select: none;
   cursor: pointer;
 }
+
+/* Score Page ------------------------- */
+.score-container {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-footer {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -30px;
+}
