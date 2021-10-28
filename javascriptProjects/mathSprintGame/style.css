@@ -236,3 +236,22 @@ button:active {
   position: relative;
   top: -30px;
 }
+
+.title {
+  font-size: 45px;
+}
+
+.final-time {
+  font-size: 100px;
+  margin: 0;
+  color: var(--success);
+}
+
+.base-time {
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+
+.penalty-time {
+  color: var(--danger);
+}
