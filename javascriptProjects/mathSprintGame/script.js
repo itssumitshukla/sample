@@ -46,6 +46,8 @@ startForm.addEventListener('click', () => {
     //Remove the selected label
     radioEl.classList.remove('selected-label');
     //Add it back if radio input is checked
-    
+    if (radioEl.children[1].checked) {
+      radioEl.classList.add('selected-label');
+    }
   })
 });
