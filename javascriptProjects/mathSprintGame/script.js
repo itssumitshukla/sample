@@ -41,6 +41,11 @@ let finalTimeDisplay = '0.0';
 // Scroll
 let valueY = 0;
 
-startForm.addEventListener('click', ()=> {
-
+startForm.addEventListener('click', () => {
+  radioContainers.forEach((radioEl) => {
+    //Remove the selected label
+    radioEl.classList.remove('selected-label');
+    //Add it back if radio input is checked
+    
+  })
 });
