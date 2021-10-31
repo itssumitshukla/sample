@@ -41,6 +41,24 @@ let finalTimeDisplay = '0.0';
 // Scroll
 let valueY = 0;
 
+//Get the value from selected radio button
+function getRadioValue() {
+  let radioValue;
+  radioInputs.forEach((radioInput) => {
+    if (radioInput.checked) {
+      radioValue = radioInput.value;
+    }
+  });
+  return radioValue;
+}
+
+//Form that decides amount of questions
+function selectQuestionAmount(e) {
+  e.preventDefault();
+  questionAmount = getRadioValue();
+  console.log('Question Amount: ', questionAmount);
+}
+
 startForm.addEventListener('click', () => {
   radioContainers.forEach((radioEl) => {
     //Remove the selected label
@@ -51,3 +69,6 @@ startForm.addEventListener('click', () => {
     }
   })
 });
+
+//Event Listners
+startForm.addEventListener('submit', selectQuestionAmount);
