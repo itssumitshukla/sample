@@ -17,3 +17,30 @@ const finalTimeEl = document.querySelector('.final-time');
 const baseTimeEl = document.querySelector('.base-time');
 const penaltyTimeEl = document.querySelector('.penalty-time');
 const playAgainBtn = document.querySelector('.play-again');
+
+// Equations
+let questionAmount = 0;
+let equationsArray = [];
+let playerGuessArray = [];
+let bestScoreArray = [];
+
+// Game Page
+let firstNumber = 0;
+let secondNumber = 0;
+let equationObject = {};
+const wrongFormat = [];
+
+// Time
+let timer;
+let timePlayed = 0;
+let baseTime = 0;
+let penaltyTime = 0;
+let finalTime = 0;
+let finalTimeDisplay = '0.0';
+
+// Scroll
+let valueY = 0;
+
+startForm.addEventListener('click', ()=> {
+
+});
