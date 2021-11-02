@@ -93,6 +93,23 @@ function createEquations() {
     };
     equationsArray.push(equationObject);
   }
+  // Loop through for each wrong equation, mess with the equation results, push to array
+  for (let i = 0; i < wrongEquations; i++) {
+    firstNumber = getRandomInt(9);
+    secondNumber = getRandomInt(9);
+    const equationValue = firstNumber * secondNumber;
+    wrongFormat[0] = `${firstNumber} x ${secondNumber + 1} = ${equationValue}`;
+    wrongFormat[1] = `${firstNumber} x ${secondNumber} = ${equationValue - 1}`;
+    wrongFormat[2] = `${firstNumber + 1} x ${secondNumber} = ${equationValue}`;
+    const formatChoice = getRandomInt(2);
+    const equation = wrongFormat[formatChoice];
+    equationObject = {
+      value: equation,
+      evaluated: 'false'
+    };
+    equationsArray.push(equationObject);
+  }
+  shuffle(equationsArray);
 }
 
 
