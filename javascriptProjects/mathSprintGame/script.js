@@ -41,6 +41,12 @@ let finalTimeDisplay = '0.0';
 // Scroll
 let valueY = 0;
 
+//Navigate from splash page to co0ntdown page
+function showCountdown() {
+  countdownPage.hidden = false;
+  splashPage.hidden = true;
+}
+
 //Get the value from selected radio button
 function getRadioValue() {
   let radioValue;
@@ -57,6 +63,9 @@ function selectQuestionAmount(e) {
   e.preventDefault();
   questionAmount = getRadioValue();
   console.log('Question Amount: ', questionAmount);
+  if(questionAmount){
+    showCountdown();
+  }
 }
 
 startForm.addEventListener('click', () => {
