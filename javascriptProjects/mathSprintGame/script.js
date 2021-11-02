@@ -73,6 +73,29 @@ function getRadioValue() {
   return radioValue;
 }
 
+// Create Correct/Incorrect Random Equations
+function createEquations() {
+  // Randomly choose how many correct equations there should be
+  const correctEquations = getRandomInt(questionAmount);
+  console.log('correct equations:', correctEquations);
+  // Set amount of wrong equations
+  const wrongEquations = questionAmount - correctEquations;
+  console.log('wrong equations:', wrongEquations);
+  // Loop through for each correct equation, multiply random numbers up to 9, push to array
+  for (let i = 0; i < correctEquations; i++) {
+    firstNumber = getRandomInt(9);
+    secondNumber = getRandomInt(9);
+    const equationValue = firstNumber * secondNumber;
+    const equation = `${firstNumber} x ${secondNumber} = ${equationValue}`;
+    equationObject = {
+      value: equation,
+      evaluated: 'true'
+    };
+    equationsArray.push(equationObject);
+  }
+}
+
+
 //Form that decides amount of questions
 function selectQuestionAmount(e) {
   e.preventDefault();
@@ -80,6 +103,7 @@ function selectQuestionAmount(e) {
   console.log('question amount:', questionAmount);
   if (questionAmount) {
     showCountdown();
+    createEquations();
   }
 }
 
