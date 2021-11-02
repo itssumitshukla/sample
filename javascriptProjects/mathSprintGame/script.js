@@ -41,10 +41,25 @@ let finalTimeDisplay = '0.0';
 // Scroll
 let valueY = 0;
 
+//Dislays 3,2,1
+function countdownStart() {
+  countdown.textContent = '3';
+  setTimeout(() => {
+    countdown.textContent = '2';
+  }, 1000);
+  setTimeout(() => {
+    countdown.textContent = '1';
+  }, 2000);
+  setTimeout(() => {
+    countdown.textContent = 'GO!';
+  }, 3000);
+}
+
 //Navigate from splash page to co0ntdown page
 function showCountdown() {
   countdownPage.hidden = false;
   splashPage.hidden = true;
+  countdownStart();
 }
 
 //Get the value from selected radio button
@@ -62,21 +77,22 @@ function getRadioValue() {
 function selectQuestionAmount(e) {
   e.preventDefault();
   questionAmount = getRadioValue();
-  console.log('Question Amount: ', questionAmount);
-  if(questionAmount){
+  console.log('question amount:', questionAmount);
+  if (questionAmount) {
     showCountdown();
   }
 }
 
+// Switch selected input styling
 startForm.addEventListener('click', () => {
   radioContainers.forEach((radioEl) => {
-    //Remove the selected label
+    // Remove Selected Label Styling
     radioEl.classList.remove('selected-label');
-    //Add it back if radio input is checked
+    // Add it back if radio input is checked
     if (radioEl.children[1].checked) {
       radioEl.classList.add('selected-label');
     }
-  })
+  });
 });
 
 //Event Listners
