@@ -96,6 +96,16 @@ function updateBestScore() {
 }
 
 
+// Reset Game
+function playAgain() {
+  gamePage.addEventListener('click', startTimer);
+  scorePage.hidden = true;
+  splashPage.hidden = false;
+  equationsArray = [];
+  playerGuessArray = [];
+  valueY = 0;
+  playAgainBtn.hidden = true;
+}
 
 //Dislays 3,2,1
 function countdownStart() {
@@ -127,6 +137,11 @@ function getRadioValue() {
     }
   });
   return radioValue;
+}
+
+// Get Random Number up to a certain amount
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
 }
 
 // Create Correct/Incorrect Random Equations
