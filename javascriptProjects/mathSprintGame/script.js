@@ -41,6 +41,15 @@ let finalTimeDisplay = '0.0';
 // Scroll
 let valueY = 0;
 
+// Refresh Splash Page Best Scores
+function bestScoresToDOM() {
+  bestScores.forEach((bestScore, index) => {
+    const bestScoreEl = bestScore;
+    bestScoreEl.textContent = `${bestScoreArray[index].bestScore}s`;
+  });
+}
+
+
 //Dislays 3,2,1
 function countdownStart() {
   countdown.textContent = '3';
@@ -60,6 +69,7 @@ function showCountdown() {
   countdownPage.hidden = false;
   splashPage.hidden = true;
   countdownStart();
+  populateGamePage();
 }
 
 //Get the value from selected radio button
@@ -110,6 +120,22 @@ function createEquations() {
     equationsArray.push(equationObject);
   }
   shuffle(equationsArray);
+  equationsToDOM();
+}
+
+// Add Equations to DOM
+function equationsToDOM() {
+  equationsArray.forEach((equation) => {
+    // Item
+    const item = document.createElement('div');
+    item.classList.add('item');
+    // Equation Text
+    const equationText = document.createElement('h1');
+    equationText.textContent = equation.value;
+    // Append
+    item.appendChild(equationText);
+    itemContainer.appendChild(item);
+  });
 }
 
 
