@@ -95,6 +95,15 @@ function updateBestScore() {
   localStorage.setItem('bestScores', JSON.stringify(bestScoreArray));
 }
 
+// Start timer when game page is clicked
+function startTimer() {
+  // Reset times
+  timePlayed = 0;
+  penaltyTime = 0;
+  finalTime = 0;
+  timer = setInterval(addTime, 100);
+  gamePage.removeEventListener('click', startTimer);
+}
 
 // Reset Game
 function playAgain() {
@@ -249,4 +258,5 @@ startForm.addEventListener('click', () => {
 });
 
 //Event Listners
+gamePage.addEventListener('click', startTimer);
 startForm.addEventListener('submit', selectQuestionAmount);
