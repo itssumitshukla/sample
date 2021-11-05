@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag and Drop</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1 class="main-title">Kanban Board</h1>
+    <div class="drag-container">
+        <ul class="drag-list">
+            <!-- Backlog Column -->
+            <li class="drag-column backlog-column">
+                <span class="header">
+                    <h1>Backlog</h1>
+                </span>
+                <!-- Backlog Content -->
+                <div id="backlog-content" class="custom-scroll">
+                    <ul class="drag-item-list" id="backlog-list" ondrop="drop(event)" ondragover="allowDrop(event)"
+                        ondragenter="dragEnter(0)"></ul>
+                </div>
+                <!-- Add Button Group -->
+                <div class="add-btn-group">
+                    <div class="add-btn" onclick="showInputBox(0)">
+                        <span class="plus-sign">+</span>
+                        <span>Add Item</span>
+                    </div>
+                    <div class="add-btn solid" onclick="hideInputBox(0)">
+                        <span>Save Item</span>
+                    </div>
+                </div>
+        </ul>
+    </div>
     <!-- Script -->
     <script src="script.js"></script>
 </body>
+
 </html>
