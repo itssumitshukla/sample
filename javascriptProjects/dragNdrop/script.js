@@ -29,10 +29,29 @@ function getSavedColumns() {
   if (localStorage.getItem('backlogItems')) {
     backlogListArray = JSON.parse(localStorage.backlogItems);
     progressListArray = JSON.parse(localStorage.progressItems);
+    completeListArray = JSON.parse(localStorage.completeItems);
+    onHoldListArray = JSON.parse(localStorage.onHoldItems);
   } else {
     backlogListArray = ['Release the course', 'Sit back and relax'];
     progressListArray = ['Work on projects', 'Listen to music'];
+    completeListArray = ['Being cool', 'Getting stuff done'];
+    onHoldListArray = ['Being uncool'];
   }
 }
 
-console.log(getSavedColumns());
+// Get Arrays from localStorage if available, set default values if not
+function getSavedColumns() {
+  if (localStorage.getItem('backlogItems')) {
+    backlogListArray = JSON.parse(localStorage.backlogItems);
+    progressListArray = JSON.parse(localStorage.progressItems);
+    completeListArray = JSON.parse(localStorage.completeItems);
+    onHoldListArray = JSON.parse(localStorage.onHoldItems);
+  } else {
+    backlogListArray = ['Release the course', 'Sit back and relax'];
+    progressListArray = ['Work on projects', 'Listen to music'];
+    completeListArray = ['Being cool', 'Getting stuff done'];
+    onHoldListArray = ['Being uncool'];
+  }
+}
+console.log(getSavedColumns(),
+  getSavedColumns());
