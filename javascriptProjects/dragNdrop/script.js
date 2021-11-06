@@ -9,4 +9,30 @@ const progressListEl = document.getElementById('progress-list');
 const completeListEl = document.getElementById('complete-list');
 const onHoldListEl = document.getElementById('on-hold-list');
 
-console.log(addBtns);
+// Items
+let updatedOnLoad = false;
+
+// Initialize Arrays
+let backlogListArray = [];
+let progressListArray = [];
+let completeListArray = [];
+let onHoldListArray = [];
+let listArrays = [];
+
+// Drag Functionality
+let draggedItem;
+let dragging = false;
+let currentColumn;
+
+// Get Arrays from localStorage if available, set default values if not
+function getSavedColumns() {
+  if (localStorage.getItem('backlogItems')) {
+    backlogListArray = JSON.parse(localStorage.backlogItems);
+    progressListArray = JSON.parse(localStorage.progressItems);
+  } else {
+    backlogListArray = ['Release the course', 'Sit back and relax'];
+    progressListArray = ['Work on projects', 'Listen to music'];
+  }
+}
+
+console.log(getSavedColumns());
