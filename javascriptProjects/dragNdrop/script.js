@@ -54,5 +54,17 @@ function filterArray(array) {
   return filteredArray;
 }
 
-console.log(getSavedColumns(),
-  getSavedColumns());
+// Create DOM Elements for each list item
+function createItemEl(columnEl, column, item, index) {
+  // List Item
+  const listEl = document.createElement('li');
+  listEl.textContent = item;
+  listEl.id = index;
+  listEl.classList.add('drag-item');
+  listEl.draggable = true;
+  listEl.setAttribute('onfocusout', `updateItem(${index}, ${column})`);
+  listEl.setAttribute('ondragstart', 'drag(event)');
+  listEl.contentEditable = true;
+  // Append
+  columnEl.appendChild(listEl);
+}
