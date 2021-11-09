@@ -76,9 +76,16 @@ function updateDOM() {
   if (!updatedOnLoad) {
     getSavedColumns();
   }
- // Backlog Column
- backlogListEl.textContent = '';
- backlogListArray.forEach((backlogItem, index) => {
-   createItemEl(backlogListEl, 0, backlogItem, index);
- });
+  // Backlog Column
+  backlogListEl.textContent = '';
+  backlogListArray.forEach((backlogItem, index) => {
+    createItemEl(backlogListEl, 0, backlogItem, index);
+  });
+  backlogListArray = filterArray(backlogListArray);
+  // Progress Column
+  progressListEl.textContent = '';
+  progressListArray.forEach((progressItem, index) => {
+    createItemEl(progressListEl, 1, progressItem, index);
+  });
+  progressListArray = filterArray(progressListArray);
 }
