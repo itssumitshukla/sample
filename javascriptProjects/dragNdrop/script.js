@@ -68,3 +68,13 @@ function createItemEl(columnEl, column, item, index) {
   // Append
   columnEl.appendChild(listEl);
 }
+
+
+// Update Columns in DOM - Reset HTML, Filter Array, Update localStorage
+function updateDOM() {
+  // Check localStorage once
+  if (!updatedOnLoad) {
+    getSavedColumns();
+  }
+  updateSavedColumns();
+}
