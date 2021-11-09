@@ -76,5 +76,9 @@ function updateDOM() {
   if (!updatedOnLoad) {
     getSavedColumns();
   }
-  updateSavedColumns();
+ // Backlog Column
+ backlogListEl.textContent = '';
+ backlogListArray.forEach((backlogItem, index) => {
+   createItemEl(backlogListEl, 0, backlogItem, index);
+ });
 }
