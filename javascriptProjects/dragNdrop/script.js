@@ -88,4 +88,10 @@ function updateDOM() {
     createItemEl(progressListEl, 1, progressItem, index);
   });
   progressListArray = filterArray(progressListArray);
+  // Complete Column
+  completeListEl.textContent = '';
+  completeListArray.forEach((completeItem, index) => {
+    createItemEl(completeListEl, 2, completeItem, index);
+  });
+  completeListArray = filterArray(completeListArray);
 }
