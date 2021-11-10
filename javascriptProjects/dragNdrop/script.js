@@ -69,7 +69,6 @@ function createItemEl(columnEl, column, item, index) {
   columnEl.appendChild(listEl);
 }
 
-
 // Update Columns in DOM - Reset HTML, Filter Array, Update localStorage
 function updateDOM() {
   // Check localStorage once
@@ -104,3 +103,12 @@ function updateDOM() {
   updatedOnLoad = true;
   updateSavedColumns();
 }
+
+// When Item Starts Dragging
+function drag(e) {
+  draggedItem = e.target;
+  dragging = true;
+}
+
+// On Load
+updateDOM();
