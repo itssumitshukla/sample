@@ -142,6 +142,26 @@ function hideInputBox(column) {
   addToColumn(column);
 }
 
+// Allows arrays to reflect Drag and Drop items
+function rebuildArrays() {
+  backlogListArray = [];
+  for (let i = 0; i < backlogListEl.children.length; i++) {
+    backlogListArray.push(backlogListEl.children[i].textContent);
+  }
+  progressListArray = [];
+  for (let i = 0; i < progressListEl.children.length; i++) {
+    progressListArray.push(progressListEl.children[i].textContent);
+  }
+  completeListArray = [];
+  for (let i = 0; i < completeListEl.children.length; i++) {
+    completeListArray.push(completeListEl.children[i].textContent);
+  }
+  onHoldListArray = [];
+  for (let i = 0; i < onHoldListEl.children.length; i++) {
+    onHoldListArray.push(onHoldListEl.children[i].textContent);
+  }
+  updateDOM();
+}
 
 // When Item Enters Column Area
 function dragEnter(column) {
@@ -163,7 +183,16 @@ function allowDrop(e) {
 // Dropping Item in Column
 function drop(e) {
   e.preventDefault();
-
+  const parent = listColumns[currentColumn];
+  // Remove Background Color/Padding
+  listColumns.forEach((column) => {
+    column.classList.remove('over');
+  });
+  // Add item to Column
+  parent.appendChild(draggedItem);
+  // Dragging complete
+  dragging = false;
+  rebuildArrays();
 }
 
 // On Load
