@@ -5,12 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Jquery Test</title>
 </head>
 
 <body>
 
-  <div id="test"></div>
+  <div id="append">Append</div>
+  <div id="appendTo">AppendTo</div>
   <div>Hello WOrld</div>
   <span>Test</span>
   <p></p>
@@ -20,7 +22,14 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      $('#test').html('Hello Coding Addict')
+      let first = $('#append');
+      let second = $('#appendTo');
+      first.append('<div class ="apped"> Added Element After</div>');
+      second.append('<div class ="apped"> Added Element Before</div>');
+
+      $('<div class ="apped"> Added Element After</div>').appendTo(second);
+      $('<div class ="prepend"> Added Element After</div>').prepend(second)
+
     });
   </script>
 
