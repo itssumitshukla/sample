@@ -1,9 +1,4 @@
-.append{
+.special{
   background-color: red;
-  font-size: 35px;
-}
-
-.prepend{
-  background-color: green;
-  color: red;
+  font-size: 40px;
 }
