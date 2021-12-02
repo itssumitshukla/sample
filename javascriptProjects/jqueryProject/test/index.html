@@ -13,10 +13,7 @@
 
   <div id="append">Append</div>
   <div id="appendTo">AppendTo</div>
-  <div>Hello WOrld</div>
-  <span>Test</span>
-  <p></p>
-  <a href=""></a>
+
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -24,11 +21,11 @@
     $(document).ready(function () {
       let first = $('#append');
       let second = $('#appendTo');
-      first.append('<div class ="apped"> Added Element After</div>');
-      second.append('<div class ="apped"> Added Element Before</div>');
+      first.append('<div class ="append"> Added Element After</div>');
+      first.append('<div class ="prepend"> Added Element Before</div>');
 
       $('<div class ="apped"> Added Element After</div>').appendTo(second);
-      $('<div class ="prepend"> Added Element After</div>').prepend(second)
+      $('<div class ="prepend"> Added Element Before</div>').prependTo(second)
 
     });
   </script>
