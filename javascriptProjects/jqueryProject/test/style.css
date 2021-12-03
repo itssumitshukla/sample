@@ -1,5 +1,22 @@
-.change{
+.btn {
+  display: block;
+  background-color: green;
+  padding: 40px;
+  font-size: 40px;
+}
+
+.simple{
+  padding: 40px;
   background-color: red;
   font-size: 40px;
-  color: blue;
+}
+
+.special{
+  width: 300px;
+  font-size: 40px;
+  background-color: yellow;
+}
+
+.hide{
+  display: none;
 }
