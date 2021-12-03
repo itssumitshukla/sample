@@ -10,21 +10,18 @@
 </head>
 
 <body>
-  <p class="special">I am special</p>
-  <div id="main">I am main Div</div>
-  <span>I am Span Test</span>
+  <input id="name" type="text" placeholder="Write your name">
+  <input id="lastName" type="text" placeholder="Write your last name">
+  <input id="phone" type="phone" placeholder="Write your phone name">
+  <input id="email" type="email" placeholder="Write your email">
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      $('#main').addClass('special');
-      $('p').removeClass();
-
-      $('p,div,span').click(function(){
-        $(this).toggleClass('special')
+      $('#name, #lastName, #phone, #email').change(function () {
+        $(this).addClass('special')
       })
-
     });
   </script>
 
