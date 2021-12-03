@@ -10,16 +10,13 @@
 </head>
 
 <body>
-  <input id="name" type="text" placeholder="Write your name">
-  <input id="lastName" type="text" placeholder="Write your last name">
-  <input id="phone" type="phone" placeholder="Write your phone name">
-  <input id="email" type="email" placeholder="Write your email">
 
+  <div id="main">Hover over me</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      $('#name, #lastName, #phone, #email').change(function () {
+      $('#main').hover(function () {
         $(this).addClass('special')
       })
     });
