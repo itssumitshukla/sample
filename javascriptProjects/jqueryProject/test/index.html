@@ -19,7 +19,11 @@
   <script>
     $(document).ready(function () {
       $('#main').addClass('special');
-      $('p').removeClass('special');
+      $('p').removeClass();
+
+      $('p,div,span').click(function(){
+        $(this).toggleClass('special')
+      })
 
     });
   </script>
