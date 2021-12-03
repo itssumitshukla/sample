@@ -11,15 +11,21 @@
 
 <body>
 
-  <div id="main">Hover over me</div>
+  <div id="main">Testing on function</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    $(document).ready(function () {
-      $('#main').hover(function () {
-        $(this).addClass('special')
-      })
-    });
+    let mainDiv = $("#main");
+
+    mainDiv.on('mouseover, mouseleave', changeDiv);
+
+    mainDiv.on('click', function(){
+      mainDiv.off('mouseover mouseleave', changeDiv);
+      mainDiv.html('This is clicked')
+    })
+    function changeDiv(){
+      mainDiv.toggleClass('change')
+    }
   </script>
 
 </body>
