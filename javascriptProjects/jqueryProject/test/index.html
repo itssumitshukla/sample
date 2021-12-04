@@ -10,22 +10,31 @@
 </head>
 
 <body>
-  <h1>Animation in jquery</h1>
-  <button id="button" type="button">Click me</button>
-  <div class="simple">I am simple</div>
-  <div class="special">I am special</div>
+ <!-- Ajax test from file -->
 
-
+ <div>This is stuff back from server
+   <span id="result"></span>
+ </div>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    $('#button').click(function(){
-      let simpleDiv = $('.simple');
-      let specialDiv = $('.special');
-      specialDiv.animate({
-        fontSize: "200px",
-        marginLeft: "-100px"
-      }, 3000)
-    })
+   $.ajax({
+    url: "//simple.txt",
+    dataType:"text",
+    method:"GET",
+    success:gotData,
+    error:noData
+   });
+
+   function gotData(data) {
+     console.log(data);
+     $('#result').text(data);
+   }
+
+   function noData(xhr) {
+     console.log(xhr);
+     alert('Something failed')
+   }
   </script>
 
 </body>
