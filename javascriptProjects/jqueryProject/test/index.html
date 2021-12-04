@@ -21,10 +21,10 @@
     $('#button').click(function(){
       let simpleDiv = $('.simple');
       let specialDiv = $('.special');
-      //specialDiv.fadeOut(4000).fadeIn(2000)
-      //specialDiv.fadeToggle(1000);
-      specialDiv.fadeTo(3000, 0.3);
-      simpleDiv.slideToggle(2000)
+      specialDiv.animate({
+        fontSize: "200px",
+        marginLeft: "-100px"
+      }, 3000)
     })
   </script>
 
