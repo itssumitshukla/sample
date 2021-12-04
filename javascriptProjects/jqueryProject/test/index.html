@@ -20,13 +20,11 @@
   <script>
     $('#button').click(function(){
       let simpleDiv = $('.simple');
-      if(simpleDiv.is(':hidden')){
-        simpleDiv.show(1000)
-  
-      } else {
-        simpleDiv.hide(2000)
-      }
-
+      let specialDiv = $('.special');
+      //specialDiv.fadeOut(4000).fadeIn(2000)
+      //specialDiv.fadeToggle(1000);
+      specialDiv.fadeTo(3000, 0.3);
+      simpleDiv.slideToggle(2000)
     })
   </script>
 
