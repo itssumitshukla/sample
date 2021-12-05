@@ -18,7 +18,13 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-   $("#result").load('simple.txt')
+   $("#result").load('//fdsimple.txt', function(response, status, xhr){
+     if(status ==="error"){
+       alert("Sorry something went wrong: " + xhr.status + " " + xhr.statusText)
+     } else {
+       console.log("This works")
+     }
+   })
   </script>
 
 </body>
