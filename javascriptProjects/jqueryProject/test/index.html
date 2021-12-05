@@ -18,23 +18,7 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-   $.ajax({
-    url: "//simple.txt",
-    dataType:"text",
-    method:"GET",
-    success:gotData,
-    error:noData
-   });
-
-   function gotData(data) {
-     console.log(data);
-     $('#result').text(data);
-   }
-
-   function noData(xhr) {
-     console.log(xhr);
-     alert('Something failed')
-   }
+   $("#result").load('simple.txt')
   </script>
 
 </body>
