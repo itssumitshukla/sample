@@ -12,22 +12,17 @@
 <body>
  <!-- Ajax test from file -->
 
- <div>This is stuff back from server
-   <span id="main"></span>
+ <div class="container">
+   <div class="quote-text">
+     <h1 id="quote"> If you would like to read a random quote, click the button below</h1>
+     <p id="author"> - Testing</p>
+   </div>
+   <button id="btn">Click here</button>
  </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-    let url = $.get("/simple.txt");
-    console.log(url)
-    $.get("/simple.txt", gotData);
-    function gotData(data) {
-      $.each(data, workData)
-    }
 
-    function workData(index, dataSET) {
-      $('#main').append('div class="simple"' + dataSET.author + " is the auther. Number: " + index +'</div>')
-    }
 
   </script>
 
