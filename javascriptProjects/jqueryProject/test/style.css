@@ -1,38 +1,44 @@
-
-.container {
-  background-color: #fff;
-  width: 80vw;
-  padding: 40px;
-  height: 55vh;
-  border-left: 3px solid blue;
-}
-.quote-text{
-  min-height: 20vh;
+body {
+  background-color: #ced0ce;
+  min-height: 100vh;
+  text-align: center;
 }
 
-.container h1 {
-  font-size: 50px;
-  text-align: left;
-}
-
-.container p {
-  text-transform: capitalize;
-  color: #ced0ce;
-  text-align: right;
-  font-style: italic;
-  font-size: 30px;
-}
-
-#btn {
-  margin-top: 30px;
-  font-size: 25px;
-  padding: 10px 20px;
-  background-color: #191716;
-  color: #F15025;
+.banner {
+  font-size: 35px;
   text-transform: uppercase;
+  color: #f15025;
+  margin: 25px 0 50px 0;
 }
 
-#btn:hover {
+.message{
+  font-size: 40px;
+  text-align: left;
+  text-transform: capitalize;
+  background-color: #fff;
+  width: 75%;
+  height: 150px;
+  padding: 20px 20px;
+  margin: 20px auto 40px auto;
+}
+
+#text {
+  font-size: 30px;
+  padding: 40px 20px;
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn {
+  margin: 40px 10px;
+  padding: 10px 15px;
+  font-size: 25px;
   color: #191716;
   background-color: #f15025;
+}
+
+.btn:hover{
+  color: #f15025;
+  background-color: #191716;
 }
