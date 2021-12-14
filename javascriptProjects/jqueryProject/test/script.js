@@ -31,3 +31,25 @@
 //   $('#auther').html('<span>--</span>' + quotes[number].author);
 //   console.log('YAY')
 // });
+
+//assign variables
+const $message = $('.message');
+const $text = $('#text');
+const $send = $('#send');
+const $clear = $('#clear');
+
+//click event
+$send.click(deliverMessage);
+
+function deliverMessage (){
+  let textValue = $text.val();
+  $message.html(textValue);
+}
+
+//Clear
+$clear.click(clearField);
+
+function clearField() {
+  $message.html('');
+  $text.val('');
+}
