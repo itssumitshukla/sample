@@ -29,7 +29,9 @@ $(document).ready(function () {
   // });
   //accordian
   $('.accordion__btn').click(function () {
-    $(this).toggleClass('rotate')
+    $('.accordion__btn').not(this).removeClass('rotate');
+    $(this).toggleClass('rotate');
+    $(this).parent().next();
   })
 
 });
