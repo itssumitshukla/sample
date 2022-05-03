@@ -30,8 +30,10 @@ $(document).ready(function () {
   //accordian
   $('.accordion__btn').click(function () {
     $('.accordion__btn').not(this).removeClass('rotate');
+    $('.accordion__btn').not(this).parent().next().slideUp();
+
     $(this).toggleClass('rotate');
-    $(this).parent().next();
+    $(this).parent().next().slideToggle();
   })
 
 });
