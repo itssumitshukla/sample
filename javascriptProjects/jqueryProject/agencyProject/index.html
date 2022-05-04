@@ -19,75 +19,81 @@
 </head>
 
 <body>
+  <!-- preloader -->
   <div class="preloader">
-    <img src="/img/preloader.gif" alt="" class="preloader__img">
+    <img src="img/preloader.gif" alt="" class="preloader__img">
   </div>
-  <!-- Header -->
+  <!--end of preloader -->
+  <!-- header section-->
   <header class="header" id="header">
+    <!-- title -->
     <article class="banner">
-      <h1 class="banner__title">We are <strong class="banner__title-name">agency</strong></h1>
+      <h1 class="banner__title">we are
+        <strong class="banner__title-name">agency</strong>
+      </h1>
     </article>
-  </header>
-  <!-- End of header -->
-  <div class="video__container">
-    <video class="video__item" id="video" autoplay loop muted>
-      <source src="video/Working-it/Mp4/Working-it.mp4" type="video/mp4">
-      <source src="video/Working-it/Ogv/Working-it.ogv" type="video/og">
-      <source src="video/Working-it/Webm/Working-it.webm" type="video/webm">
-      browser does not suppor the video tag
-    </video>
-  </div>
-  <!-- Video Overlay -->
-  <div class="video__overlay"></div>
-  <!-- nav btn -->
-  <div class="navBtn">
-    <i class="fas fa-bars"></i>
-  </div>
-  <!-- navbar -->
-  <nav class="nav">
-    <ul class="nav__links">
-      <li>
-        <a href="" id="home" class="nav__single-link">
-          <img src="img/logo.svg" alt="logo">
-        </a>
-      </li>
-      <li>
-        <a href="#home" class="nav__single-link">home</a>
-      </li>
-      <li>
-        <a href="#contact" class="nav__single-link">contact</a>
-      </li>
-      <li>
-        <a href="#projects" class="nav__single-link">projects</a>
-      </li>
-      <li>
-        <a href="#progress" class="nav__single-link" s>progress</a>
-      </li>
-    </ul>
-  </nav>
-  <!-- social icons -->
-  <div class="social-icons">
-    <a href="#" class="social-icon social-icon-facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="#" class="social-icon social-icon-twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a href="#" class="social-icon social-icon-instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
-  <!-- end of social icon -->
-  <!-- video switch -->
-  <div class="video__switch-container">
-    <div class="video__switch">
-      <span>on</span>
-      <span>Off</span>
-      <div class="video__switch-btn">
+    <!--end of title -->
+    <!-- video -->
+    <div class="video__container">
+      <video class="video__item" id="video" autoplay loop muted>
+        <source src="video/Working-it/Mp4/Working-it.mp4" type="video/mp4">
+        <source src="video/Working-it/Ogv/Working-it.ogv" type="video/ogv">
+        <source src="video/Working-it/Webm/Working-it.webm" type="video/webm"> browser does not support the video tag
+      </video>
+    </div>
+    <!-- end of video -->
+    <!-- video overlay -->
+    <div class="video__overlay"></div>
+    <!-- end of video overlay -->
+    <!-- nav btn -->
+    <div class="navBtn">
+      <i class="fas fa-bars"></i>
+    </div>
+    <!-- navbar -->
+    <nav class="nav">
+      <ul class="nav__links">
+        <li>
+          <a href="" id="home" class="nav__single-link">
+            <img src="img/logo.svg" alt="logo">
+          </a>
+        </li>
+        <li>
+          <a href="#home" class="nav__single-link">home</a>
+        </li>
+        <li>
+          <a href="#contact" class="nav__single-link">contact</a>
+        </li>
+        <li>
+          <a href="#projects" class="nav__single-link">projects</a>
+        </li>
+        <li>
+          <a href="#progress" class="nav__single-link" s>progress</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- social icons -->
+    <div class="social-icons">
+      <a href="#" class="social-icon social-icon-facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="#" class="social-icon social-icon-twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#" class="social-icon social-icon-instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <!-- end of social icons-->
+    <!-- video switch -->
+    <div class="video__switch-container">
+      <div class="video__switch">
+        <span>on</span>
+        <span>off</span>
+        <div class="video__switch-btn"></div>
       </div>
     </div>
-  </div>
-
+  </header>
+  <!-- end of header section -->
   <!-- services -->
   <section class="services section-padding" id="services">
     <!-- section title -->
@@ -185,6 +191,7 @@
       <!-- end of single service -->
     </div>
   </section>
+  <!--end of  services section-->
   <!-- contact -->
   <section class="contact section-padding" id="contact">
     <div class="contact__container">
@@ -285,241 +292,242 @@
         <div class="project__outline"></div>
       </article>
       <!--end of single project -->
-      <!-- progress section -->
-      <section class="progress section-padding" id="progress">
-        <!-- section title -->
-        <div class="section-title__container">
-          <!-- icon -->
-          <div class="section-title__icon">
-            <i class="fas fa-spinner"></i>
-          </div>
-          <!-- text  -->
-          <div class="section-title__text">
-            <h1 class="section-title__name">our progress</h1>
-            <h4 class="section-title__info">Lorem ipsum dolor sit amet.</h4>
-          </div>
-        </div>
-        <!-- end of section title -->
-        <!--  -->
-        <div class="flexbox-parent flexbox-parent--medium">
-          <!-- progress img-->
-          <article class="progress__img progress__item"></article>
-          <!-- progress info -->
-          <article class="progress__info progress__item">
-            <div class="progress__container">
-              <!-- single progress bar -->
-              <div class="progress__bar">
-                <!-- text -->
-                <div class="progress__bar-text">
-                  <h1>deliveries</h1>
-                  <h1>100%</h1>
-                </div>
-                <!-- value -->
-                <div class="progress__bcg">
-                  <div class="progress__value progress__value--one"></div>
-                </div>
-              </div>
-              <!-- end single progress bar -->
-              <!-- single progress bar -->
-              <div class="progress__bar">
-                <!-- text -->
-                <div class="progress__bar-text">
-                  <h1>initial sale</h1>
-                  <h1>90%</h1>
-                </div>
-                <!-- value -->
-                <div class="progress__bcg">
-                  <div class="progress__value progress__value--two"></div>
-                </div>
-              </div>
-              <!-- end single progress bar -->
-              <!-- single progress bar -->
-              <div class="progress__bar">
-                <!-- text -->
-                <div class="progress__bar-text">
-                  <h1>customer satisfaction</h1>
-                  <h1>80%</h1>
-                </div>
-                <!-- value -->
-                <div class="progress__bcg">
-                  <div class="progress__value progress__value--three"></div>
-                </div>
-              </div>
-              <!-- end single progress bar -->
-              <!-- single progress bar -->
-              <div class="progress__bar">
-                <!-- text -->
-                <div class="progress__bar-text">
-                  <h1>follow up</h1>
-                  <h1>70%</h1>
-                </div>
-                <!-- value -->
-                <div class="progress__bcg">
-                  <div class="progress__value progress__value--four"></div>
-                </div>
-              </div>
-              <!-- end single progress bar -->
-              <!-- single progress bar -->
-              <div class="progress__bar">
-                <!-- text -->
-                <div class="progress__bar-text">
-                  <h1>response times</h1>
-                  <h1>60%</h1>
-                </div>
-                <!-- value -->
-                <div class="progress__bcg">
-                  <div class="progress__value progress__value--five"></div>
-                </div>
-              </div>
-              <!-- end single progress bar -->
-            </div>
-          </article>
-        </div>
-      </section>
-      <!-- end progress section -->
-      <!-- about section -->
-      <section class="about section-padding" id="about">
-        <!-- section title -->
 
-        <div class="reverse-section-title__container">
-          <!-- icon -->
-          <div class="reverse-section-title__icon">
-            <i class="fas fa-user"></i>
+
+    </div>
+  </section>
+  <!-- end of projects -->
+  <!-- progress section -->
+  <section class="progress section-padding" id="progress">
+    <!-- section title -->
+    <div class="section-title__container">
+      <!-- icon -->
+      <div class="section-title__icon">
+        <i class="fas fa-spinner"></i>
+      </div>
+      <!-- text  -->
+      <div class="section-title__text">
+        <h1 class="section-title__name">our progress</h1>
+        <h4 class="section-title__info">Lorem ipsum dolor sit amet.</h4>
+      </div>
+    </div>
+    <!-- end of section title -->
+    <!--  -->
+    <div class="flexbox-parent flexbox-parent--medium">
+      <!-- progress img-->
+      <article class="progress__img progress__item"></article>
+      <!-- progress info -->
+      <article class="progress__info progress__item">
+        <div class="progress__container">
+          <!-- single progress bar -->
+          <div class="progress__bar">
+            <!-- text -->
+            <div class="progress__bar-text">
+              <h1>deliveries</h1>
+              <h1>100%</h1>
+            </div>
+            <!-- value -->
+            <div class="progress__bcg">
+              <div class="progress__value progress__value--one"></div>
+            </div>
           </div>
-          <!-- text  -->
-          <div class="reverse-section-title__text section-title__text--border-blue">
-            <h1 class="reverse-section-title__name">about us</h1>
-            <h4 class="reverse-section-title__info section-title__info--blue">Lorem ipsum dolor sit amet.</h4>
+          <!-- end single progress bar -->
+          <!-- single progress bar -->
+          <div class="progress__bar">
+            <!-- text -->
+            <div class="progress__bar-text">
+              <h1>initial sale</h1>
+              <h1>90%</h1>
+            </div>
+            <!-- value -->
+            <div class="progress__bcg">
+              <div class="progress__value progress__value--two"></div>
+            </div>
+          </div>
+          <!-- end single progress bar -->
+          <!-- single progress bar -->
+          <div class="progress__bar">
+            <!-- text -->
+            <div class="progress__bar-text">
+              <h1>customer satisfaction</h1>
+              <h1>80%</h1>
+            </div>
+            <!-- value -->
+            <div class="progress__bcg">
+              <div class="progress__value progress__value--three"></div>
+            </div>
+          </div>
+          <!-- end single progress bar -->
+          <!-- single progress bar -->
+          <div class="progress__bar">
+            <!-- text -->
+            <div class="progress__bar-text">
+              <h1>follow up</h1>
+              <h1>70%</h1>
+            </div>
+            <!-- value -->
+            <div class="progress__bcg">
+              <div class="progress__value progress__value--four"></div>
+            </div>
+          </div>
+          <!-- end single progress bar -->
+          <!-- single progress bar -->
+          <div class="progress__bar">
+            <!-- text -->
+            <div class="progress__bar-text">
+              <h1>response times</h1>
+              <h1>60%</h1>
+            </div>
+            <!-- value -->
+            <div class="progress__bcg">
+              <div class="progress__value progress__value--five"></div>
+            </div>
+          </div>
+          <!-- end single progress bar -->
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- end progress section -->
+  <!-- about section -->
+  <section class="about section-padding" id="about">
+    <!-- section title -->
+
+    <div class="reverse-section-title__container">
+      <!-- icon -->
+      <div class="reverse-section-title__icon">
+        <i class="fas fa-user"></i>
+      </div>
+      <!-- text  -->
+      <div class="reverse-section-title__text section-title__text--border-blue">
+        <h1 class="reverse-section-title__name">about us</h1>
+        <h4 class="reverse-section-title__info section-title__info--blue">Lorem ipsum dolor sit amet.</h4>
+      </div>
+    </div>
+    <!-- end of section title -->
+    <div class="flexbox-parent flexbox-parent--medium">
+      <!-- about img -->
+      <article class="about__img item-margin">
+        <div class="about__img-container">
+          <h1 class="about__img-name">john doe</h1>
+          <img src="img/team-1.jpg" alt="team member" class="about__img-photo">
+          <div class="about__img-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iste adipisci quae. Maiores quis esse eos ducimus
+            modi dolorem nesciunt!</div>
+        </div>
+      </article>
+      <!-- about info -->
+      <article class="about__info item-margin">
+        <h1 class="about__info-title">frequent questions</h1>
+        <!-- single accordion -->
+        <div class="accordion">
+          <!-- header -->
+          <div class="accordion__header">
+            <div class="accordion__icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h4 class="accordion__title">web design &amp; development</h4>
+            <div class="accordion__btn">
+              <i class="fas fa-arrow-down"></i>
+            </div>
+          </div>
+          <!-- content -->
+          <div class="accordion__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nisi totam pariatur illo architecto delectus unde, obcaecati
+            recusandae at tempora?
           </div>
         </div>
-        <!-- end of section title -->
-        <div class="flexbox-parent flexbox-parent--medium">
-          <!-- about img -->
-          <article class="about__img item-margin">
-            <div class="about__img-container">
-              <h1 class="about__img-name">john doe</h1>
-              <img src="img/team-1.jpg" alt="team member" class="about__img-photo">
-              <div class="about__img-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iste adipisci
-                quae. Maiores quis esse eos ducimus
-                modi dolorem nesciunt!</div>
+        <!-- end of accordion -->
+        <!-- single accordion -->
+        <div class="accordion">
+          <!-- header -->
+          <div class="accordion__header">
+            <div class="accordion__icon">
+              <i class="fas fa-desktop"></i>
             </div>
-          </article>
-          <!-- about info -->
-          <article class="about__info item-margin">
-            <h1 class="about__info-title">frequent questions</h1>
-            <!-- single accordion -->
-            <div class="accordion">
-              <!-- header -->
-              <div class="accordion__header">
-                <div class="accordion__icon">
-                  <i class="fas fa-desktop"></i>
-                </div>
-                <h4 class="accordion__title">web design &amp; development</h4>
-                <div class="accordion__btn">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-              <!-- content -->
-              <div class="accordion__content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nisi totam pariatur illo architecto
-                delectus unde, obcaecati
-                recusandae at tempora?
-              </div>
+            <h4 class="accordion__title">creative designer</h4>
+            <div class="accordion__btn">
+              <i class="fas fa-arrow-down"></i>
             </div>
-            <!-- end of accordion -->
-            <!-- single accordion -->
-            <div class="accordion">
-              <!-- header -->
-              <div class="accordion__header">
-                <div class="accordion__icon">
-                  <i class="fas fa-desktop"></i>
-                </div>
-                <h4 class="accordion__title">creative designer</h4>
-                <div class="accordion__btn">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-              <!-- content -->
-              <div class="accordion__content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nisi totam pariatur illo architecto
-                delectus unde, obcaecati
-                recusandae at tempora?
-              </div>
-            </div>
-            <!-- end of accordion -->
-            <!-- single accordion -->
-            <div class="accordion">
-              <!-- header -->
-              <div class="accordion__header">
-                <div class="accordion__icon">
-                  <i class="fas fa-desktop"></i>
-                </div>
-                <h4 class="accordion__title">article writer</h4>
-                <div class="accordion__btn">
-                  <i class="fas fa-arrow-down"></i>
-                </div>
-              </div>
-              <!-- content -->
-              <div class="accordion__content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nisi totam pariatur illo architecto
-                delectus unde, obcaecati
-                recusandae at tempora?
-              </div>
-            </div>
-            <!-- end of accordion -->
-          </article>
+          </div>
+          <!-- content -->
+          <div class="accordion__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nisi totam pariatur illo architecto delectus unde, obcaecati
+            recusandae at tempora?
+          </div>
         </div>
-      </section>
-      <!-- end of about section -->
-      <!-- nubmers section -->
-      <section id="numbers" class="numbers">
-        <!-- single number -->
-        <article class="number section-padding">
-          <span class="number__icon">
-            <i class="fas fa-user"></i>
-          </span>
-          <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
-          <h3 class="number__name">users</h3>
-        </article>
-        <!--end of  single number -->
-        <!-- single number -->
-        <article class="number section-padding">
-          <span class="number__icon">
-            <i class="fas fa-cart-plus"></i>
-          </span>
-          <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
-          <h3 class="number__name">downloads</h3>
-        </article>
-        <!--end of  single number -->
-        <!-- single number -->
-        <article class="number section-padding">
-          <span class="number__icon">
-            <i class="fas fa-fire-extinguisher"></i>
-          </span>
-          <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
-          <h3 class="number__name">emergencies</h3>
-        </article>
-        <!--end of  single number -->
-        <!-- single number -->
-        <article class="number section-padding">
-          <span class="number__icon">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
-          <h3 class="number__name">messages</h3>
-        </article>
-        <!--end of  single number -->
-      </section>
-      <!--end of  nubmers section -->
+        <!-- end of accordion -->
+        <!-- single accordion -->
+        <div class="accordion">
+          <!-- header -->
+          <div class="accordion__header">
+            <div class="accordion__icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h4 class="accordion__title">article writer</h4>
+            <div class="accordion__btn">
+              <i class="fas fa-arrow-down"></i>
+            </div>
+          </div>
+          <!-- content -->
+          <div class="accordion__content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores nisi totam pariatur illo architecto delectus unde, obcaecati
+            recusandae at tempora?
+          </div>
+        </div>
+        <!-- end of accordion -->
+      </article>
+    </div>
+  </section>
+  <!-- end of about section -->
+  <!-- nubmers section -->
+  <section id="numbers" class="numbers">
+    <!-- single number -->
+    <article class="number section-padding">
+      <span class="number__icon">
+        <i class="fas fa-user"></i>
+      </span>
+      <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
+      <h3 class="number__name">users</h3>
+    </article>
+    <!--end of  single number -->
+    <!-- single number -->
+    <article class="number section-padding">
+      <span class="number__icon">
+        <i class="fas fa-cart-plus"></i>
+      </span>
+      <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
+      <h3 class="number__name">downloads</h3>
+    </article>
+    <!--end of  single number -->
+    <!-- single number -->
+    <article class="number section-padding">
+      <span class="number__icon">
+        <i class="fas fa-fire-extinguisher"></i>
+      </span>
+      <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
+      <h3 class="number__name">emergencies</h3>
+    </article>
+    <!--end of  single number -->
+    <!-- single number -->
+    <article class="number section-padding">
+      <span class="number__icon">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <p class="numscroller number__data" data-min='1' data-max="1000" data-delay="1000" data-increment="1">1000</p>
+      <h3 class="number__name">messages</h3>
+    </article>
+    <!--end of  single number -->
+  </section>
+  <!--end of  nubmers section -->
 
       <!-- scripts -->
       <!-- jquery -->
       <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <!-- magnific -->
-      <!-- <script src="plugins/magnific/jquery.magnific-popup.min.js"></script> -->
+      <script src="plugins/magnific/jquery.magnific-popup.min.js"></script>
       <!-- magnific script -->
-      <!-- <script src="plugins/magnific/magnific.js"></script> -->
+      <script src="plugins/magnific/magnific.js"></script>
       <!-- numscroller -->
       <script src="plugins/numscroller-1.0.js"></script>
       <!-- owl carousel -->
