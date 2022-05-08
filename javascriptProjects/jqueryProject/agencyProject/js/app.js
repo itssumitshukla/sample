@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     $(this).toggleClass('rotate');
     $(this).parent().next().slideToggle();
-  })
+  });
 
   // team members
   // iify --- instantly invoked funtion expression
@@ -73,9 +73,12 @@ $(document).ready(function () {
       }
     ]
 
-$('.team-img').click(function(){
+    $('.team-img__item').click(function () {
+      $('.team-img__item').not(this).removeClass('active');
+      $(this).addClass('active')
 
-})
+
+    })
 
   })();
 
