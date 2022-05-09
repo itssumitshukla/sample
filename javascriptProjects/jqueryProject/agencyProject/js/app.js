@@ -79,8 +79,9 @@ $(document).ready(function () {
       $(this).addClass('active');
       // Change data
       let id = $(this).attr('data-id');
-      $('.team-info__member-name').text(data[id].name)
-
+      $('.team-info__member-name').text(data[id].name);
+      $('.team-info__member-job').text(data[id].job)
+      $('.team-info__member-text').text(data[id].text)
 
     })
 
