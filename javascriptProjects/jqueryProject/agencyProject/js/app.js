@@ -82,7 +82,9 @@ $(document).ready(function () {
       $('.team-info__member-name').text(data[id].name);
       $('.team-info__member-job').text(data[id].job)
       $('.team-info__member-text').text(data[id].text)
-
+      $('.team-info__member-single-favorite-text').each(function (index) {
+        $(this).text(data[id].favorites[index])
+      })
     })
 
   })();
