@@ -79,7 +79,7 @@ $(document).ready(function () {
       $(this).addClass('active');
       // Change data
       let id = $(this).attr('data-id');
-      console.log(id)
+      $('.team-info__member-name').text(data[id].name)
 
 
     })
