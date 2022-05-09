@@ -74,8 +74,12 @@ $(document).ready(function () {
     ]
 
     $('.team-img__item').click(function () {
+      // adding removing active class
       $('.team-img__item').not(this).removeClass('active');
-      $(this).addClass('active')
+      $(this).addClass('active');
+      // Change data
+      let id = $(this).attr('data-id');
+      console.log(id)
 
 
     })
