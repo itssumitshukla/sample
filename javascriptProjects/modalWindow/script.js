@@ -27,9 +27,7 @@ overlay.addEventListener('click', closeModal);
 
 //global keypress for escape
 document.addEventListener('keydown', function (e) {
-    if(e.key === 'Escape'){
-        if(!modal.classList.contains('hidden'))
-   console.log(`A key waspressed + ${e.key}`);
+    if(e.key === 'Escape'&& (!modal.classList.contains('hidden'))){
+            closeModal();
     }
-
 })
