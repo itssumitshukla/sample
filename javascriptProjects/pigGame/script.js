@@ -14,3 +14,7 @@ let btnRoll = document.querySelector('.btn--roll');
 let btnHold = document.querySelector('.btn--hold');
 
 let scores, currentScore, activePlayer, playing;
+
+score0El.textContent=0;
+score1El.textContent=0;
+diceEl.classList.add('hidden');
