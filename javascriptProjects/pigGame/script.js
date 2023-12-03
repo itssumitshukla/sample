@@ -16,7 +16,7 @@ let btnHold = document.querySelector('.btn--hold');
 let scores = [0 , 0];
 let currentScore = 0;
 let activePlayer = 0; 
-let playing;
+let playing = true;
 
 //Starting codition
 score0El.textContent=0;
@@ -34,7 +34,9 @@ const switchPlayer = function(){
 
 //Rolling dice function
 btnRoll.addEventListener('click', function(){
-    let dice = Math.trunc(Math.random() * 6) + 1;
+    //if you are playing
+    if(playing){
+ let dice = Math.trunc(Math.random() * 6) + 1;
     //display dice
     diceEl.classList.remove('hidden');
     diceEl.src = `dice-${dice}.png`;
@@ -47,22 +49,27 @@ btnRoll.addEventListener('click', function(){
     } else {
         switchPlayer()
     }
+    } 
 });
 
 //btn hold
 btnHold.addEventListener('click', function () {
-    //Add current score to active players score
+        //if you are playing
+    if(playing){
+  //Add current score to active players score
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
     //Check if players score is 100
-    if(scores[activePlayer] >= 20){
-        document.querySelector(`palyer--${activePlayer}`).classList.add('player--winner');
-        document.querySelector(`palyer--${activePlayer}`).classList.remove('player--active');
+    if(scores[activePlayer] >= 10){
+        playing = false;
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
     } else {
     //switch to the next player
     switchPlayer()
     }
+}
 
-
+  
 });
