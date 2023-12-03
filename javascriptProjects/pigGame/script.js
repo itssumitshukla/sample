@@ -15,7 +15,7 @@ let btnHold = document.querySelector('.btn--hold');
 
 let scores;
 let currentScore = 0;
-let activePlayer; 
+let activePlayer = 0; 
 let playing;
 
 //Starting codition
@@ -34,10 +34,12 @@ btnRoll.addEventListener('click', function(){
     if(dice !== 1){
         //Add dice to current store
         currentScore += dice;
-        current0El.textContent = currentScore;
-        console.log(currentScore)
+        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+        // current0El.textContent = currentScore;
+        // console.log(currentScore)
     } else {
         //switch to next player
+        activePlayer = activePlayer === 0 ? 1 : 0;
     }
 
 });
