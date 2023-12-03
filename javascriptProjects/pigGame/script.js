@@ -51,7 +51,10 @@ btnRoll.addEventListener('click', function(){
 
 //btn hold
 btnHold.addEventListener('click', function () {
-//Add current score to active players score
-scores[activePlayer] += currentScore;
-switchPlayer()
+    //Add current score to active players score
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent = 0;
+
+    //switch to the next player
+    switchPlayer()
 });
