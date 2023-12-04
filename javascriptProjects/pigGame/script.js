@@ -81,7 +81,7 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
     //Check if players score is 100
-    if(scores[activePlayer] >= 10){
+    if(scores[activePlayer] >= 100){
         playing = false;
             diceEl.classList.add('hidden');
         document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
@@ -94,6 +94,4 @@ btnHold.addEventListener('click', function () {
 });
 
 //New game button
-btnNew.addEventListener('click', function(){
-init()
-});
+btnNew.addEventListener('click', init);
