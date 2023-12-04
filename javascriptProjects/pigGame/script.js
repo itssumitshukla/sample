@@ -13,14 +13,15 @@ let btnNew = document.querySelector('.btn--new');
 let btnRoll = document.querySelector('.btn--roll');
 let btnHold = document.querySelector('.btn--hold');
 
+let scores, currentScore, activePlayer, playing;
 
 //Init function
 const init = function(){
-    
-    let scores = [0 , 0];
-    let currentScore = 0;
-    let activePlayer = 0; 
-    let playing = true;
+
+    scores = [0 , 0];
+    currentScore = 0;
+    activePlayer = 0; 
+    playing = true;
 
     score0El.textContent=0;
     score1El.textContent=0;
@@ -32,8 +33,10 @@ const init = function(){
     player1El.classList.remove('player--winner');
     player0El.classList.add('player--active');
     player1El.classList.remove('player--active');
-
 }
+
+//Run init
+init();
 
 //Starting codition
 score0El.textContent=0;
@@ -92,5 +95,5 @@ btnHold.addEventListener('click', function () {
 
 //New game button
 btnNew.addEventListener('click', function(){
-
+init()
 });
