@@ -78,11 +78,15 @@ const displayMovements = function(movements){
 
 displayMovements(account1.movements)
 
-const user = 'Sumit test user';
-const username = user.toLowerCase().split(' ').map((name)=>{
+const createUserNames = function(user){
+  const username = user.toLowerCase().split(' ').map((name)=>{
   return name[0]
 }).join("");
-console.log(username);
+return username;
+} 
+
+const user = 'Sumit test user';
+console.log(createUserNames('Sumit Shukla Test'));
 
 
 
