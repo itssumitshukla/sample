@@ -78,15 +78,18 @@ const displayMovements = function(movements){
 
 displayMovements(account1.movements)
 
-const createUserNames = function(user){
-  const username = user.toLowerCase().split(' ').map((name)=>{
-  return name[0]
-}).join("");
-return username;
-} 
+const createUserNames = function(accs){
+  accs.forEach(function (acc) {
+      acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map((name)=>{
+      return name[0]}).join("");
+      })
+} ;
 
-const user = 'Sumit test user';
-console.log(createUserNames('Sumit Shukla Test'));
+createUserNames(accounts)
+console.log(accounts);
 
 
 
