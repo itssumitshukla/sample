@@ -76,7 +76,17 @@ const displayMovements = function(movements){
     });
 };
 
-displayMovements(account1.movements)
+displayMovements(account1.movements);
+
+
+const calcDisplayBalance = function(movements){
+  const balance = movements.reduce((acc,mov)=>{
+    acc + mov
+  }, 0);
+  labelBalance.textContent = `${balance} USD`
+};
+
+calcDisplayBalance(account1.movements)
 
 const createUserNames = function(accs){
   accs.forEach(function (acc) {
@@ -90,7 +100,6 @@ const createUserNames = function(accs){
 
 createUserNames(accounts)
 console.log(accounts);
-
 
 
 /////////////////////////////////////////////////
@@ -126,15 +135,3 @@ console.log(accounts);
 //   `Movement ${i+1}: You ${mov > 0? 'deposited': 'withdrew'} ${Math.abs(mov)}`);
 
 // console.log(movementDescriptions);
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-const deposits = movements.filter(function(mov){
-  return mov > 0;
-});
-
-const balance = movements.reduce(function(acc, cur, i , arr){
-  return acc + cur
-});
-
-console.log(balance);
