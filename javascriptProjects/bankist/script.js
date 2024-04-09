@@ -133,5 +133,8 @@ const deposits = movements.filter(function(mov){
   return mov > 0;
 });
 
-console.log(movements);
-console.log(deposits);
+const balance = movements.reduce(function(acc, cur, i , arr){
+  return acc + cur
+});
+
+console.log(balance);
