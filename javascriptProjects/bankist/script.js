@@ -1,9 +1,9 @@
 'use strict';
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
 // BANKIST APP
 
+/////////////////////////////////////////////////
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -35,6 +35,7 @@ const account4 = {
 
 const accounts = [account1, account2, account3, account4];
 
+/////////////////////////////////////////////////
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -61,44 +62,35 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function(movements){
-    containerMovements.innerHTML = '';
-    movements.forEach(function(mov, i) {
-        const type = mov > 0 ? 'deposit':'withdrawal';
+/////////////////////////////////////////////////
+// Functions
+
+const displayMovements = function (movements, sort = false) {
+  containerMovements.innerHTML = '';
+
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
     const html = `
-          <div class="movements">
-        <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-          <div class="movements__value">${mov}</div>
-        </div>
+      <div class="movements__row">
+        <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+        <div class="movements__value">${mov}€</div>
+      </div>
     `;
-    containerMovements.insertAdjacentHTML('afterbegin',html);
-    });
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
 };
 
-displayMovements(account1.movements);
-
-
-const calcDisplayBalance = function(movements){
-  const balance = movements.reduce((acc,mov)=>
-    acc + mov , 0);
-  labelBalance.textContent = `${balance} USD`
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance}€`;
 };
 
-calcDisplayBalance(account1.movements)
-
-const createUserNames = function(accs){
-  accs.forEach(function (acc) {
-      acc.username = acc.owner
-      .toLowerCase()
-      .split(' ')
-      .map((name)=>{
-      return name[0]}).join("");
-      })
-} ;
-
-createUserNames(accounts)
-console.log(accounts);
 
 
 /////////////////////////////////////////////////
@@ -111,7 +103,7 @@ console.log(accounts);
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // /////////////////////////////////////////////////
 
@@ -134,3 +126,9 @@ console.log(accounts);
 //   `Movement ${i+1}: You ${mov > 0? 'deposited': 'withdrew'} ${Math.abs(mov)}`);
 
 // console.log(movementDescriptions);
+
+const eurToUsd = 1.1;
+const totalDepositsUsd = movements
+.filter(mov=>mov > 0)
+.map((mov) => mov * eurToUsd)
+.reduce((acc,mov) => acc = mov, 0)
