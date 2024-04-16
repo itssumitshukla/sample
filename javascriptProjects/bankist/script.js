@@ -115,10 +115,27 @@ const calcDisplaySummary = function (movements) {
 
 calcDisplaySummary(account1.movements);
 
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0])
+      .join("");
+  });
+};
+createUsernames(accounts);
+
 //Event Handler
+let currentAccount;
+
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("LOGIN");
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
 });
 
 /////////////////////////////////////////////////
