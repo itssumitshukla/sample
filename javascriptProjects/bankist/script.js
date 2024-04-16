@@ -105,11 +105,21 @@ const calcDisplaySummary = function (movements) {
   const interest = movements
     .filter((mov) => mov > 0)
     .map((deposit) => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    })
     .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${Math.abs(interest)}$USD`;
 };
 
 calcDisplaySummary(account1.movements);
+
+//Event Handler
+btnLogin.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("LOGIN");
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
