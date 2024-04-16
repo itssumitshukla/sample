@@ -100,7 +100,13 @@ const calcDisplaySummary = function (movements) {
   const out = movements
     .filter((mov) => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${out}$USD`;
+  labelSumOut.textContent = `${Math.abs(out)}$USD`;
+
+  const interest = movements
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${Math.abs(interest)}$USD`;
 };
 
 calcDisplaySummary(account1.movements);
