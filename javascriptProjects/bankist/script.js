@@ -131,14 +131,16 @@ let currentAccount;
 
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("LOGIN");
   currentAccount = accounts.find(
     (acc) => acc.username === inputLoginUsername.value
   );
   console.log(currentAccount);
 
-  if (currentAccount.pin === Number(inputLoginPin.value)) {
-    console.log("Logged In");
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    labelWelcome.textContent = `Welcome Back ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+    containerApp.style.opacity = 100;
   }
 });
 
