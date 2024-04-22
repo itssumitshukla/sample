@@ -166,6 +166,15 @@ btnTransfer.addEventListener("click", function (e) {
     (acc) => acc.username === inputTransferTo.value
   );
   console.log(amount, receiverAcc);
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.username !== currentAccount.username
+  ) {
+    console.log(`Transfer is valid`);
+  }
 });
 
 // const eurToUsd = 1.1;
