@@ -159,9 +159,18 @@ btnLogin.addEventListener("click", function (e) {
   }
 });
 
-const eurToUsd = 1.1;
-const totalDepositsUsd = movements
-  .filter((mov) => mov > 0)
-  .map((mov) => mov * eurToUsd)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(totalDepositsUsd);
+btnTransfer.addEventListener("click", function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    (acc) => acc.username === inputTransferTo.value
+  );
+  console.log(amount, receiverAcc);
+});
+
+// const eurToUsd = 1.1;
+// const totalDepositsUsd = movements
+//   .filter((mov) => mov > 0)
+//   .map((mov) => mov * eurToUsd)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(totalDepositsUsd);
