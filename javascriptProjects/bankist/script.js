@@ -180,6 +180,15 @@ btnTransfer.addEventListener("click", function (e) {
   }
 });
 
+btnClose.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.username &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+  }
+});
+
 // const eurToUsd = 1.1;
 // const totalDepositsUsd = movements
 //   .filter((mov) => mov > 0)
