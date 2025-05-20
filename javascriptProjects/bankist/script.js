@@ -221,6 +221,11 @@ btnClose.addEventListener("click", function (e) {
   inputCloseUsername.value = inputClosePin.value = "";
 });
 
+btnSort.addEventListener("click", function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, true);
+});
+
 // const eurToUsd = 1.1;
 // const totalDepositsUsd = movements
 //   .filter((mov) => mov > 0)
