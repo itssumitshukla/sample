@@ -37,10 +37,17 @@ World.add(world, walls);
 
 //Random Shapes
 for (let i = 0; i < 20; i++) {
-  World.add(
-    world,
-    Bodies.rectangle(Math.random() * width, Math.random() * height, 50, 50)
-  );
+  if (Math.random() > 0.5) {
+    World.add(
+      world,
+      Bodies.rectangle(Math.random() * width, Math.random() * height, 50, 50)
+    );
+  } else {
+    World.add(
+      world,
+      Bodies.circle(Math.random() * width, Math.random() * height, 50, 50)
+    );
+  }
 }
 
 // Old Code
