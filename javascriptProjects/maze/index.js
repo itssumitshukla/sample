@@ -35,6 +35,13 @@ const walls = [
 ];
 World.add(world, walls);
 
+//Maze Generation
+const grid = Array(3)
+  .fill(null)
+  .map(() => {
+    Array(3).fill(false);
+  });
+
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
 //   isStatic: true,
