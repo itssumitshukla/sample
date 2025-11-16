@@ -39,26 +39,22 @@ World.add(world, walls);
 //Maze Generation
 const grid = Array(cells)
   .fill(null)
-  .map(() => {
-    Array(cells).fill(false);
-  });
+  .map(() => Array(cells).fill(false));
 
 const verticals = Array(cells)
   .fill(null)
-  .map(() => {
-    Array(cells - 1).fill(false);
-  });
+  .map(() => Array(cells - 1).fill(false));
 
-const horizontals = Array(cells)
+const horizontals = Array(cells - 1)
   .fill(null)
-  .map(() => {
-    Array(cells).fill(false);
-  });
+  .map(() => Array(cells).fill(false));
 
 const startRow = Math.floor(Math.random() * cells);
 const startColumn = Math.floor(Math.random() * cells);
 
-const stepThroughCells = (row, column) => {
+console.log(startColumn, startRow);
+
+const stepThroughCell = (row, column) => {
   // If i have visted the cell at [row, column], then return
   if (grid[row][column]) {
     return;
@@ -73,7 +69,8 @@ const stepThroughCells = (row, column) => {
   // Visit that next cell
 };
 
-stepThroughCells(startRow, startColumn);
+stepThroughCell(startRow, startColumn);
+console.log(grid);
 
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
