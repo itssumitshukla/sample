@@ -55,6 +55,26 @@ const horizontals = Array(cells)
     Array(cells).fill(false);
   });
 
+const startRow = Math.floor(Math.random() * cells);
+const startColumn = Math.floor(Math.random() * cells);
+
+const stepThroughCells = (row, column) => {
+  // If i have visted the cell at [row, column], then return
+  if (grid[row][column]) {
+    return;
+  }
+  // Mark this cell as being visited
+  grid[row][column] = true;
+  // Assemble randomly-ordered list of neighbors
+  // For each neighbor....
+  // See if that neighbor is out of bounds
+  // If we have visited that neighbor, continue to next neighbor
+  // Remove a wall from either horizontals or verticals
+  // Visit that next cell
+};
+
+stepThroughCells(startRow, startColumn);
+
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
 //   isStatic: true,
