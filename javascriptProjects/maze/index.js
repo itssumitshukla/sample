@@ -42,6 +42,18 @@ const grid = Array(3)
     Array(3).fill(false);
   });
 
+const verticals = Array(3)
+  .fill(null)
+  .map(() => {
+    Array(2).fill(false);
+  });
+
+const horizontals = Array(3)
+  .fill(null)
+  .map(() => {
+    Array(3).fill(false);
+  });
+
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
 //   isStatic: true,
