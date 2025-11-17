@@ -137,6 +137,25 @@ horizontals.forEach((row, rowIndex) => {
   });
 });
 
+verticals.forEach((row, rowIndex) => {
+  row.forEach((open, columnIndex) => {
+    if (open) {
+      return;
+    }
+
+    const wall = Bodies.rectangle(
+      columnIndex * unitLength + unitLength,
+      rowIndex * unitLength + unitLength / 2,
+      10,
+      unitLength,
+      {
+        isStatic: true,
+      }
+    );
+    World.add(world, wall);
+  });
+});
+
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
 //   isStatic: true,
