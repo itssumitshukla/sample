@@ -156,6 +156,10 @@ verticals.forEach((row, rowIndex) => {
   });
 });
 
+const goal = Bodies.rectangle(width - unitLength / 2, height - unitLength / 2);
+
+World.add(world, goal);
+
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
 //   isStatic: true,
