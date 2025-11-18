@@ -1,5 +1,5 @@
 //from Matter.js
-const { Engine, Render, Runner, World, Bodies, Body } = Matter;
+const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
 const cells = 10;
 const width = 600;
@@ -8,6 +8,7 @@ const height = 600;
 const unitLength = width / cells;
 
 const engine = Engine.create();
+engine.world.gravity.y = 0;
 const { world } = engine;
 const render = Render.create({
   element: document.body,
@@ -178,21 +179,26 @@ World.add(world, ball);
 document.addEventListener("keydown", (event) => {
   const { x, y } = ball.velocity;
 
-  if (event.keyCode === 87) {
+  if (event.keyCode === 87 || event.key === "w") {
     Body.setVelocity(ball, { x, y: y - 5 });
   }
 
-  if (event.keyCode === 68) {
+  if (event.keyCode === 68 || event.key === "s") {
     Body.setVelocity(ball, { x: x + 5, y });
   }
 
-  if (event.keyCode === 83) {
+  if (event.keyCode === 83 || event.key === "a") {
     Body.setVelocity(ball, { x, y: y + 5 });
   }
 
-  if (event.keyCode === 65) {
+  if (event.keyCode === 65 || event.key === "d") {
     Body.setVelocity(ball, { x: x - 5, y });
   }
+});
+
+//Win Condition
+Events.on(engine, "collisionStart", (event) => {
+  console.log(event);
 });
 
 // Old Code
