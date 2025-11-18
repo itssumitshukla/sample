@@ -1,7 +1,7 @@
 //from Matter.js
-const { Engine, Render, Runner, World, Bodies } = Matter;
+const { Engine, Render, Runner, World, Bodies, Body } = Matter;
 
-const cells = 3;
+const cells = 10;
 const width = 600;
 const height = 600;
 
@@ -173,15 +173,12 @@ World.add(world, goal);
 const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4, {
   isStatic: true,
 });
-
 World.add(world, ball);
 
 document.addEventListener("keydown", (event) => {
-  console.log(event);
   const { x, y } = ball.velocity;
 
   if (event.keyCode === 87) {
-    console.log("move ball up");
     Body.setVelocity(ball, { x, y: y - 5 });
   }
 
