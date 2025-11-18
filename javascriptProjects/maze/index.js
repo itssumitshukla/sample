@@ -1,7 +1,7 @@
 //from Matter.js
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cells = 10;
+const cells = 3;
 const width = 600;
 const height = 600;
 
@@ -198,7 +198,9 @@ document.addEventListener("keydown", (event) => {
 
 //Win Condition
 Events.on(engine, "collisionStart", (event) => {
-  console.log(event);
+  event.pairs.forEach((collision) => {
+    console.log(collision);
+  });
 });
 
 // Old Code
