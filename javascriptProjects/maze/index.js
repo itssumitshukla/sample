@@ -176,6 +176,28 @@ const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4, {
 
 World.add(world, ball);
 
+document.addEventListener("keydown", (event) => {
+  console.log(event);
+  const { x, y } = ball.velocity;
+
+  if (event.keyCode === 87) {
+    console.log("move ball up");
+    Body.setVelocity(ball, { x, y: y - 5 });
+  }
+
+  if (event.keyCode === 68) {
+    Body.setVelocity(ball, { x: x + 5, y });
+  }
+
+  if (event.keyCode === 83) {
+    Body.setVelocity(ball, { x, y: y + 5 });
+  }
+
+  if (event.keyCode === 65) {
+    Body.setVelocity(ball, { x: x - 5, y });
+  }
+});
+
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
 //   isStatic: true,
