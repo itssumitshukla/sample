@@ -164,6 +164,7 @@ const goal = Bodies.rectangle(
   unitLength * 0.7,
   unitLength * 0.7,
   {
+    label: "goal",
     isStatic: true,
   }
 );
@@ -172,7 +173,7 @@ World.add(world, goal);
 
 //Ball
 const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4, {
-  isStatic: true,
+  label: "ball",
 });
 World.add(world, ball);
 
@@ -183,7 +184,7 @@ document.addEventListener("keydown", (event) => {
     Body.setVelocity(ball, { x, y: y - 5 });
   }
 
-  if (event.keyCode === 68 || event.key === "s") {
+  if (event.keyCode === 68 || event.key === "d") {
     Body.setVelocity(ball, { x: x + 5, y });
   }
 
@@ -191,7 +192,7 @@ document.addEventListener("keydown", (event) => {
     Body.setVelocity(ball, { x, y: y + 5 });
   }
 
-  if (event.keyCode === 65 || event.key === "d") {
+  if (event.keyCode === 65 || event.key === "a") {
     Body.setVelocity(ball, { x: x - 5, y });
   }
 });
@@ -199,7 +200,14 @@ document.addEventListener("keydown", (event) => {
 //Win Condition
 Events.on(engine, "collisionStart", (event) => {
   event.pairs.forEach((collision) => {
-    console.log(collision);
+    const labels = ["ball", "goal"];
+
+    if (
+      labels.includes(collision.bodyA.label) &&
+      labels.includes(collision.bodyB.label)
+    ) {
+      console.log("USER WON");
+    }
   });
 });
 
