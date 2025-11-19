@@ -1,13 +1,13 @@
 //from Matter.js
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cellsHorizontal = 4;
-const cellsVertial = 3;
+const cellsHorizontal = 16;
+const cellsVertical = 10;
 const width = window.innerWidth;
 const height = window.innerHeight;
 
 const unitLengthX = width / cellsHorizontal;
-const unitLengthY = height / cellsVertial;
+const unitLengthY = height / cellsVertical;
 
 const engine = Engine.create();
 engine.world.gravity.y = 0;
@@ -16,12 +16,11 @@ const render = Render.create({
   element: document.body,
   engine: engine,
   options: {
-    wireframes: true,
+    wireframes: false,
     width,
     height,
   },
 });
-
 Render.run(render);
 Runner.run(Runner.create(), engine);
 
@@ -48,11 +47,14 @@ const shuffle = (arr) => {
 
   while (counter > 0) {
     const index = Math.floor(Math.random() * counter);
+
     counter--;
+
     const temp = arr[counter];
     arr[counter] = arr[index];
     arr[index] = temp;
   }
+
   return arr;
 };
 
@@ -80,6 +82,7 @@ const stepThroughCell = (row, column) => {
   }
   // Mark this cell as being visited
   grid[row][column] = true;
+
   // Assemble randomly-ordered list of neighbors
   const neighbors = shuffle([
     [row - 1, column, "up"],
@@ -94,9 +97,9 @@ const stepThroughCell = (row, column) => {
     // See if that neighbor is out of bounds
     if (
       nextRow < 0 ||
-      nextRow >= cells ||
+      nextRow >= cellsVertical ||
       nextColumn < 0 ||
-      nextColumn >= cells
+      nextColumn >= cellsHorizontal
     ) {
       continue;
     }
