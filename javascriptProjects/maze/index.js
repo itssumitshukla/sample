@@ -154,31 +154,37 @@ verticals.forEach((row, rowIndex) => {
     }
 
     const wall = Bodies.rectangle(
-      columnIndex * unitLength + unitLength,
-      rowIndex * unitLength + unitLength / 2,
-      10,
-      unitLength,
+      columnIndex * unitLengthX + unitLengthX,
+      rowIndex * unitLengthY + unitLengthY / 2,
+      5,
+      unitLengthY,
       {
-        labal: "wall",
+        label: "wall",
         isStatic: true,
+        render: {
+          fillStyle: "red",
+        },
       }
     );
     World.add(world, wall);
   });
 });
 
-//Goal
+// Goal
+
 const goal = Bodies.rectangle(
-  width - unitLength / 2,
-  height - unitLength / 2,
-  unitLength * 0.7,
-  unitLength * 0.7,
+  width - unitLengthX / 2,
+  height - unitLengthY / 2,
+  unitLengthX * 0.7,
+  unitLengthY * 0.7,
   {
     label: "goal",
     isStatic: true,
+    render: {
+      fillStyle: "green",
+    },
   }
 );
-
 World.add(world, goal);
 
 //Ball
