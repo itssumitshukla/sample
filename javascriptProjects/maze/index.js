@@ -1,11 +1,13 @@
 //from Matter.js
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cells = 3;
+const cellsHorizontal = 4;
+const cellsVertial = 3;
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-const unitLength = width / cells;
+const unitLengthX = width / cellsHorizontal;
+const unitLengthY = height / cellsVertial;
 
 const engine = Engine.create();
 engine.world.gravity.y = 0;
