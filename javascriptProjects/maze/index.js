@@ -1,8 +1,8 @@
 //from Matter.js
 const { Engine, Render, Runner, World, Bodies, Body, Events } = Matter;
 
-const cellsHorizontal = 16;
-const cellsVertical = 10;
+const cellsHorizontal = 3;
+const cellsVertical = 3;
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -188,8 +188,12 @@ const goal = Bodies.rectangle(
 World.add(world, goal);
 
 //Ball
-const ball = Bodies.circle(unitLength / 2, unitLength / 2, unitLength / 4, {
+const ballRadius = Math.min(unitLengthX, unitLengthY) / 4;
+const ball = Bodies.circle(unitLengthX / 2, unitLengthY / 2, ballRadius, {
   label: "ball",
+  render: {
+    fillStyle: "blue",
+  },
 });
 World.add(world, ball);
 
@@ -222,6 +226,7 @@ Events.on(engine, "collisionStart", (event) => {
       labels.includes(collision.bodyA.label) &&
       labels.includes(collision.bodyB.label)
     ) {
+      document.querySelector(".winner").classList.remove("hidden");
       world.gravity.y = 1;
       world.bodies.forEach((body) => {
         if (body.label === "wall") {
@@ -231,7 +236,6 @@ Events.on(engine, "collisionStart", (event) => {
     }
   });
 });
-
 // Old Code
 //const shape = Bodies.rectangle(200, 200, 50, 50, {
 //   isStatic: true,
