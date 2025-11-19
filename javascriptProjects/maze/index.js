@@ -150,6 +150,7 @@ verticals.forEach((row, rowIndex) => {
       10,
       unitLength,
       {
+        labal: "wall",
         isStatic: true,
       }
     );
@@ -206,7 +207,7 @@ Events.on(engine, "collisionStart", (event) => {
       labels.includes(collision.bodyA.label) &&
       labels.includes(collision.bodyB.label)
     ) {
-      console.log("USER WON");
+      world.gravity.y = 1;
     }
   });
 });
