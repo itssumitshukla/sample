@@ -1,3 +1,13 @@
+const { hash } = window;
+
+console.log("Testing");
+
+const message = atob(hash.replace("#", " "));
+
+if (message) {
+  document.querySelector("message-form").classList.add("hide");
+}
+
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -10,4 +20,6 @@ document.querySelector("form").addEventListener("submit", (event) => {
   const linkInput = document.querySelector("#link-input");
   linkInput.value = `${window.location}#${encrypted}`;
   linkInput.select();
+  console.log(encrypted);
+  console.log(atob(hash.replace("#", "")));
 });
