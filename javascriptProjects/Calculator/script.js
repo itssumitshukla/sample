@@ -9,6 +9,13 @@ function sendNumberValue(number) {
     displayValue === "0" ? number : displayValue + number;
 }
 
+function addDecimal() {
+  //If no decimal, add one
+  if (!calculatorDisplay.textContent.includes(".")) {
+    calculatorDisplay.textContent = `${calculatorDisplay.textContent}`;
+  }
+}
+
 //Add event listeners for numbers, operators, decimal
 inputBtns.forEach((inputBtn) => {
   if (inputBtn.classList.length === 0) {
