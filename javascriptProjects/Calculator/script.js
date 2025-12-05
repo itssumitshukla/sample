@@ -26,3 +26,4 @@ function resetAll() {
 }
 
 //Event listener
+clearBtn.addEventListener("click", resetAll);
