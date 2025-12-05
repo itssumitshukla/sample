@@ -3,7 +3,10 @@ const inputBtns = document.querySelectorAll("button");
 const clearBtn = document.getElementById("clear-btn");
 
 function sendNumberValue(number) {
-  calculatorDisplay.textContent = number;
+  // If current display value is 0, replace ImageTrack, if not add number
+  const displayValue = calculatorDisplay.textContent;
+  calculatorDisplay.textContent =
+    displayValue === "0" ? number : displayValue + number;
 }
 
 //Add event listeners for numbers, operators, decimal
@@ -13,6 +16,6 @@ inputBtns.forEach((inputBtn) => {
   } else if (inputBtn.classList.contains("operator")) {
     inputBtn.addEventListener("click", () => sendNumberValue(inputBtn.value));
   } else if (inputBtn.classList.contains("decimal")) {
-    inputBtn.addEventListener("click", () => sendNumberValue());
+    inputBtn.addEventListener("click", () => sendNumberValue(inputBtn.value));
   }
 });
