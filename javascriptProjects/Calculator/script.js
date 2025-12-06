@@ -2,6 +2,10 @@ const calculatorDisplay = document.querySelector("h1");
 const inputBtns = document.querySelectorAll("button");
 const clearBtn = document.getElementById("clear-btn");
 
+let firstValue = 0;
+let operatorValue = "";
+let awaitingNextValue = false;
+
 function sendNumberValue(number) {
   // If current display value is 0, replace ImageTrack, if not add number
   const displayValue = calculatorDisplay.textContent;
@@ -16,12 +20,20 @@ function addDecimal() {
   }
 }
 
+function useOperator(operator) {
+  const currentValue = Number(calculatorDisplay.textContent);
+  //Assign first value is no value
+  if (!firstValue) {
+    firstValue = currentValue;
+  }
+}
+
 //Add event listeners for numbers, operators, decimal
 inputBtns.forEach((inputBtn) => {
   if (inputBtn.classList.length === 0) {
     inputBtn.addEventListener("click", () => sendNumberValue(inputBtn.value));
   } else if (inputBtn.classList.contains("operator")) {
-    inputBtn.addEventListener("click", () => sendNumberValue(inputBtn.value));
+    inputBtn.addEventListener("click", () => useOperator(inputBtn.value));
   } else if (inputBtn.classList.contains("decimal")) {
     inputBtn.addEventListener("click", () => addDecimal());
   }
