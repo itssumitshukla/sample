@@ -26,6 +26,9 @@ function useOperator(operator) {
   if (!firstValue) {
     firstValue = currentValue;
   }
+  operatorValue = operator;
+  console.log("First Value", firstValue);
+  console.log("Operator Value", operatorValue);
 }
 
 //Add event listeners for numbers, operators, decimal
@@ -39,8 +42,11 @@ inputBtns.forEach((inputBtn) => {
   }
 });
 
-//Reset display
+//Reset all values display
 function resetAll() {
+  firstValue = "";
+  operatorValue = "";
+  awaitingNextValue = false;
   calculatorDisplay.textContent = "0";
 }
 
