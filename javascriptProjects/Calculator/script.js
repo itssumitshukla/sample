@@ -7,10 +7,16 @@ let operatorValue = "";
 let awaitingNextValue = false;
 
 function sendNumberValue(number) {
-  // If current display value is 0, replace ImageTrack, if not add number
-  const displayValue = calculatorDisplay.textContent;
-  calculatorDisplay.textContent =
-    displayValue === "0" ? number : displayValue + number;
+  //Replace current display if first value is entered
+  if (awaitingNextValue) {
+    calculatorDisplay.textContent = number;
+    awaitingNextValue = false;
+  } else {
+    // If current display value is 0, replace ImageTrack, if not add number
+    const displayValue = calculatorDisplay.textContent;
+    calculatorDisplay.textContent =
+      displayValue === "0" ? number : displayValue + number;
+  }
 }
 
 function addDecimal() {
@@ -25,7 +31,11 @@ function useOperator(operator) {
   //Assign first value is no value
   if (!firstValue) {
     firstValue = currentValue;
+  } else {
+    console.log("current value", currentValue);
   }
+  //Ready for next value, store operator
+  awaitingNextValue = true;
   operatorValue = operator;
   console.log("First Value", firstValue);
   console.log("Operator Value", operatorValue);
