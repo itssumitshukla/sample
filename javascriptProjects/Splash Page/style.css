@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 html {
   box-sizing: border-box;
@@ -6,4 +6,20 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  font-family: Lato, sans-serif;
+  color: #54575a;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f3f8f7 49.91%,
+    #fff9f5 94.19%
+  );
+
+  .wrapper {
+    position: relative;
+    width: 1440px;
+    height: 1379px;
+    margin: auto;
+  }
 }
