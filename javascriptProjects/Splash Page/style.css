@@ -92,4 +92,20 @@ body {
   .main-image-container img {
     height: 411.15px;
   }
+
+  .profile-img {
+    position: absolute;
+    height: 444px;
+    left: 737px;
+    right: 479px;
+    top: 686px;
+  }
+
+  .orders-img {
+    position: absolute;
+    height: 470px; /* Had to change to show full box shadow */
+    left: 479px;
+    right: 737px;
+    top: 913px;
+  }
 }
