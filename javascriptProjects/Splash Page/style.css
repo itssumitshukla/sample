@@ -108,4 +108,20 @@ body {
     right: 737px;
     top: 913px;
   }
+
+  .home-img {
+    position: absolute;
+    height: 470px; /* Had to change to show full box shadow */
+    left: 995px;
+    right: 221px;
+    top: 908px;
+  }
+
+  .cart-img {
+    position: absolute;
+    height: 222px; /* Had to cut in half */
+    left: 221px;
+    right: 995px;
+    top: 1157px;
+  }
 }
