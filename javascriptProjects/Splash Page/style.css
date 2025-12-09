@@ -23,6 +23,14 @@ body {
     margin: auto;
   }
 
+  .brand-img {
+    position: absolute;
+    width: 193px;
+    height: 47.64px;
+    left: 221px;
+    top: 50.25px;
+  }
+
   .title {
     position: absolute;
     width: 458px;
@@ -45,5 +53,18 @@ body {
     font-weight: normal;
     font-size: 20px;
     line-height: 32px;
+  }
+
+  .app-store-btn {
+    position: absolute;
+    width: 138.44px;
+    height: 46.28px;
+    left: 221px;
+    top: 531px;
+  }
+
+  .app-store-btn img {
+    width: 138.44px;
+    height: 46.28px;
   }
 }
