@@ -132,4 +132,12 @@ body {
     right: 479px;
     top: 1157px;
   }
+
+  /* Background Toggles */
+  .background-toggles {
+    position: absolute;
+    right: 150px;
+    top: 70px;
+    display: flex;
+  }
 }
