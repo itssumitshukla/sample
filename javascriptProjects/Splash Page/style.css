@@ -124,4 +124,12 @@ body {
     right: 995px;
     top: 1157px;
   }
+
+  .product-img {
+    position: absolute;
+    height: 222px; /* Had to cut in half */
+    left: 737px;
+    right: 479px;
+    top: 1157px;
+  }
 }
