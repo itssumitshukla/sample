@@ -1,6 +1,8 @@
 const { body } = document;
 
 function changeBackground(number) {
+  // Rest css body class
+  body.className = "";
   switch (number) {
     case "1":
       body.classList.add("background-1");
