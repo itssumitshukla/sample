@@ -101,7 +101,7 @@ body {
 
 /* Custom Slider */
 .slider {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   position: relative;
   left: -8px;
   width: 100px;
