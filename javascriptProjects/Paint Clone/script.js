@@ -54,15 +54,14 @@ eraser.addEventListener("click", () => {
 });
 
 // // Switch back to Brush
-// function switchToBrush() {
-//   isEraser = false;
-//   activeToolEl.textContent = 'Brush';
-//   brushIcon.style.color = 'black';
-//   eraser.style.color = 'white';
-//   currentColor = `#${brushColorBtn.value}`;
-//   currentSize = 10;
-
-// }
+function switchToBrush() {
+  isEraser = false;
+  activeToolEl.textContent = "Brush";
+  brushIcon.style.color = "black";
+  eraser.style.color = "white";
+  currentColor = `#${brushColorBtn.value}`;
+  currentSize = 10;
+}
 
 // Create Canvas
 function createCanvas() {
@@ -194,8 +193,8 @@ canvas.addEventListener("mouseup", () => {
 //   setTimeout(switchToBrush, 1500);
 // });
 
-// // Event Listener
-// brushIcon.addEventListener('click', switchToBrush);
+// Event Listener
+brushIcon.addEventListener("click", switchToBrush);
 
 // On Load
 createCanvas();
