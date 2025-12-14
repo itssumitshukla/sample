@@ -39,20 +39,19 @@ brushColorBtn.addEventListener("change", () => {
 
 // Setting Background Color
 bucketColorBtn.addEventListener("change", () => {
-  console.log(bucketColor);
   bucketColor = `${bucketColorBtn.value}`;
-  console.log(bucketColor);
   createCanvas();
 });
 
 // // Eraser
-// eraser.addEventListener('click', () => {
-
-//   brushIcon.style.color = 'white';
-//   eraser.style.color = 'black';
-//   activeToolEl.textContent = 'Eraser';
-
-// });
+eraser.addEventListener("click", () => {
+  isEraser = true;
+  brushIcon.style.color = "white";
+  eraser.style.color = "black";
+  activeToolEl.textContent = "Eraser";
+  currentColor = bucketColor;
+  currentSize = 50;
+});
 
 // // Switch back to Brush
 // function switchToBrush() {
