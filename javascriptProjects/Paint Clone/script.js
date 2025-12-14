@@ -22,14 +22,19 @@ let isEraser = false;
 // let drawnArray = [];
 
 // Formatting Brush Size
-// function displayBrushSize() {
-
-// }
+function displayBrushSize() {
+  if (brushSlider.value < 10) {
+    brushSize.textContent = `0${brushSlider.value}`;
+  } else {
+    brushSize.textContent = brushSlider.value;
+  }
+}
 
 // Setting Brush Size
-// brushSlider.addEventListener('change', () => {
-
-// });
+brushSlider.addEventListener("change", () => {
+  currentSize = brushSlider.value;
+  displayBrushSize();
+});
 
 // Setting Brush Color
 brushColorBtn.addEventListener("change", () => {
