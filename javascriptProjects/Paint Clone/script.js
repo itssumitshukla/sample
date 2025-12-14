@@ -13,13 +13,15 @@ const downloadBtn = document.getElementById("download");
 const { body } = document;
 
 // Global Variables
-
+const canvas = document.createElement("canvas");
+canvas.id = "canvas";
+const context = canvas.getContext("2d");
 let currentSize = 10;
 let bucketColor = "#FFFFFF";
 let currentColor = "#A51DAB";
 let isEraser = false;
-// let isMouseDown = false;
-// let drawnArray = [];
+let isMouseDown = false;
+let drawnArray = [];
 
 // Formatting Brush Size
 function displayBrushSize() {
@@ -66,6 +68,8 @@ function switchToBrush() {
   eraser.style.color = "white";
   currentColor = `#${brushColorBtn.value}`;
   currentSize = 10;
+  brushSlider.value = 10;
+  displayBrushSize();
 }
 
 // Create Canvas
