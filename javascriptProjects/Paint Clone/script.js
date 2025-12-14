@@ -37,9 +37,12 @@ let currentColor = "#A51DAB";
 // });
 
 // Setting Background Color
-// bucketColorBtn.addEventListener('change', () => {
-
-// });
+bucketColorBtn.addEventListener("change", () => {
+  console.log(bucketColor);
+  bucketColor = `${bucketColorBtn.value}`;
+  console.log(bucketColor);
+  createCanvas();
+});
 
 // // Eraser
 // eraser.addEventListener('click', () => {
@@ -63,10 +66,10 @@ let currentColor = "#A51DAB";
 
 // Create Canvas
 function createCanvas() {
-  // canvas.width = ;
-  // canvas.height = ;
-  // context.fillStyle = ;
-  // context.fillRect();
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight - 50;
+  context.fillStyle = bucketColor;
+  context.fillRect(0, 0, canvas.width, canvas.height);
   body.appendChild(canvas);
 }
 
