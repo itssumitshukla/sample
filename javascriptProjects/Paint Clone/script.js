@@ -70,6 +70,7 @@ function createCanvas() {
   context.fillStyle = bucketColor;
   context.fillRect(0, 0, canvas.width, canvas.height);
   body.appendChild(canvas);
+  switchToBrush();
 }
 
 // // Clear Canvas
