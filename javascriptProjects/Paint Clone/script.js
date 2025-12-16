@@ -170,11 +170,13 @@ saveStorageBtn.addEventListener("click", () => {
   if (localStorage.getItem("savedCanvas")) {
     drawnArray = JSON.parse(loadStorage.savedCanvas);
     restoreCanvas();
+    // Active Tool
+    activeToolEl.textContent = "Canvas Saved";
+    setTimeout(switchToBrush, 1500);
+  } else {
+    // Active Tool
+    activeToolEl.textContent = "No Canvas Found";
   }
-
-  // Active Tool
-  activeToolEl.textContent = "Canvas Saved";
-  setTimeout(switchToBrush, 1500);
 });
 
 // Load from Local Storage
