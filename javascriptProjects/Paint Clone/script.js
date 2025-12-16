@@ -176,6 +176,7 @@ saveStorageBtn.addEventListener("click", () => {
   } else {
     // Active Tool
     activeToolEl.textContent = "No Canvas Found";
+    setTimeout(switchToBrush, 1500);
   }
 });
 
