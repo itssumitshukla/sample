@@ -209,7 +209,8 @@ function startGame() {
   computerScore = 0;
   ballReset();
   createCanvas();
-  animate();
+  // animate();
+  setInterval(animate, 1000 / 60);
   canvas.addEventListener("mousemove", (e) => {
     console.log(e.clientX);
     playerMoved = true;
