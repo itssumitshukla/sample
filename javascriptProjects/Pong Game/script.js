@@ -44,8 +44,8 @@ if (isMobile.matches) {
 let playerScore = 0;
 let computerScore = 0;
 const winningScore = 7;
-// let isGameOver = true;
-// let isNewGame = true;
+let isGameOver = true;
+let isNewGame = true;
 
 // Render Everything on Canvas
 function renderCanvas() {
@@ -182,12 +182,12 @@ function showGameOverEl(winner) {
 
 // Check If One Player Has Winning Score, If They Do, End Game
 function gameOver() {
-  // if (playerScore === winningScore || computerScore === winningScore) {
-  //   isGameOver = ;
-  //   // Set Winner
-  //   let winner = ;
-  //   showGameOverEl(winner);
-  // }
+  if (playerScore === winningScore || computerScore === winningScore) {
+    isGameOver = true;
+    // Set Winner
+    let winner = isGameOver;
+    showGameOverEl(winner);
+  }
 }
 
 // Called Every Frame
@@ -196,6 +196,7 @@ function animate() {
   ballMove();
   ballBoundaries();
   computerAI();
+  gameOver();
   window.requestAnimationFrame(animate);
 }
 
