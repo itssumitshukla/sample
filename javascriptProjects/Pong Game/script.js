@@ -197,7 +197,9 @@ function animate() {
   ballBoundaries();
   computerAI();
   gameOver();
-  window.requestAnimationFrame(animate);
+  if (!gameOver) {
+    window.requestAnimationFrame(animate);
+  }
 }
 
 // Start Game, Reset Everything
@@ -205,7 +207,7 @@ function startGame() {
   // if (isGameOver && !isNewGame) {
 
   // }
-  // isGameOver = ;
+  isGameOver = false;
   // isNewGame = ;
   playerScore = 0;
   computerScore = 0;
