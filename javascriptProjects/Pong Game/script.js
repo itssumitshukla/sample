@@ -49,28 +49,34 @@ let isNewGame = true;
 
 // Render Everything on Canvas
 function renderCanvas() {
-  //   Canvas Background
+  // Canvas Background
   context.fillStyle = "black";
   context.fillRect(0, 0, width, height);
-  //   Paddle Color
+
+  // Paddle Color
   context.fillStyle = "white";
-  //   Player Paddle (Bottom)
+
+  // Player Paddle (Bottom)
   context.fillRect(paddleBottomX, height - 20, paddleWidth, paddleHeight);
-  //   Computer Paddle (Top)
+
+  // Computer Paddle (Top)
   context.fillRect(paddleTopX, 10, paddleWidth, paddleHeight);
-  //   Dashed Center Line
+
+  // Dashed Center Line
   context.beginPath();
   context.setLineDash([4]);
   context.moveTo(0, 350);
   context.lineTo(500, 350);
   context.strokeStyle = "grey";
   context.stroke();
-  //   Ball
+
+  // Ball
   context.beginPath();
   context.arc(ballX, ballY, ballRadius, 2 * Math.PI, false);
   context.fillStyle = "white";
   context.fill();
-  //   Score
+
+  // Score
   context.font = "32px Courier New";
   context.fillText(playerScore, 20, canvas.height / 2 + 50);
   context.fillText(computerScore, 20, canvas.height / 2 - 30);
@@ -167,7 +173,7 @@ function computerAI() {
 
 function showGameOverEl(winner) {
   // Hide Canvas
-  canvas.hidden = "true";
+  canvas.hidden = true;
   // Container
   gameOverEl.textContent = "";
   gameOverEl.classList.add("game-over-container");
@@ -180,7 +186,7 @@ function showGameOverEl(winner) {
   playAgainBtn.textContent = "Play Again";
   // Append
   gameOverEl.append(title, playAgainBtn);
-  body.appendChild(gameOver);
+  body.appendChild(gameOverEl);
 }
 
 // Check If One Player Has Winning Score, If They Do, End Game
@@ -200,7 +206,7 @@ function animate() {
   ballBoundaries();
   computerAI();
   gameOver();
-  if (!gameOver) {
+  if (!isGameOver) {
     window.requestAnimationFrame(animate);
   }
 }
@@ -209,7 +215,7 @@ function animate() {
 function startGame() {
   if (isGameOver && !isNewGame) {
     body.removeChild(gameOverEl);
-    canvas.hidden = "false";
+    canvas.hidden = false;
   }
   isGameOver = false;
   isNewGame = false;
@@ -219,7 +225,6 @@ function startGame() {
   createCanvas();
   animate();
   canvas.addEventListener("mousemove", (e) => {
-    console.log(e.clientX);
     playerMoved = true;
     // Compensate for canvas being centered
     paddleBottomX = e.clientX - canvasPosition - paddleDiff;
