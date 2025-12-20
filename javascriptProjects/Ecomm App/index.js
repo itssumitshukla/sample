@@ -6,9 +6,9 @@ app.get("/", (req, res) => {
   res.send(`
     <div>
         <form>
-            <input placeholder="email" />
-            <input placeholder="password" />
-            <input placeholder="password confirmation" />
+            <input name="email" placeholder="email" />
+            <input name="password" placeholder="password" />
+            <input name="passwordConfirmation" placeholder="password confirmation" />
             <button>SignUP</button>
         </form>
     </div>
