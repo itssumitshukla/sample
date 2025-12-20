@@ -16,6 +16,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
+  req.on("data", (data) => {
+    console.log(data);
+  });
   res.send("Account created");
 });
 
