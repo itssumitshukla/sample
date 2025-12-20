@@ -1,1 +1,3 @@
-console.log("Testing Nodemon");
+const express = require("express");
+
+const app = express();
