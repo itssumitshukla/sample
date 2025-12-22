@@ -24,13 +24,16 @@ const bodyParser = (req, res, next) => {
         const [key, value] = pair.split("=");
         formData[key] = value;
       }
-      console.log(formData);
+      req.body = formData;
+      next();
     });
+  } else {
+    next();
   }
 };
 
 app.post("/", (req, res) => {
-  console.log(req);
+  console.log(req.body);
   res.send("Account created");
 });
 
