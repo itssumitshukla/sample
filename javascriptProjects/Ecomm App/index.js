@@ -32,7 +32,7 @@ const bodyParser = (req, res, next) => {
   }
 };
 
-app.post("/", (req, res) => {
+app.post("/", bodyParser, (req, res) => {
   console.log(req.body);
   res.send("Account created");
 });
