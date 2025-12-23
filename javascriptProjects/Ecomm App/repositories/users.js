@@ -21,6 +21,13 @@ class UsersRepository {
       })
     );
   }
+
+  async create(attrs) {
+    //Save email and pass
+    const records = await this.getAll();
+    records.push(attrs);
+    await fs.promises.writeFile(this.filename, JSON.stringify(records));
+  }
 }
 
 const test = async () => {
