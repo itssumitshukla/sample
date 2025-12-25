@@ -1,5 +1,6 @@
 const fs = require("fs");
 const crypto = require("crypto");
+const { error } = require("console");
 
 class UsersRepository {
   constructor(filename) {
@@ -51,6 +52,14 @@ class UsersRepository {
     const records = await this.getAll();
     const filteredRecords = records.filter((record) => record.id !== id);
     await this.writeAll(filteredRecords);
+  }
+
+  async update(id, attrs) {
+    const records = await this.getAll();
+    const record = records.find((record) => record.id === id);
+    if (!record) {
+      throw new Error(`Record with id ${id} not found`);
+    }
   }
 }
 
