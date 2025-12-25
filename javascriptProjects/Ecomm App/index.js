@@ -42,6 +42,10 @@ app.post("/", async (req, res) => {
   if (existingUser) {
     return res.send("Email in use");
   }
+  if (password !== passwordConfirmation) {
+    return res.send("Password do not match");
+  }
+
   res.send("Account created");
 });
 
