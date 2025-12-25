@@ -60,19 +60,21 @@ class UsersRepository {
     if (!record) {
       throw new Error(`Record with id ${id} not found`);
     }
+    Object.assign(record, attrs);
+    await this.writeAll(records);
   }
 }
 
 const test = async () => {
   const repo = new UsersRepository("users.json");
-  //   await repo.create({
-  //     email: "test@test.com",
-  //     password: "password",
-  //   });
+  await repo.create({
+    email: "test@test.com",
+    password: "password",
+  });
 
-  //   const users = await repo.getAll();
+  const users = await repo.getAll();
 
-  const user = await repo.getOne("772a6480");
+  //const user = await repo.getOne("772a6480");
 
   console.log(user);
 };
