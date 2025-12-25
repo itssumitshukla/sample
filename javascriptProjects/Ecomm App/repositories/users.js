@@ -24,6 +24,7 @@ class UsersRepository {
   }
 
   async create(attrs) {
+    attrs.id = this.randomId();
     //Save email and pass
     const records = await this.getAll();
     records.push(attrs);
