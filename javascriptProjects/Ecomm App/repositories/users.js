@@ -46,6 +46,12 @@ class UsersRepository {
     const records = await this.getAll();
     return records.find((records) => records.id === id);
   }
+
+  async delete(id) {
+    const records = await this.getAll();
+    const filteredRecords = records.filter((record) => record.id !== id);
+    await this.writeAll(filteredRecords);
+  }
 }
 
 const test = async () => {
