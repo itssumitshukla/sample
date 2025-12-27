@@ -64,6 +64,7 @@ app.post("/signup", async (req, res) => {
 
 app.get("/signout", (req, res) => {
   req.session = null;
+  req.send("You are logged out");
 });
 
 app.listen(3000, () => {
