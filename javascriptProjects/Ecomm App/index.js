@@ -79,6 +79,11 @@ app.get("/signin", (req, res) => {
         `);
 });
 
+app.post("/signin", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await usersRepo.getOneBy({ email });
+});
+
 app.listen(3000, () => {
   console.log("Listening");
 });
