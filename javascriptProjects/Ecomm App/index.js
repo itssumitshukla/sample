@@ -90,6 +90,9 @@ app.post("/signin", async (req, res) => {
   if (user.password !== password) {
     return res.send("Invalid Password");
   }
+
+  req.session.userId = userId;
+  res.send("You are sign in");
 });
 
 app.listen(3000, () => {
