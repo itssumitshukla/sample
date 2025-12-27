@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 const usersRepo = require("./repositories/users");
+const { use } = require("react");
 
 const app = express();
 
@@ -82,6 +83,13 @@ app.get("/signin", (req, res) => {
 app.post("/signin", async (req, res) => {
   const { email, password } = req.body;
   const user = await usersRepo.getOneBy({ email });
+  if (!user) {
+    return res.send("User email not found ");
+  }
+
+  if (user.password !== password) {
+    return res.send("Invalid Password");
+  }
 });
 
 app.listen(3000, () => {
