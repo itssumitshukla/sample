@@ -26,10 +26,16 @@ class UsersRepository {
 
   async create(attrs) {
     attrs.id = this.randomId();
+
+    const salt = crypto.randomBytes(8).toString("hex");
+    scrypt(attrs.password, salt, 64, (err, buff) => {
+      const hashed = buff.toString("hex");
+    });
     //Save email and pass
     const records = await this.getAll();
     records.push(attrs);
     await this.writeAll(records);
+
     return attrs;
   }
 
