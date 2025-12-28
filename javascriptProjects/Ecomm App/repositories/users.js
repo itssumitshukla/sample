@@ -32,12 +32,13 @@ class UsersRepository {
 
     const salt = crypto.randomBytes(8).toString("hex");
     const buf = await scrypt(attrs.password, salt, 64);
-
     const records = await this.getAll();
-    records.push({ ...attrs, password: `${buf.toString("hex")}.${salt}` });
+    const record = { ...attrs, password: `${buf.toString("hex")}.${salt}` };
+    records.push(record);
+
     await this.writeAll(records);
 
-    return attrs;
+    return record;
   }
 
   async writeAll(records) {
