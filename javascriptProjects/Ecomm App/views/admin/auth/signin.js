@@ -1,5 +1,9 @@
 module.exports = () => {
   return `
+  <!DOCTYPE html>
+  <html>
+  <head></head>
+  <body>
     <div>
         <form method="POST">
             <input name="email" placeholder="email" />
@@ -7,5 +11,7 @@ module.exports = () => {
             <button>SignIn</button>
         </form>
     </div>
+    </body>
+    </html>
     `;
 };
