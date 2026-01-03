@@ -1,5 +1,5 @@
 const express = require("express");
-const { check } = require("express-validator");
+const { check, validationResult } = require("express-validator");
 const usersRepo = require("../../repositories/users");
 const signupTemplate = require("../../views/admin/auth/signup");
 const signinTemplate = require("../../views/admin/auth/signin");
@@ -30,11 +30,13 @@ router.get("/signup", (req, res) => {
 router.post(
   "/signup",
   [
-    check("email").trim().normalizeEmail().isEmail,
+    check("email").trim().normalizeEmail().isEmail(),
     check("password").trim().isLength({ min: 4, max: 20 }),
-    check("passwordConfirmation"),
+    check("passwordConfirmation").trim().isLength({ min: 4, max: 20 }),
   ],
   async (req, res) => {
+    const errors = validationResult(req);
+    console.log(errors);
     const { email, password, passwordConfirmation } = req.body;
     const existingUser = await usersRepo.getOneBy({ email });
     if (existingUser) {
