@@ -42,7 +42,15 @@ router.post(
         }
       }),
     check("password").trim().isLength({ min: 4, max: 20 }),
-    check("passwordConfirmation").trim().isLength({ min: 4, max: 20 }),
+    check("passwordConfirmation")
+      .trim()
+      .isLength({ min: 4, max: 20 })
+      .withMessage("Must be between 4 and 20 characters")
+      .custom((passwordConfirmation, { req }) => {
+        if (passwordConfirmation !== req.body.password) {
+          throw new Error("Password must match");
+        }
+      }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
