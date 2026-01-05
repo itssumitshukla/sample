@@ -9,8 +9,11 @@ module.exports = ({ req, errors }) => {
     Your Id is: ${req.session.userId}
         <form method="POST">
             <input name="email" placeholder="email" />
+            ${getError(errors, "email")}
             <input name="password" placeholder="password" />
+            ${getError(errors, "password")}</p>
             <input name="passwordConfirmation" placeholder="password confirmation" />
+            ${getError(errors, "passwordConfirmation")}
             <button>SignUP</button>
         </form>
     </div>
