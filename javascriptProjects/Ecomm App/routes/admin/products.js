@@ -1,5 +1,6 @@
-const Repository = require("./repository");
+const express = require("express");
+const productsRepo = require("../../repositories/products");
 
-class ProductsRepository extends Repository {}
+const router = express.Router();
 
-module.exports = new ProductsRepository("products.json");
+module.exports = router;
