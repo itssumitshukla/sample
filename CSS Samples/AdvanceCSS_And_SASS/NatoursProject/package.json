@@ -15,6 +15,6 @@
   "devDependencies": {
     "autoprefixer": "^10.3.1",
     "node-sass": "^9.0.0",
-    "postcss": "^8.3.6"
+    "postcss": "^8.5.6"
   }
 }
