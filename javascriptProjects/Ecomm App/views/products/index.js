@@ -1,4 +1,4 @@
-const layout = require("../layout");
+const layout = require("../admin/layout");
 
 module.exports = ({ products }) => {
   const renderedProducts = products
