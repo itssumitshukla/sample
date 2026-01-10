@@ -1,4 +1,10 @@
-const createAutoComplete = ({root, renderOption, onOptionSelect, inputValue, fetchData}) => {
+const createAutoComplete = ({
+  root,
+  renderOption,
+  onOptionSelect,
+  inputValue,
+  fetchData,
+}) => {
   root.innerHTML = `
     <label><b>Search</b></label>
     <input class="input"/>
@@ -10,28 +16,27 @@ const createAutoComplete = ({root, renderOption, onOptionSelect, inputValue, fet
       </div>
   `;
 
-  const input = root.querySelector('input');
-  const dropdown = root.querySelector('.dropdown');
-  const resultWrapper = root.querySelector('.results');
-
+  const input = root.querySelector("input");
+  const dropdown = root.querySelector(".dropdown");
+  const resultWrapper = root.querySelector(".results");
 
   const onInput = async (event) => {
     const items = await fetchData(event.target.value);
 
     if (!items.length) {
-      dropdown.classList.remove('is-active');
+      dropdown.classList.remove("is-active");
     }
 
-    resultWrapper.innerHTML = '';
+    resultWrapper.innerHTML = "";
     dropdown.classList.add("is-active");
     for (let item of items) {
-      let option = document.createElement('a');
+      let option = document.createElement("a");
 
-      option.classList.add('dropdown-item');
+      option.classList.add("dropdown-item");
       option.innerHTML = renderOption(item);
 
-      option.addEventListener('click', () => {
-        dropdown.classList.remove('is-active');
+      option.addEventListener("click", () => {
+        dropdown.classList.remove("is-active");
         input.value = inputValue(item);
 
         onOptionSelect(item);
@@ -41,13 +46,13 @@ const createAutoComplete = ({root, renderOption, onOptionSelect, inputValue, fet
     }
   };
 
-  input.addEventListener('input', debounce(onInput, 500));
+  input.addEventListener("input", debounce(onInput, 500));
 
   //global event listner
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     if (!root.contains(e.target)) {
-      dropdown.classList.remove('is-active');
+      dropdown.classList.remove("is-active");
     }
   });
 };
