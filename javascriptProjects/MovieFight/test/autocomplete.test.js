@@ -59,3 +59,14 @@ it("after search, dropdown opens up", async () => {
   const dropdown = document.querySelector(".dropdown");
   expect(dropdown.className).to.include("is-active");
 });
+
+it("after searching, display some results", async () => {
+  const input = document.querySelector("input");
+  input.value = "avengers";
+  input.dispatchEvent(new Event("input"));
+
+  await waitFor(".dropdown-item");
+
+  const itesms = document.querySelectorAll(".dropdown-item");
+  expect(itesms.length).to.equal(3);
+});
