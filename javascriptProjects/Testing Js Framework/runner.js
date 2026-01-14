@@ -8,7 +8,7 @@ class Runner {
 
   async runTests() {
     for (let file of this.testFiles) {
-      console.log(file);
+      require(file.name);
     }
   }
 
