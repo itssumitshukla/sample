@@ -1,5 +1,5 @@
 const fs = require("fs");
-const patj = require("path");
+const path = require("path");
 
 class Runner {
   constructor() {
@@ -10,6 +10,12 @@ class Runner {
     for (let file of files) {
       const filepath = path.join(targetPath, file);
       const stats = await fs.promises.lstat(filepath);
+
+      if (stats.file() && file.includes(".test.js")) {
+        this.testFiles.push({ name: filepath });
+      } else if (stats.isDirectory()) {
+        console.log(object);
+      }
     }
   }
 }
