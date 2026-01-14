@@ -1,4 +1,5 @@
 const fs = require("fs");
+const patj = require("path");
 
 class Runner {
   constructor() {
@@ -6,7 +7,10 @@ class Runner {
   }
   async collectFiles(targetPath) {
     const files = await fs.promises.readdir(targetPath);
-    return files;
+    for (let file of files) {
+      const filepath = path.join(targetPath, file);
+      const stats = await fs.promises.lstat(filepath);
+    }
   }
 }
 
