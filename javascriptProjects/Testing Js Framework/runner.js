@@ -14,7 +14,9 @@ class Runner {
       if (stats.file() && file.includes(".test.js")) {
         this.testFiles.push({ name: filepath });
       } else if (stats.isDirectory()) {
-        console.log(object);
+        const childFiles = await fs.promises.readdir(filepath);
+
+        files.push(...childFiles);
       }
     }
   }
