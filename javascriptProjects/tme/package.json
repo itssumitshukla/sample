@@ -1,5 +1,5 @@
 {
-  "name": "testing-js-framework",
+  "name": "tme",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,5 +11,9 @@
   "license": "ISC",
   "bin": {
     "tme": "index.js"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "jsdom": "^15.2.1"
   }
 }
