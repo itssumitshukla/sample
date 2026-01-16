@@ -45,5 +45,11 @@
   ],
   "start_url": "/public/index.html",
   "scope": ".",
-  "display": "standalong"
+  "display": "standalong",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "A simple instagram clone, implementation a lot of pwa",
+  "dir": "ltr",
+  "lang": "en-US"
 }
