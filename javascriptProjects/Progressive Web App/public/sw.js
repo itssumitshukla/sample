@@ -7,4 +7,5 @@ self.addEventListener("activate", function (event) {
 });
 self.addEventListener("fetch", function (event) {
   console.log("Serivce working[SW file] Fetching Something...", event);
+  event.respondWith(null);
 });
