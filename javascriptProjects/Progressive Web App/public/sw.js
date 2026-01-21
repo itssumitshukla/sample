@@ -1,5 +1,11 @@
 self.addEventListener("install", function (event) {
   console.log("[Service Worker] Installing Service Worker ...", event);
+  event.waitUntil(
+    caches.open("static").then(function (caches) {
+      console.log("Precaching");
+      cache.add("/public/src/js/app.js");
+    }),
+  );
 });
 
 self.addEventListener("activate", function (event) {
