@@ -85,6 +85,12 @@ function createCard() {
   sharedMomentsArea.appendChild(cardWrapper);
 }
 
+function updateUI(data) {
+  for (let i = 0; i < data.length; i++) {
+    createCard(data[i]);
+  }
+}
+
 let url = "https://httpbin.org/post";
 let networkDataReceived = false;
 
