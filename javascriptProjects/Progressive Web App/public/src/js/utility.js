@@ -15,8 +15,30 @@ function writeData(st, data) {
 
 function readAllData(st) {
   return dbPromise.then(function (db) {
-    let tx = db.transaction(st, "readyonly");
+    let tx = db.transaction(st, "readonly");
     let store = tx.objectStore(st);
     return store.getAll();
   });
+}
+
+function clearAllData(st) {
+  return dbPromise.then(function (db) {
+    let tx = db.transaction(st, "readwrite");
+    let store = tx.objectStore(st);
+    store.clear();
+    return tx.complete;
+  });
+}
+
+function deleteItemFromData(st, id) {
+  dbPromise
+    .then(function (db) {
+      let tx = db.transaction(st, "readwrite");
+      let store = tx.objectStore(st);
+      store.delete(id);
+      return tx.complete;
+    })
+    .then(function () {
+      console.log("Item deleted!");
+    });
 }
