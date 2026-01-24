@@ -110,8 +110,12 @@ fetch(url, {
   .then(function (data) {
     networkDataReceived = true;
     console.log("From web", data);
+    let dataArray = [];
+    for (let key in data) {
+      dataArray.push(data[key]);
+    }
     clearCards();
-    createCard();
+    updateUI(data);
   });
 
 if ("caches" in window) {
