@@ -163,14 +163,12 @@ form.addEventListener("submit", function (event) {
       };
       writeData("sync-posts", post)
         .then(function () {
-          return sw.sync.register("sync-new-post");
+          return sw.sync.register("sync-new-posts");
         })
         .then(function () {
-          let snackbackContainer = document.querySelector(
-            "#confirmation-toast",
-          );
+          let snackbarContainer = document.querySelector("#confirmation-toast");
           let data = { message: "Your Post was saved for syncing!" };
-          snackbackContainer.MaterialSnackback.showSnackbar(data);
+          snackbarContainer.MaterialSnackbar.showSnackbar(data);
         })
         .catch(function (err) {
           console.log(err);
