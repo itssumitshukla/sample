@@ -5,7 +5,7 @@
     return;
   }
 
-  var support = {
+  let support = {
     searchParams: "URLSearchParams" in self,
     iterable: "Symbol" in self && "iterator" in Symbol,
     blob:
@@ -24,7 +24,7 @@
   };
 
   if (support.arrayBuffer) {
-    var viewClasses = [
+    let viewClasses = [
       "[object Int8Array]",
       "[object Uint8Array]",
       "[object Uint8ClampedArray]",
@@ -36,11 +36,11 @@
       "[object Float64Array]",
     ];
 
-    var isDataView = function (obj) {
+    let isDataView = function (obj) {
       return obj && DataView.prototype.isPrototypeOf(obj);
     };
 
-    var isArrayBufferView =
+    let isArrayBufferView =
       ArrayBuffer.isView ||
       function (obj) {
         return (
@@ -68,9 +68,9 @@
 
   // Build a destructive iterator for the value list
   function iteratorFor(items) {
-    var iterator = {
+    let iterator = {
       next: function () {
-        var value = items.shift();
+        let value = items.shift();
         return { done: value === undefined, value: value };
       },
     };
@@ -105,7 +105,7 @@
   Headers.prototype.append = function (name, value) {
     name = normalizeName(name);
     value = normalizeValue(value);
-    var oldValue = this.map[name];
+    let oldValue = this.map[name];
     this.map[name] = oldValue ? oldValue + "," + value : value;
   };
 
@@ -127,7 +127,7 @@
   };
 
   Headers.prototype.forEach = function (callback, thisArg) {
-    for (var name in this.map) {
+    for (let name in this.map) {
       if (this.map.hasOwnProperty(name)) {
         callback.call(thisArg, this.map[name], name, this);
       }
@@ -135,7 +135,7 @@
   };
 
   Headers.prototype.keys = function () {
-    var items = [];
+    let items = [];
     this.forEach(function (value, name) {
       items.push(name);
     });
@@ -143,7 +143,7 @@
   };
 
   Headers.prototype.values = function () {
-    var items = [];
+    let items = [];
     this.forEach(function (value) {
       items.push(value);
     });
@@ -151,7 +151,7 @@
   };
 
   Headers.prototype.entries = function () {
-    var items = [];
+    let items = [];
     this.forEach(function (value, name) {
       items.push([name, value]);
     });
@@ -181,24 +181,24 @@
   }
 
   function readBlobAsArrayBuffer(blob) {
-    var reader = new FileReader();
-    var promise = fileReaderReady(reader);
+    let reader = new FileReader();
+    let promise = fileReaderReady(reader);
     reader.readAsArrayBuffer(blob);
     return promise;
   }
 
   function readBlobAsText(blob) {
-    var reader = new FileReader();
-    var promise = fileReaderReady(reader);
+    let reader = new FileReader();
+    let promise = fileReaderReady(reader);
     reader.readAsText(blob);
     return promise;
   }
 
   function readArrayBufferAsText(buf) {
-    var view = new Uint8Array(buf);
-    var chars = new Array(view.length);
+    let view = new Uint8Array(buf);
+    let chars = new Array(view.length);
 
-    for (var i = 0; i < view.length; i++) {
+    for (let i = 0; i < view.length; i++) {
       chars[i] = String.fromCharCode(view[i]);
     }
     return chars.join("");
@@ -208,7 +208,7 @@
     if (buf.slice) {
       return buf.slice(0);
     } else {
-      var view = new Uint8Array(buf.byteLength);
+      let view = new Uint8Array(buf.byteLength);
       view.set(new Uint8Array(buf));
       return view.buffer;
     }
@@ -264,7 +264,7 @@
 
     if (support.blob) {
       this.blob = function () {
-        var rejected = consumed(this);
+        let rejected = consumed(this);
         if (rejected) {
           return rejected;
         }
@@ -290,7 +290,7 @@
     }
 
     this.text = function () {
-      var rejected = consumed(this);
+      let rejected = consumed(this);
       if (rejected) {
         return rejected;
       }
@@ -320,16 +320,16 @@
   }
 
   // HTTP methods whose capitalization should be normalized
-  var methods = ["DELETE", "GET", "HEAD", "OPTIONS", "POST", "PUT"];
+  let methods = ["DELETE", "GET", "HEAD", "OPTIONS", "POST", "PUT"];
 
   function normalizeMethod(method) {
-    var upcased = method.toUpperCase();
+    let upcased = method.toUpperCase();
     return methods.indexOf(upcased) > -1 ? upcased : method;
   }
 
   function Request(input, options) {
     options = options || {};
-    var body = options.body;
+    let body = options.body;
 
     if (input instanceof Request) {
       if (input.bodyUsed) {
@@ -369,15 +369,15 @@
   };
 
   function decode(body) {
-    var form = new FormData();
+    let form = new FormData();
     body
       .trim()
       .split("&")
       .forEach(function (bytes) {
         if (bytes) {
-          var split = bytes.split("=");
-          var name = split.shift().replace(/\+/g, " ");
-          var value = split.join("=").replace(/\+/g, " ");
+          let split = bytes.split("=");
+          let name = split.shift().replace(/\+/g, " ");
+          let value = split.join("=").replace(/\+/g, " ");
           form.append(decodeURIComponent(name), decodeURIComponent(value));
         }
       });
@@ -385,12 +385,12 @@
   }
 
   function parseHeaders(rawHeaders) {
-    var headers = new Headers();
+    let headers = new Headers();
     rawHeaders.split(/\r?\n/).forEach(function (line) {
-      var parts = line.split(":");
-      var key = parts.shift().trim();
+      let parts = line.split(":");
+      let key = parts.shift().trim();
       if (key) {
-        var value = parts.join(":").trim();
+        let value = parts.join(":").trim();
         headers.append(key, value);
       }
     });
@@ -425,12 +425,12 @@
   };
 
   Response.error = function () {
-    var response = new Response(null, { status: 0, statusText: "" });
+    let response = new Response(null, { status: 0, statusText: "" });
     response.type = "error";
     return response;
   };
 
-  var redirectStatuses = [301, 302, 303, 307, 308];
+  let redirectStatuses = [301, 302, 303, 307, 308];
 
   Response.redirect = function (url, status) {
     if (redirectStatuses.indexOf(status) === -1) {
@@ -446,11 +446,11 @@
 
   self.fetch = function (input, init) {
     return new Promise(function (resolve, reject) {
-      var request = new Request(input, init);
-      var xhr = new XMLHttpRequest();
+      let request = new Request(input, init);
+      let xhr = new XMLHttpRequest();
 
       xhr.onload = function () {
-        var options = {
+        let options = {
           status: xhr.status,
           statusText: xhr.statusText,
           headers: parseHeaders(xhr.getAllResponseHeaders() || ""),
@@ -459,7 +459,7 @@
           "responseURL" in xhr
             ? xhr.responseURL
             : options.headers.get("X-Request-URL");
-        var body = "response" in xhr ? xhr.response : xhr.responseText;
+        let body = "response" in xhr ? xhr.response : xhr.responseText;
         resolve(new Response(body, options));
       };
 
