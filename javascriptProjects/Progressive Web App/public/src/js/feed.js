@@ -1,12 +1,12 @@
-var shareImageButton = document.querySelector("#share-image-button");
-var createPostArea = document.querySelector("#create-post");
-var closeCreatePostModalButton = document.querySelector(
+let shareImageButton = document.querySelector("#share-image-button");
+let createPostArea = document.querySelector("#create-post");
+let closeCreatePostModalButton = document.querySelector(
   "#close-create-post-modal-btn",
 );
-var sharedMomentsArea = document.querySelector("#shared-moments");
-var form = document.querySelector("form");
-var titleInput = document.querySelector("#title");
-var locationInput = document.querySelector("#location");
+let sharedMomentsArea = document.querySelector("#shared-moments");
+let form = document.querySelector("form");
+let titleInput = document.querySelector("#title");
+let locationInput = document.querySelector("#location");
 
 function openCreatePostModal() {
   // createPostArea.style.display = 'block';
@@ -32,7 +32,7 @@ function openCreatePostModal() {
   // if ('serviceWorker' in navigator) {
   //   navigator.serviceWorker.getRegistrations()
   //     .then(function(registrations) {
-  //       for (var i = 0; i < registrations.length; i++) {
+  //       for (let i = 0; i < registrations.length; i++) {
   //         registrations[i].unregister();
   //       }
   //     })
@@ -66,23 +66,23 @@ function clearCards() {
 }
 
 function createCard(data) {
-  var cardWrapper = document.createElement("div");
+  let cardWrapper = document.createElement("div");
   cardWrapper.className = "shared-moment-card mdl-card mdl-shadow--2dp";
-  var cardTitle = document.createElement("div");
+  let cardTitle = document.createElement("div");
   cardTitle.className = "mdl-card__title";
   cardTitle.style.backgroundImage = "url(" + data.image + ")";
   cardTitle.style.backgroundSize = "cover";
   cardWrapper.appendChild(cardTitle);
-  var cardTitleTextElement = document.createElement("h2");
+  let cardTitleTextElement = document.createElement("h2");
   cardTitleTextElement.style.color = "white";
   cardTitleTextElement.className = "mdl-card__title-text";
   cardTitleTextElement.textContent = data.title;
   cardTitle.appendChild(cardTitleTextElement);
-  var cardSupportingText = document.createElement("div");
+  let cardSupportingText = document.createElement("div");
   cardSupportingText.className = "mdl-card__supporting-text";
   cardSupportingText.textContent = data.location;
   cardSupportingText.style.textAlign = "center";
-  // var cardSaveButton = document.createElement('button');
+  // let cardSaveButton = document.createElement('button');
   // cardSaveButton.textContent = 'Save';
   // cardSaveButton.addEventListener('click', onSaveButtonClicked);
   // cardSupportingText.appendChild(cardSaveButton);
@@ -93,13 +93,13 @@ function createCard(data) {
 
 function updateUI(data) {
   clearCards();
-  for (var i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     createCard(data[i]);
   }
 }
 
-var url = "https://pwagram-99adf.firebaseio.com/posts.json";
-var networkDataReceived = false;
+let url = "https://pwagram-99adf.firebaseio.com/posts.json";
+let networkDataReceived = false;
 
 fetch(url)
   .then(function (res) {
@@ -108,8 +108,8 @@ fetch(url)
   .then(function (data) {
     networkDataReceived = true;
     console.log("From web", data);
-    var dataArray = [];
-    for (var key in data) {
+    let dataArray = [];
+    for (let key in data) {
       dataArray.push(data[key]);
     }
     updateUI(dataArray);
@@ -156,7 +156,7 @@ form.addEventListener("submit", function (event) {
 
   if ("serviceWorker" in navigator && "SyncManager" in window) {
     navigator.serviceWorker.ready.then(function (sw) {
-      var post = {
+      let post = {
         id: new Date().toISOString(),
         title: titleInput.value,
         location: locationInput.value,
@@ -166,8 +166,8 @@ form.addEventListener("submit", function (event) {
           return sw.sync.register("sync-new-posts");
         })
         .then(function () {
-          var snackbarContainer = document.querySelector("#confirmation-toast");
-          var data = { message: "Your Post was saved for syncing!" };
+          let snackbarContainer = document.querySelector("#confirmation-toast");
+          let data = { message: "Your Post was saved for syncing!" };
           snackbarContainer.MaterialSnackbar.showSnackbar(data);
         })
         .catch(function (err) {
