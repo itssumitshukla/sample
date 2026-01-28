@@ -1,13 +1,14 @@
 importScripts("/src/js/idb.js");
 importScripts("/src/js/utility.js");
 
-let CACHE_STATIC_NAME = "static-v28";
-let CACHE_DYNAMIC_NAME = "dynamic-v2";
+let CACHE_STATIC_NAME = "static-v40";
+let CACHE_DYNAMIC_NAME = "dynamic-v3";
 let STATIC_FILES = [
   "/",
   "/index.html",
   "/offline.html",
   "/src/js/app.js",
+  "/src/js/utility.js",
   "/src/js/feed.js",
   "/src/js/idb.js",
   "/src/js/promise.js",
@@ -62,15 +63,12 @@ self.addEventListener("activate", function (event) {
 });
 
 function isInArray(string, array) {
-  let cachePath;
-  if (string.indexOf(self.origin) === 0) {
-    // request targets domain where we serve the page from (i.e. NOT a CDN)
-    console.log("matched ", string);
-    cachePath = string.substring(self.origin.length); // take the part of the URL AFTER the domain (e.g. after localhost:8080)
-  } else {
-    cachePath = string; // store the full request (for CDNs)
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === string) {
+      return true;
+    }
   }
-  return array.indexOf(cachePath) > -1;
+  return false;
 }
 
 self.addEventListener("fetch", function (event) {
@@ -183,21 +181,19 @@ self.addEventListener("sync", function (event) {
     event.waitUntil(
       readAllData("sync-posts").then(function (data) {
         for (let dt of data) {
+          let postData = new FormData();
+          postData.append("id", dt.id);
+          postData.append("title", dt.title);
+          postData.append("location", dt.location);
+          postData.append("rawLocationLat", dt.rawLocation.lat);
+          postData.append("rawLocationLng", dt.rawLocation.lng);
+          postData.append("file", dt.picture, dt.id + ".png");
+
           fetch(
             "https://us-central1-pwagram-99adf.cloudfunctions.net/storePostData",
             {
               method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify({
-                id: dt.id,
-                title: dt.title,
-                location: dt.location,
-                image:
-                  "https://firebasestorage.googleapis.com/v0/b/pwagram-99adf.appspot.com/o/sf-boat.jpg?alt=media&token=19f4770c-fc8c-4882-92f1-62000ff06f16",
-              }),
+              body: postData,
             },
           )
             .then(function (res) {
