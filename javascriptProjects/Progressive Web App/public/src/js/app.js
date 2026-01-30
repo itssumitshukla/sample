@@ -36,7 +36,7 @@ function displayConfirmNotification() {
       vibrate: [100, 50, 200],
       badge: "/src/images/icons/app-icon-96x96.png",
       tag: "confirm-notification",
-      renotify: true,
+      renotify: false,
       actions: [
         {
           action: "confirm",

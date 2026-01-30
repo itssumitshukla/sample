@@ -289,7 +289,6 @@ form.addEventListener("submit", function (event) {
         })
         .catch(function (err) {
           console.log(err);
-          console.log(err.value);
         });
     });
   } else {
