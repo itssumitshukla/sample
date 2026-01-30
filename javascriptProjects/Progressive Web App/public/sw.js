@@ -245,10 +245,12 @@ self.addEventListener("notificationclick", function (event) {
 
 self.addEventListener("notificationclose", function (event) {
   console.log("Notification was closed", event);
+  console.log(event);
 });
 
 self.addEventListener("push", function (event) {
   console.log("Push Notification received", event);
+  console.log(event);
 
   let data = {
     title: "New!",
