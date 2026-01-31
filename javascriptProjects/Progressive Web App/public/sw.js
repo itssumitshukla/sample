@@ -102,7 +102,6 @@ self.addEventListener("fetch", function (event) {
               return caches.open(CACHE_DYNAMIC_NAME).then(function (cache) {
                 // trimCache(CACHE_DYNAMIC_NAME, 3);
                 cache.put(event.request.url, res.clone());
-                console.log(res);
                 return res;
               });
             })
@@ -217,9 +216,7 @@ self.addEventListener("sync", function (event) {
 self.addEventListener("notificationclick", function (event) {
   let notification = event.notification;
   let action = event.action;
-
-  console.log(notification);
-
+  console.log(event);
   if (action === "confirm") {
     console.log("Confirm was chosen");
     console.log("Test user confirm");
