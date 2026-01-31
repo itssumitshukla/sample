@@ -40,7 +40,6 @@ self.addEventListener("install", function (event) {
   event.waitUntil(
     caches.open(CACHE_STATIC_NAME).then(function (cache) {
       console.log("[Service Worker] Precaching App Shell");
-      console.log(cache);
       cache.addAll(STATIC_FILES);
     }),
   );
@@ -103,6 +102,7 @@ self.addEventListener("fetch", function (event) {
               return caches.open(CACHE_DYNAMIC_NAME).then(function (cache) {
                 // trimCache(CACHE_DYNAMIC_NAME, 3);
                 cache.put(event.request.url, res.clone());
+                console.log(res);
                 return res;
               });
             })
