@@ -1,20 +1,28 @@
 const itemForm = document.getElementById("item-form");
 const itemInput = document.getElementById("item-input");
-const itemList = document.getElementById("item-List");
+const itemList = document.getElementById("item-list");
 
 function addItem(e) {
   e.preventDefault();
 
-  if (itemInput.value === "") {
-    alert("Please ad an item");
+  const newItem = itemInput.value;
+
+  // Validate Input
+  if (newItem === "") {
+    alert("Please add an item");
     return;
   }
 
-  console.log("Success");
+  // Create list item
   const li = document.createElement("li");
   li.appendChild(document.createTextNode(newItem));
 
   const button = createButton("remove-item btn-link text-red");
+  li.appendChild(button);
+
+  itemList.appendChild(li);
+
+  itemInput.value = "";
 }
 
 function createButton(classes) {
@@ -31,4 +39,5 @@ function createIcon(classes) {
   return icon;
 }
 
+// Event Listeners
 itemForm.addEventListener("submit", addItem);
