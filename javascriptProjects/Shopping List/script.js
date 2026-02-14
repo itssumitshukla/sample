@@ -13,6 +13,14 @@ function addItem(e) {
   console.log("Success");
   const li = document.createElement("li");
   li.appendChild(document.createTextNode(newItem));
+
+  const button = createButton("remove-item btn-link text-red");
+}
+
+function createButton(classes) {
+  const button = document.createElement("button");
+  button.className = classes;
+  return button;
 }
 
 itemForm.addEventListener("submit", addItem);
