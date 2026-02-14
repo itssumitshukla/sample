@@ -11,6 +11,8 @@ function addItem(e) {
   }
 
   console.log("Success");
+  const li = document.createElement("li");
+  li.appendChild(document.createTextNode(newItem));
 }
 
 itemForm.addEventListener("submit", addItem);
