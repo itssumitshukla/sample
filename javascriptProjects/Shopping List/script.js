@@ -56,6 +56,8 @@ function clearItems() {
 function checkUI() {
   const items = itemList.querySelectorAll("li");
   if (items.length === 0) {
+    clearBtn.style.display = "none";
+    itemFilter.style.display = "none";
   }
 }
 
@@ -63,3 +65,5 @@ function checkUI() {
 itemForm.addEventListener("submit", addItem);
 itemList.addEventListener("click", removeItem);
 clearBtn.addEventListener("click", clearItems);
+
+checkUI();
