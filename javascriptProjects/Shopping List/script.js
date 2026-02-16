@@ -2,6 +2,7 @@ const itemForm = document.getElementById("item-form");
 const itemInput = document.getElementById("item-input");
 const itemList = document.getElementById("item-list");
 const clearBtn = document.getElementById("clear");
+const itemFilter = document.getElementById("filter");
 
 function addItem(e) {
   e.preventDefault();
@@ -49,6 +50,12 @@ function removeItem(e) {
 function clearItems() {
   while (itemList.firstChild) {
     itemList.removeChild(itemList.firstChild);
+  }
+}
+
+function checkUI() {
+  const items = itemList.querySelectorAll("li");
+  if (items.length === 0) {
   }
 }
 
