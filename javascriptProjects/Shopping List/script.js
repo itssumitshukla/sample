@@ -58,6 +58,9 @@ function checkUI() {
   if (items.length === 0) {
     clearBtn.style.display = "none";
     itemFilter.style.display = "none";
+  } else {
+    clearBtn.style.display = "block";
+    itemFilter.style.display = "block";
   }
 }
 
