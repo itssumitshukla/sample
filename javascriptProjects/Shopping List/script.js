@@ -22,7 +22,10 @@ function addItem(e) {
   const button = createButton("remove-item btn-link text-red");
   li.appendChild(button);
 
+  //Add li to DOM
   itemList.appendChild(li);
+
+  checkUI();
 
   itemInput.value = "";
 }
