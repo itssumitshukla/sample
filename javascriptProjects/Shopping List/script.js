@@ -15,15 +15,10 @@ function onAddItemSubmit(e) {
     return;
   }
 
-  // Create list item
-  const li = document.createElement("li");
-  li.appendChild(document.createTextNode(newItem));
+  addItemToDom(newItem);
 
-  const button = createButton("remove-item btn-link text-red");
-  li.appendChild(button);
-
-  //Add li to DOM
-  itemList.appendChild(li);
+  //Add item to local storage
+  addItemToStorage(newItem);
 
   checkUI();
 
@@ -32,12 +27,11 @@ function onAddItemSubmit(e) {
 
 function addItemToStorage(item) {
   let itemsFromStorage;
-  if (localStorage.getItem("items" === null)) {
+  if (localStorage.getItem("items") === null) {
     itemsFromStorage = [];
   } else {
     itemsFromStorage = JSON.parse(localStorage.getItem("items"));
   }
-
   itemsFromStorage.push(item);
 
   //Convert to JSON string and set to local storage
