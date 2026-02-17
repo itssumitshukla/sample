@@ -67,7 +67,12 @@ function filterItems(e) {
 
   items.forEach((items) => {
     const itemName = items.firstChild.textContent.toLocaleLowerCase();
-    console.log(itemName);
+
+    if (itemName.indexOf(text) != -1) {
+      items.style.display = "flex";
+    } else {
+      items.style.display = "none";
+    }
   });
 }
 
