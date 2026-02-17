@@ -62,8 +62,13 @@ function clearItems() {
 }
 
 function filterItems(e) {
-  const text = e.target.value;
-  console.log(text);
+  const items = itemList.querySelectorAll("li");
+  const text = e.target.value.toLowerCase();
+
+  items.forEach((items) => {
+    const itemName = items.firstChild.textContent.toLocaleLowerCase();
+    console.log(itemName);
+  });
 }
 
 function checkUI() {
