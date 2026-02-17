@@ -9,6 +9,8 @@ function displayItems() {
   itemsFromStorage.forEach((item) => {
     addItemToDom(item);
   });
+
+  checkUI();
 }
 
 function onAddItemSubmit(e) {
