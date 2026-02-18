@@ -95,6 +95,14 @@ function removeItem(item) {
   }
 }
 
+function removeItemFromStorage(item) {
+  let itemsFromStorage = getItemsFromStorage();
+
+  //Filter out item to be removed
+  itemsFromStorage = itemsFromStorage.filter((i) => i !== item);
+  localStorage.setItem("items", JSON.stringify(itemsFromStorage));
+}
+
 function clearItems() {
   while (itemList.firstChild) {
     itemList.removeChild(itemList.firstChild);
