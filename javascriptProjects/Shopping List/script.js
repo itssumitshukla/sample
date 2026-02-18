@@ -80,18 +80,19 @@ function getItemsFromStorage() {
 
 function onClickItem(e) {
   if (e.target.parentElement.classList.contains("remove-item")) {
-    removeItem(e.target.parentElement);
+    removeItem(e.target.parentElement.parentElement);
   }
 }
 
 function removeItem(item) {
-  console.log(item);
-  // if (e.target.parentElement.classList.contains("remove-item")) {
-  //   if (confirm("Are you sure")) {
-  //     e.target.parentElement.parentElement.remove();
-  //     checkUI();
-  //   }
-  // }
+  if (confirm("Are you sure")) {
+    item.remove();
+
+    //Remove item from storage
+    removeItemFromStorage(item.textContent);
+
+    checkUI();
+  }
 }
 
 function clearItems() {
