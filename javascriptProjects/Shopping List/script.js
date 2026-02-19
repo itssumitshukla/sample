@@ -26,6 +26,15 @@ function onAddItemSubmit(e) {
     return;
   }
 
+  //Check for edit mode
+  if (isEditMode) {
+    const itemToEdit = itemList.querySelector(".edit-mode");
+    removeItemFromStorage(itemToEdit.textContent);
+    itemToEdit.classList.remove(".edit-mode");
+    itemToEdit.remove();
+    isEditMode = false;
+  }
+
   addItemToDom(newItem);
 
   //Add item to local storage
