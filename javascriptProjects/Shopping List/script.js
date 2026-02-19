@@ -4,6 +4,7 @@ const itemList = document.getElementById("item-list");
 const clearBtn = document.getElementById("clear");
 const itemFilter = document.getElementById("filter");
 let isEditMode = false;
+const formBtn = itemForm.querySelector("button");
 
 function displayItems() {
   const itemsFromStorage = getItemsFromStorage();
@@ -89,6 +90,8 @@ function onClickItem(e) {
 
 function setItemToEdit(item) {
   isEditMode = true;
+  item.classList.add("edit-mode");
+  formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Update Item';
 }
 
 function removeItem(item) {
