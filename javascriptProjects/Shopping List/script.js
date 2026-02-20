@@ -112,7 +112,7 @@ function checkIfItemExists(item) {
 }
 
 function setItemToEdit(item) {
-  isEditMode = true;
+  isEditMode = false;
   itemList.querySelectorAll("li").forEach((i) => {
     i.classList.remove("edit-mode");
   });
