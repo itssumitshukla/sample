@@ -13,6 +13,15 @@ function init() {
     case "/shows.html":
       console.log("Shows");
       break;
+    case "/movie-details.html":
+      console.log("Movie Details");
+      break;
+    case "/tv-details.html":
+      console.log("TV Details");
+      break;
+    case "/search.html":
+      console.log("Search");
+      break;
   }
 }
 
