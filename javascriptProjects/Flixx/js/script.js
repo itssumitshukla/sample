@@ -1,8 +1,12 @@
-const apiKey = env.API_KEY;
+// const apiKey = process.env.API_KEY;
+
+import { API_KEY } from "./apiKey";
 
 const global = {
   currentPage: window.location.pathname,
 };
+
+//Fetch data from TMDB API
 
 //Highlight active link
 function highlightActiveLink() {
