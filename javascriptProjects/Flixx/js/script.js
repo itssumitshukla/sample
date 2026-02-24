@@ -70,7 +70,7 @@ async function displayPopularShows() {
           </div>
         `;
 
-    document.querySelector("#popular-movies").appendChild(div);
+    document.querySelector("#popular-show").appendChild(div);
   });
 }
 
