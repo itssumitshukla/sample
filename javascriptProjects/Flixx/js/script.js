@@ -49,6 +49,15 @@ async function fetchAPIData(endpoint) {
   return data;
 }
 
+//Show Spinner
+function showSpinner() {
+  document.querySelector("spinner").classList.add("show");
+}
+//Hide Spinner
+function hideSpinner() {
+  document.querySelector("spinner").classList.remove("show");
+}
+
 //Highlight active link
 function highlightActiveLink() {
   const links = document.querySelectorAll(".nav-link");
