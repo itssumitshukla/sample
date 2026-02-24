@@ -42,20 +42,25 @@ async function displayPopularMovies() {
 //Fetch data from TMDB API
 async function fetchAPIData(endpoint) {
   const API_URL = "https://api.themoviedb.org/3/";
+
+  showSpinner();
+
   const response = await fetch(
     `${API_URL}${endpoint}?api_key=${API_KEY}&language=em-US`,
   );
   const data = await response.json();
+
+  hideSpinner();
   return data;
 }
 
 //Show Spinner
 function showSpinner() {
-  document.querySelector("spinner").classList.add("show");
+  document.querySelector(".spinner").classList.add("show");
 }
 //Hide Spinner
 function hideSpinner() {
-  document.querySelector("spinner").classList.remove("show");
+  document.querySelector(".spinner").classList.remove("show");
 }
 
 //Highlight active link
