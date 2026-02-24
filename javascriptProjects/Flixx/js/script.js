@@ -39,6 +39,41 @@ async function displayPopularMovies() {
   });
 }
 
+//Display 20 most popular tv
+
+async function displayPopularShows() {
+  const { results } = await fetchAPIData("tv/popular");
+  results.forEach((show) => {
+    const div = document.createElement("div");
+    div.classList.add("card");
+    div.innerHTML = `
+          <a href="tv-details.html?id=${show.id}">
+            ${
+              show.poster_path
+                ? `<img
+              src="https://image.tmdb.org/t/p/w500${show.poster_path}"
+              class="card-img-top"
+              alt="${show.title}"
+            />`
+                : `<img
+            src="../images/no-image.jpg"
+            class="card-img-top"
+            alt="${show.title}"
+          />`
+            }
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">${show.title}</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: ${show.release_date}</small>
+            </p>
+          </div>
+        `;
+
+    document.querySelector("#popular-movies").appendChild(div);
+  });
+}
+
 //Fetch data from TMDB API
 async function fetchAPIData(endpoint) {
   const API_URL = "https://api.themoviedb.org/3/";
