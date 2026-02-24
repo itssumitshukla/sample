@@ -117,6 +117,7 @@ function init() {
       console.log("Home");
       break;
     case "/shows.html":
+      displayPopularShows();
       console.log("Shows");
       break;
     case "/movie-details.html":
