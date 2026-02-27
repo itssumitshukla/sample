@@ -294,6 +294,7 @@ function init() {
       console.log("Movie Details");
       break;
     case "/tv-details.html":
+      displayShowDetails();
       console.log("TV Details");
       break;
     case "/search.html":
