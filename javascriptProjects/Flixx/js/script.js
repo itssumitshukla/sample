@@ -239,6 +239,12 @@ function displayBackgroundImage(type, backgroundPath) {
   }
 }
 
+//Show swipper
+async function displaySlider() {
+  const { results } = await fetchAPIData("movie/now_playing");
+  console.log(results);
+}
+
 //Fetch data from TMDB API
 async function fetchAPIData(endpoint) {
   const API_URL = "https://api.themoviedb.org/3/";
@@ -282,6 +288,7 @@ function init() {
   switch (global.currentPage) {
     case "/":
     case "/index.html":
+      displaySlider();
       displayPopularMovies();
       console.log("Home");
       break;
