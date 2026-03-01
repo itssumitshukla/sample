@@ -239,6 +239,12 @@ function displayBackgroundImage(type, backgroundPath) {
   }
 }
 
+//search Movies/Shows
+async function search() {
+  const queryString = window.location.search;
+  console.log(queryString);
+}
+
 //Show swipper
 async function displaySlider() {
   const { results } = await fetchAPIData("movie/now_playing");
@@ -345,6 +351,7 @@ function init() {
       console.log("TV Details");
       break;
     case "/search.html":
+      search();
       console.log("Search");
       break;
   }
