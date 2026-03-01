@@ -4,6 +4,12 @@ let API_KEY = "";
 
 const global = {
   currentPage: window.location.pathname,
+  search: {
+    term: "",
+    type: "",
+    page: 1,
+    totalPages: 1,
+  },
 };
 
 async function displayPopularMovies() {
@@ -242,6 +248,7 @@ function displayBackgroundImage(type, backgroundPath) {
 //search Movies/Shows
 async function search() {
   const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
   console.log(queryString);
 }
 
