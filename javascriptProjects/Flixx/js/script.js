@@ -340,6 +340,12 @@ function highlightActiveLink() {
   });
 }
 
+//show alert
+function showAlert(message, className) {
+  const alertEl = document.createElement("div");
+  alertEl.classList.add("alert", className);
+}
+
 function addCommasToNumber(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
