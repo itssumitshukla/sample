@@ -252,6 +252,12 @@ async function search() {
 
   global.search.type = urlParams.get("type");
   global.search.term = urlParams.get("search-term");
+
+  if (global.search.term !== "" && global.search.term !== null) {
+    //todo- make request and display result
+  } else {
+    alert("Please enter a search term");
+  }
 }
 
 //Show swipper
