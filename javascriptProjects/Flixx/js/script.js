@@ -346,6 +346,10 @@ function showAlert(message, className) {
   alertEl.classList.add("alert", className);
   alertEl.appendChild(document.createTextNode(message));
   document.querySelector("#alert").appendChild(alertEl);
+
+  setTimeout(() => {
+    (alertEl.remove(), 3000);
+  });
 }
 
 function addCommasToNumber(number) {
