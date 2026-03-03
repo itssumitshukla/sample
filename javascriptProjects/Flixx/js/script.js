@@ -256,7 +256,7 @@ async function search() {
   if (global.search.term !== "" && global.search.term !== null) {
     //todo- make request and display result
   } else {
-    alert("Please enter a search term");
+    showAlert("Please enter a search term");
   }
 }
 
@@ -344,6 +344,8 @@ function highlightActiveLink() {
 function showAlert(message, className) {
   const alertEl = document.createElement("div");
   alertEl.classList.add("alert", className);
+  alertEl.appendChild(document.createTextNode(message));
+  document.querySelector("#alert").appendChild(alertEl);
 }
 
 function addCommasToNumber(number) {
