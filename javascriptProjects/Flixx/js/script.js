@@ -315,6 +315,21 @@ async function fetchAPIData(endpoint) {
   showSpinner();
 
   const response = await fetch(
+    `${API_URL}search/${global.search.type}?api_key=${API_KEY}&language=em-US`,
+  );
+  const data = await response.json();
+
+  hideSpinner();
+  return data;
+}
+
+//Search API data
+async function searchAPIData(endpoint) {
+  const API_URL = "https://api.themoviedb.org/3/";
+
+  showSpinner();
+
+  const response = await fetch(
     `${API_URL}${endpoint}?api_key=${API_KEY}&language=em-US`,
   );
   const data = await response.json();
