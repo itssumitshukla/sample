@@ -255,6 +255,8 @@ async function search() {
 
   if (global.search.term !== "" && global.search.term !== null) {
     //todo- make request and display result
+    const results = await searchAPIData();
+    console.log(results);
   } else {
     showAlert("Please enter a search term");
   }
