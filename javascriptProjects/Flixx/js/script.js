@@ -278,7 +278,7 @@ function displaySearchResutls(results) {
             ${
               result.poster_path
                 ? `<img
-              src="https://image.tmdb.org/t/p/w500${result.poster_path}"
+              src="https://image.tmdb.org/t/p/w500/${result.poster_path}"
               class="card-img-top"
               alt="${global.search.type === "movie" ? result.title : result.name}"
             />`
