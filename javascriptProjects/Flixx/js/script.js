@@ -275,6 +275,11 @@ async function search() {
 }
 
 function displaySearchResutls(results) {
+  //clear previous results
+  document.querySelector("#search-results").innerHTML = "";
+  document.querySelector("#search-results-heading").innerHTML = "";
+  document.querySelector("#pagination").innerHTML = "";
+
   results.forEach((result) => {
     const div = document.createElement("div");
     div.classList.add("card");
