@@ -259,10 +259,46 @@ async function search() {
 
     if (results.length === 0) {
       showAlert("No results found");
+      return;
     }
+
+    displaySearchResutls(results);
+    document.querySelector("#search-term").value = "";
   } else {
     showAlert("Please enter a search term");
   }
+}
+
+function displaySearchResutls(results) {
+  results.forEach((movie) => {
+    const div = document.createElement("div");
+    div.classList.add("card");
+    div.innerHTML = `
+          <a href="movie-details.html?id=${movie.id}">
+            ${
+              movie.poster_path
+                ? `<img
+              src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+              class="card-img-top"
+              alt="${movie.title}"
+            />`
+                : `<img
+            src="../images/no-image.jpg"
+            class="card-img-top"
+            alt="${movie.title}"
+          />`
+            }
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">${movie.title}</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: ${movie.release_date}</small>
+            </p>
+          </div>
+        `;
+
+    document.querySelector("#popular-movies").appendChild(div);
+  });
 }
 
 //Show swipper
