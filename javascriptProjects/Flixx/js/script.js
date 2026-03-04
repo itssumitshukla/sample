@@ -9,6 +9,7 @@ const global = {
     type: "",
     page: 1,
     totalPages: 1,
+    totalResults: 0,
   },
 };
 
@@ -255,7 +256,9 @@ async function search() {
 
   if (global.search.term !== "" && global.search.term !== null) {
     //todo- make request and display result
-    const { results, total_pages, page } = await searchAPIData();
+    const { results, total_pages, page, total_results } = await searchAPIData();
+
+    global.search.page = page;
 
     if (results.length === 0) {
       showAlert("No results found");
