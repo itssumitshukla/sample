@@ -258,7 +258,7 @@ async function search() {
     const { results, total_pages, page } = await searchAPIData();
 
     if (results.length === 0) {
-      showAlert();
+      showAlert("No results found");
     }
   } else {
     showAlert("Please enter a search term");
@@ -361,7 +361,7 @@ function highlightActiveLink() {
 }
 
 //show alert
-function showAlert(message, className) {
+function showAlert(message, className = "error") {
   const alertEl = document.createElement("div");
   alertEl.classList.add("alert", className);
   alertEl.appendChild(document.createTextNode(message));
