@@ -49,6 +49,11 @@ function clock() {
     ctx.rotate(Math.PI / 30);
   }
   ctx.restore();
+
+  // Get current time
+  const hr = now.getHours() % 12;
+  const min = now.getMinutes();
+  const sec = now.getSeconds();
 }
 
 clock();
