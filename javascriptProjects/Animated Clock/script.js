@@ -44,6 +44,7 @@ function clock() {
       ctx.beginPath();
       ctx.moveTo(117, 0);
       ctx.lineTo(120, 0);
+      ctx.stroke();
     }
     ctx.rotate(Math.PI / 30);
   }
