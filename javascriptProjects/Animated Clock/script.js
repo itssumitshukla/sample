@@ -34,8 +34,20 @@ function clock() {
     ctx.lineTo(120, 0);
     ctx.stroke();
   }
-
   ctx.restore(); //Restore default state
+
+  // Draw minute lines
+  ctx.save();
+  ctx.lineWidth = 4;
+  for (let i = 0; i < 60; i++) {
+    if (i % 5 !== 0) {
+      ctx.beginPath();
+      ctx.moveTo(117, 0);
+      ctx.lineTo(120, 0);
+    }
+    ctx.rotate(Math.PI / 30);
+  }
+  ctx.restore();
 }
 
 clock();
