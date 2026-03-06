@@ -15,6 +15,16 @@ function clock() {
   ctx.lineWidth = 5;
   ctx.lineCap = "round";
 
+  // Draw clock face/border
+  ctx.save();
+  ctx.beginPath();
+  ctx.lineWidth = 14;
+  ctx.strokeStyle = "#800000";
+  ctx.arc(0, 0, 142, 0, Math.PI * 2, true);
+  ctx.stroke();
+  ctx.fill();
+  ctx.restore();
+
   ctx.restore(); //Restore default state
 }
 
