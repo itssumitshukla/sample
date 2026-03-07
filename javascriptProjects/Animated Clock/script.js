@@ -54,6 +54,19 @@ function clock() {
   const hr = now.getHours() % 12;
   const min = now.getMinutes();
   const sec = now.getSeconds();
+
+  // Draw hour hand
+  ctx.save();
+  ctx.rotate(
+    (Math.PI / 6) * hr + (Math.PI / 360) * min + (Math.PI / 21600) * sec,
+  );
+  ctx.strokeStyle = "#800000";
+  ctx.lineWidth = 14;
+  ctx.beginPath();
+  ctx.moveTo(-20, 0);
+  ctx.lineTo(80, 0);
+  ctx.stroke();
+  ctx.restore();
 }
 
 clock();
