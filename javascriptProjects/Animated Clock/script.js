@@ -3,10 +3,10 @@ function clock() {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
 
-  //Setup canvas
-  ctx.save(); // save the default stat
+  // Setup canvas
+  ctx.save(); // save the default state
   ctx.clearRect(0, 0, 500, 500);
-  ctx.translate(250, 250);
+  ctx.translate(250, 250); // Put 0,0 in the middle
   ctx.rotate(-Math.PI / 2); // Rotate clock -90deg
 
   // Set default styles
@@ -34,7 +34,7 @@ function clock() {
     ctx.lineTo(120, 0);
     ctx.stroke();
   }
-  ctx.restore(); //Restore default state
+  ctx.restore();
 
   // Draw minute lines
   ctx.save();
@@ -54,6 +54,8 @@ function clock() {
   const hr = now.getHours() % 12;
   const min = now.getMinutes();
   const sec = now.getSeconds();
+
+  // console.log(`${hr}:${min}:${sec}`);
 
   // Draw hour hand
   ctx.save();
@@ -95,6 +97,8 @@ function clock() {
   ctx.restore();
 
   ctx.restore(); // restore default state
+
+  requestAnimationFrame(clock);
 }
 
-clock();
+requestAnimationFrame(clock);
