@@ -37,6 +37,18 @@ function pauseSong() {
   audio.play();
 }
 
+function prevSong() {
+  songIndex--;
+
+  if (songIndex < 0) {
+    songIndex = songs.length - 1;
+  }
+
+  loadSong(songs[songIndex]);
+
+  playSong();
+}
+
 playBtn.addEventListener("click", () => {
   const isPlaying = musicContainer.classList.contains("play");
 
