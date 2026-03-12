@@ -70,7 +70,7 @@ function updateProgress(e) {
 function setProgress(e) {
   const width = this.clientWidth;
   const clickX = e.offsetX;
-  const duration = audio.duration / 2;
+  const duration = audio.duration;
 
   audio.currentTime = (clickX / width) * duration;
 }
