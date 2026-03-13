@@ -44,7 +44,7 @@ function prevSong() {
     songIndex = songs.length - 1;
   }
 
-  loadSong(songs[songIndex]);
+  loadSong(songs[songIndex - 1]);
 
   playSong();
 }
