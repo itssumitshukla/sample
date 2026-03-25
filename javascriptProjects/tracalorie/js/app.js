@@ -40,3 +40,9 @@ tracker.addMeal(breakfast);
 
 const run = new Workout("Morning Run", 300);
 tracker.addWorkout(run);
+
+const breakfast1 = new Meal("Breakfast1", 400);
+tracker.addMeal(breakfast);
+
+const run1 = new Workout("Morning Run1", 300);
+tracker.addWorkout(run);
