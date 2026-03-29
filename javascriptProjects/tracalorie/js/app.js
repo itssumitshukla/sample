@@ -13,17 +13,23 @@ class CalorieTracker {
   addMeal(meal) {
     this._meals.push(meal);
     this._totalCalories += meal.calories;
+    this._render();
   }
 
   addWorkout(workout) {
     this.__workouts.push(workout);
     this._totalCalories -= workout.calories;
+    this._render();
   }
 
   //Private Method
   _displayCaloriesTotal() {
     const totalCaloriesEl = document.getElementById("calories-total");
     totalCaloriesEl.innerHTML = this._totalCalories;
+  }
+
+  _render() {
+    this._displayCaloriesTotal();
   }
 }
 
