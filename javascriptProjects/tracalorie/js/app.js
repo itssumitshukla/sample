@@ -28,6 +28,11 @@ class CalorieTracker {
     totalCaloriesEl.innerHTML = this._totalCalories;
   }
 
+  _displayCaloriesLimit() {
+    const calorieLimitEl = document.getElementById("calories-limit");
+    totalCaloriesEl.innerHTML = this._calorieLimitEl;
+  }
+
   _render() {
     this._displayCaloriesTotal();
   }
@@ -53,9 +58,8 @@ const tracker = new CalorieTracker();
 
 const breakfast = new Meal("Breakfast", 400);
 tracker.addMeal(breakfast);
+const lunch = new Meal("Lunch", 2000);
+tracker.addMeal(lunch);
 
 const run = new Workout("Morning Run", 300);
 tracker.addWorkout(run);
-
-const lunch = new Meal("Lunch", 2000);
-tracker.addMeal(lunch);
