@@ -7,6 +7,7 @@ class CalorieTracker {
 
     this._displayCaloriesLimit();
     this._displayCaloriesTotal();
+    this._displayCaloriesConsumed();
   }
 
   //Public methods / API
@@ -34,7 +35,7 @@ class CalorieTracker {
     totalCaloriesEl.innerHTML = this._calorieLimitEl;
   }
 
-  _displayCaloriesConsumer() {
+  _displayCaloriesConsumed() {
     const caloriesConsumedEl = document.getElementById("calories-consumed");
 
     const consumed = this._meals.reduce(
@@ -47,6 +48,7 @@ class CalorieTracker {
 
   _render() {
     this._displayCaloriesTotal();
+    this._displayCaloriesConsumed();
   }
 }
 
