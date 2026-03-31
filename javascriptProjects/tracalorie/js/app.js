@@ -5,6 +5,7 @@ class CalorieTracker {
     this._meals = [];
     this._workouts = [];
 
+    this._displayCaloriesLimit();
     this._displayCaloriesTotal();
   }
 
