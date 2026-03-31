@@ -8,6 +8,7 @@ class CalorieTracker {
     this._displayCaloriesLimit();
     this._displayCaloriesTotal();
     this._displayCaloriesConsumed();
+    this._displayCaloriesBurned();
   }
 
   //Public methods / API
@@ -46,9 +47,21 @@ class CalorieTracker {
     caloriesConsumedEl.innerHTML = consumed;
   }
 
+  _displayCaloriesBurned() {
+    const caloriesBurnedEl = document.getElementById("calories-burned");
+
+    const burned = this._workouts.reduce(
+      (total, workout) => total + workout.calories,
+      0,
+    );
+
+    caloriesBurnedEl.innerHTML = burned;
+  }
+
   _render() {
     this._displayCaloriesTotal();
     this._displayCaloriesConsumed();
+    this._displayCaloriesBurned();
   }
 }
 
