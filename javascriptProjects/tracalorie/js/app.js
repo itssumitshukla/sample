@@ -88,5 +88,5 @@ tracker.addMeal(breakfast);
 const lunch = new Meal("Lunch", 2000);
 tracker.addMeal(lunch);
 
-const run = new Workout("Morning Run", 300);
+const run = new Workout("Morning Run", 320);
 tracker.addWorkout(run);
