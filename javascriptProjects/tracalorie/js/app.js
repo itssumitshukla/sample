@@ -9,6 +9,7 @@ class CalorieTracker {
     this._displayCaloriesTotal();
     this._displayCaloriesConsumed();
     this._displayCaloriesBurned();
+    this._displayCaloriesRemaining();
   }
 
   //Public methods / API
@@ -70,6 +71,7 @@ class CalorieTracker {
     this._displayCaloriesTotal();
     this._displayCaloriesConsumed();
     this._displayCaloriesBurned();
+    this._displayCaloriesRemaining();
   }
 }
 
