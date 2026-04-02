@@ -58,6 +58,14 @@ class CalorieTracker {
     caloriesBurnedEl.innerHTML = burned;
   }
 
+  _displayCaloriesRemaining() {
+    const caloriesRemainingEl = document.getElementById("calories-remaining");
+
+    const remaining = this._calorieLimit - this._totalCalories;
+
+    caloriesRemainingEl.innerHTML = remaining;
+  }
+
   _render() {
     this._displayCaloriesTotal();
     this._displayCaloriesConsumed();
