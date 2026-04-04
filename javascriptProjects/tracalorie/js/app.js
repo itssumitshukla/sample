@@ -133,7 +133,7 @@ class App {
       alert("Please fill in all fields");
       return;
     }
-    const meal = new Meal(name.value, calories.value);
+    const meal = new Meal(name.value, +calories.value);
     this._tracker.addMeal(meal);
     name.value = "";
     calories.value = "";
