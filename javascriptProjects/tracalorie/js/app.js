@@ -129,7 +129,12 @@ class App {
     const calories = document.getElementById("meal-calories");
 
     //Validate Input
-    console.log(this);
+    if (name.value === "" || calories.value === "") {
+      alert("Please fill in all fields");
+      return;
+    }
+    const meal = new Meal(name.value, calories.value);
+    this._tracker.addMeal(meal);
   }
 }
 
