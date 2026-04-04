@@ -66,6 +66,20 @@ class CalorieTracker {
     const remaining = this._calorieLimit - this._totalCalories;
 
     caloriesRemainingEl.innerHTML = remaining;
+
+    if (remaining <= 0) {
+      caloriesRemainingEl.parentElement.parentElement.classList.remove(
+        "bg-light",
+      );
+      caloriesRemainingEl.parentElement.parentElement.classList.add(
+        "bg-danger",
+      );
+    } else {
+      caloriesRemainingEl.parentElement.parentElement.classList.add("bg-light");
+      caloriesRemainingEl.parentElement.parentElement.classList.remove(
+        "bg-danger",
+      );
+    }
   }
 
   _displayCaloriesProgress() {
