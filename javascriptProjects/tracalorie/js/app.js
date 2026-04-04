@@ -74,11 +74,15 @@ class CalorieTracker {
       caloriesRemainingEl.parentElement.parentElement.classList.add(
         "bg-danger",
       );
+      progressEl.classList.remove("bg-success");
+      progressEl.classList.add("bg-danger");
     } else {
       caloriesRemainingEl.parentElement.parentElement.classList.add("bg-light");
       caloriesRemainingEl.parentElement.parentElement.classList.remove(
         "bg-danger",
       );
+      progressEl.classList.remove("bg-danger");
+      progressEl.classList.add("bg-success");
     }
   }
 
