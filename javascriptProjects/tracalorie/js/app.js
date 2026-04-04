@@ -35,7 +35,7 @@ class CalorieTracker {
 
   _displayCaloriesLimit() {
     const calorieLimitEl = document.getElementById("calories-limit");
-    calorieLimitEl.innerHTML = this._calorieLimitEl;
+    calorieLimitEl.innerHTML = this._calorieLimit;
   }
 
   _displayCaloriesConsumed() {
@@ -62,25 +62,20 @@ class CalorieTracker {
 
   _displayCaloriesRemaining() {
     const caloriesRemainingEl = document.getElementById("calories-remaining");
+    const progressEl = document.getElementById("calorie-progress");
 
     const remaining = this._calorieLimit - this._totalCalories;
 
     caloriesRemainingEl.innerHTML = remaining;
 
     if (remaining <= 0) {
-      caloriesRemainingEl.parentElement.parentElement.classList.remove(
-        "bg-light",
-      );
-      caloriesRemainingEl.parentElement.parentElement.classList.add(
-        "bg-danger",
-      );
-      progressEl.classList.remove("bg-success");
+      caloriesRemainingEl.parentElement.classList.remove("bg-light");
+      caloriesRemainingEl.parentElement.classList.add("bg-danger");
       progressEl.classList.add("bg-danger");
+      progressEl.classList.remove("bg-success");
     } else {
-      caloriesRemainingEl.parentElement.parentElement.classList.add("bg-light");
-      caloriesRemainingEl.parentElement.parentElement.classList.remove(
-        "bg-danger",
-      );
+      caloriesRemainingEl.parentElement.classList.remove("bg-danger");
+      caloriesRemainingEl.parentElement.classList.add("bg-light");
       progressEl.classList.remove("bg-danger");
       progressEl.classList.add("bg-success");
     }
