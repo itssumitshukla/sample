@@ -124,6 +124,11 @@ class App {
 
   _newMeal(e) {
     e.preventDefault();
+
+    const name = document.getElementById("meal-name");
+    const calories = document.getElementById("meal-calories");
+
+    //Validate Input
     console.log(this);
   }
 }
