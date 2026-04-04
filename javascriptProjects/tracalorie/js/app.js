@@ -22,7 +22,7 @@ class CalorieTracker {
   }
 
   addWorkout(workout) {
-    this.__workouts.push(workout);
+    this._workouts.push(workout);
     this._totalCalories -= workout.calories;
     this._render();
   }
@@ -35,7 +35,7 @@ class CalorieTracker {
 
   _displayCaloriesLimit() {
     const calorieLimitEl = document.getElementById("calories-limit");
-    totalCaloriesEl.innerHTML = this._calorieLimitEl;
+    calorieLimitEl.innerHTML = this._calorieLimitEl;
   }
 
   _displayCaloriesConsumed() {
