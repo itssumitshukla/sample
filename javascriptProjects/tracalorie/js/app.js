@@ -142,6 +142,27 @@ class App {
     name.value = "";
     calories.value = "";
   }
+
+  _newWorkout(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("meal-name");
+    const calories = document.getElementById("meal-calories");
+
+    //Validate Input
+    if (name.value === "" || calories.value === "") {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    const workout = new Workout(name.value, +calories.value);
+    this._tracker.addWorkout(workout);
+
+    const meal = new Meal(name.value, +calories.value);
+    this._tracker.addMeal(meal);
+    name.value = "";
+    calories.value = "";
+  }
 }
 
 const app = new App();
