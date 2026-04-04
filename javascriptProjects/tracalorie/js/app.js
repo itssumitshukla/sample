@@ -149,8 +149,8 @@ class App {
   _newWorkout(e) {
     e.preventDefault();
 
-    const name = document.getElementById("meal-name");
-    const calories = document.getElementById("meal-calories");
+    const name = document.getElementById("workout-name");
+    const calories = document.getElementById("workout-calories");
 
     //Validate Input
     if (name.value === "" || calories.value === "") {
