@@ -114,12 +114,16 @@ class Workout {
   }
 }
 
-const tracker = new CalorieTracker();
+class App {
+  constructor() {
+    this._tracker = new CalorieTracker();
+    document
+      .getElementById("meal-form")
+      .addEventListener("submit", this._newMeal);
+  }
 
-const breakfast = new Meal("Breakfast", 400);
-tracker.addMeal(breakfast);
-const lunch = new Meal("Lunch", 2000);
-tracker.addMeal(lunch);
-
-const run = new Workout("Morning Run", 320);
-tracker.addWorkout(run);
+  _newMeal(e) {
+    e.preventDefault();
+    console.log(this);
+  }
+}
