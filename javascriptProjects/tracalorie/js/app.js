@@ -135,6 +135,8 @@ class App {
     }
     const meal = new Meal(name.value, calories.value);
     this._tracker.addMeal(meal);
+    name.value = "";
+    calories.value = "";
   }
 }
 
