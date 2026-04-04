@@ -120,6 +120,9 @@ class App {
     document
       .getElementById("meal-form")
       .addEventListener("submit", this._newMeal.bind(this));
+    document
+      .getElementById("workout-form")
+      .addEventListener("submit", this._newWorkout.bind(this));
   }
 
   _newMeal(e) {
@@ -158,8 +161,6 @@ class App {
     const workout = new Workout(name.value, +calories.value);
     this._tracker.addWorkout(workout);
 
-    const meal = new Meal(name.value, +calories.value);
-    this._tracker.addMeal(meal);
     name.value = "";
     calories.value = "";
   }
