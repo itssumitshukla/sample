@@ -119,7 +119,7 @@ class App {
     this._tracker = new CalorieTracker();
     document
       .getElementById("meal-form")
-      .addEventListener("submit", this._newMeal);
+      .addEventListener("submit", this._newMeal.bind(this));
   }
 
   _newMeal(e) {
@@ -127,3 +127,5 @@ class App {
     console.log(this);
   }
 }
+
+const app = new App();
