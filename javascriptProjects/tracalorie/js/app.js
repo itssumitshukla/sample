@@ -154,9 +154,11 @@ class Workout {
 class App {
   constructor() {
     this._tracker = new CalorieTracker();
+
     document
       .getElementById("meal-form")
       .addEventListener("submit", this._newItem.bind(this, "meal"));
+
     document
       .getElementById("workout-form")
       .addEventListener("submit", this._newItem.bind(this, "workout"));
@@ -164,11 +166,9 @@ class App {
 
   _newItem(type, e) {
     e.preventDefault();
-
     const name = document.getElementById(`${type}-name`);
-    const calories = document.getElementById(`${type}-name`);
+    const calories = document.getElementById(`${type}-calories`);
 
-    //Validate Input
     if (name.value === "" || calories.value === "") {
       alert("Please fill in all fields");
       return;
@@ -177,7 +177,8 @@ class App {
     if (type === "meal") {
       const meal = new Meal(name.value, +calories.value);
       this._tracker.addMeal(meal);
-    } else {
+    }
+    if (type === "workout") {
       const workout = new Workout(name.value, +calories.value);
       this._tracker.addWorkout(workout);
     }
@@ -186,7 +187,9 @@ class App {
     calories.value = "";
 
     const collapseItem = document.getElementById(`collapse-${type}`);
-    const bsCollapse = new bootstrap.Collapse(collapseItem, { toggle: true });
+    const bsCollapse = new bootstrap.Collapse(collapseItem, {
+      toggle: true,
+    });
   }
 }
 
