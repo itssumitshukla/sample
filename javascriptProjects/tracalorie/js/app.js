@@ -105,55 +105,25 @@ class CalorieTracker {
     mealsEl.appendChild(mealEl);
   }
 
-  _displayCaloriesRemaining() {
-    const caloriesRemainingEl = document.getElementById("calories-remaining");
-    const progressEl = document.getElementById("calorie-progress");
-
-    const remaining = this._calorieLimit - this._totalCalories;
-
-    caloriesRemainingEl.innerHTML = remaining;
-
-    if (remaining <= 0) {
-      caloriesRemainingEl.parentElement.classList.remove("bg-light");
-      caloriesRemainingEl.parentElement.classList.add("bg-danger");
-      progressEl.classList.add("bg-danger");
-      progressEl.classList.remove("bg-success");
-    } else {
-      caloriesRemainingEl.parentElement.classList.remove("bg-danger");
-      caloriesRemainingEl.parentElement.classList.add("bg-light");
-      progressEl.classList.remove("bg-danger");
-      progressEl.classList.add("bg-success");
-    }
-  }
-
-  _displayCaloriesProgress() {
-    const progressEl = document.getElementById("calorie-progress");
-    const percentage = (this._totalCalories / this._calorieLimit) * 100;
-
-    const width = Math.min(percentage, 100);
-    progressEl.style.width = `${width}%`;
-  }
-
-  _displayNewMeal(meal) {
-    const mealsEl = document.getElementById("meal-items");
-    const mealEl = document.createElement("div");
-    mealEl.classList.add("card", "my-2");
-    mealEl.setAttribute("data-id", meal.id);
-    mealEl.innerHTML = `
-                  <div class="card-body">
-                <div class="d-flex align-items-center justify-content-between">
-                  <h4 class="mx-1">Breakfast</h4>
-                  <div
-                    class="fs-1 bg-primary text-white text-center rounded-2 px-2 px-sm-5"
-                  >
-                    350
-                  </div>
-                  <button class="delete btn btn-danger btn-sm mx-2">
-                    <i class="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-              </div>
+  _displayNewWorkout(workout) {
+    const workoutsEl = document.getElementById("workout-items");
+    const workoutEl = document.createElement("div");
+    workoutEl.classList.add("card", "my-2");
+    workoutEl.setAttribute("data-id", workout.id);
+    workoutEl.innerHTML = `
+    <div class="card-body">
+      <div class="d-flex align-items-center justify-content-between">
+        <h4 class="mx-1">${workout.name}</h4>
+        <div class="fs-1 bg-secondary text-white text-center rounded-2 px-2 px-sm-5">
+          ${workout.calories}
+        </div>
+        <button class="delete btn btn-danger btn-sm mx-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+  </div>
     `;
+    workoutsEl.appendChild(workoutEl);
   }
 
   _render() {
@@ -161,7 +131,7 @@ class CalorieTracker {
     this._displayCaloriesConsumed();
     this._displayCaloriesBurned();
     this._displayCaloriesRemaining();
-    this._displayCaloriesProgress();
+    this._displayCalorieProgress();
   }
 }
 
