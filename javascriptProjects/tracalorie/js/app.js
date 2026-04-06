@@ -13,8 +13,6 @@ class CalorieTracker {
     this._displayCaloriesProgress();
   }
 
-  //Public methods / API
-
   addMeal(meal) {
     this._meals.push(meal);
     this._totalCalories += meal.calories;
@@ -25,10 +23,10 @@ class CalorieTracker {
   addWorkout(workout) {
     this._workouts.push(workout);
     this._totalCalories -= workout.calories;
+    this._displayNewWorkout(workout);
     this._render();
   }
 
-  //Private Method
   _displayCaloriesTotal() {
     const totalCaloriesEl = document.getElementById("calories-total");
     totalCaloriesEl.innerHTML = this._totalCalories;
