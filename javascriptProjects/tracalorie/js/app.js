@@ -137,16 +137,19 @@ class App {
       return;
     }
 
-    const workout = new Workout(name.value, +calories.value);
-    this._tracker.addWorkout(workout);
+    if (type === "meal") {
+      const meal = new Meal(name.value, +calories.value);
+      this._tracker.addMeal(meal);
+    } else {
+      const workout = new Workout(name.value, +calories.value);
+      this._tracker.addWorkout(workout);
+    }
 
-    const meal = new Meal(name.value, +calories.value);
-    this._tracker.addMeal(meal);
     name.value = "";
     calories.value = "";
 
-    const collapseMeal = document.getElementById("collapse-meal");
-    const bsCollapse = new bootstrap.Collapse(collapseMeal, { toggle: true });
+    const collapseItem = document.getElementById(`collapse-${type}`);
+    const bsCollapse = new bootstrap.Collapse(collapseItem, { toggle: true });
   }
 }
 
