@@ -195,6 +195,15 @@ class App {
       toggle: true,
     });
   }
+
+  _removeItem(type, e) {
+    if (
+      e.target.classList.contains("delete") ||
+      e.target.classList.contains("fa-xmark")
+    ) {
+      console.log("Dlete");
+    }
+  }
 }
 
 const app = new App();
