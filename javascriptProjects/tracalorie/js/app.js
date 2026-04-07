@@ -201,7 +201,9 @@ class App {
       e.target.classList.contains("delete") ||
       e.target.classList.contains("fa-xmark")
     ) {
-      console.log("Dlete");
+      if (confirm("Are you sure")) {
+        const id = e.target.closest(".card").getAttribute("data-id");
+      }
     }
   }
 }
