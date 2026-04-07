@@ -162,6 +162,10 @@ class App {
     document
       .getElementById("workout-form")
       .addEventListener("submit", this._newItem.bind(this, "workout"));
+
+    document
+      .getElementById("meal-items")
+      .addEventListener("click", this._removeItem.bind(this, "meal"));
   }
 
   _newItem(type, e) {
