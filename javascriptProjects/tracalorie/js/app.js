@@ -33,6 +33,7 @@ class CalorieTracker {
 
       if (index !== -1) {
         const meal = this._meals[index];
+        this._totalCalories -= meal.calories;
       }
     });
   }
