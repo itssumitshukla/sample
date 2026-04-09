@@ -27,6 +27,16 @@ class CalorieTracker {
     this._render();
   }
 
+  removeMeal(id) {
+    const index = this._meals.findIndex((meal) => {
+      meal.id === id;
+
+      if (index !== -1) {
+        const meal = this._meals[index];
+      }
+    });
+  }
+
   _displayCaloriesTotal() {
     const totalCaloriesEl = document.getElementById("calories-total");
     totalCaloriesEl.innerHTML = this._totalCalories;
