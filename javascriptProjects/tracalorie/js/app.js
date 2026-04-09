@@ -199,7 +199,11 @@ class App {
 
     document
       .getElementById("filter-meals")
-      .addEventListener("click", this._removeItem.bind(this, "meal"));
+      .addEventListener("keyup", this._filterItems.bind(this, "meal"));
+
+    document
+      .getElementById("filter-workouts")
+      .addEventListener("keyup", this._filterItems.bind(this, "workout"));
   }
 
   _newItem(type, e) {
