@@ -34,6 +34,8 @@ class CalorieTracker {
       if (index !== -1) {
         const meal = this._meals[index];
         this._totalCalories -= meal.calories;
+        this._meals.splice(index, 1);
+        this._render;
       }
     });
   }
