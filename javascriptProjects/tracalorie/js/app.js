@@ -27,6 +27,19 @@ class CalorieTracker {
     this._render();
   }
 
+  removeworkout(id) {
+    const index = this._workouts.findIndex((workout) => {
+      workout.id === id;
+
+      if (index !== -1) {
+        const workout = this._workouts[index];
+        this._totalCalories += workout.calories;
+        this._workout.splice(index, 1);
+        this._render;
+      }
+    });
+  }
+
   removeMeal(id) {
     const index = this._meals.findIndex((meal) => {
       meal.id === id;
