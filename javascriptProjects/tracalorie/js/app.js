@@ -196,6 +196,10 @@ class App {
     document
       .getElementById("workout-items")
       .addEventListener("click", this._removeItem.bind(this, "workout"));
+
+    document
+      .getElementById("filter-meals")
+      .addEventListener("click", this._removeItem.bind(this, "meal"));
   }
 
   _newItem(type, e) {
