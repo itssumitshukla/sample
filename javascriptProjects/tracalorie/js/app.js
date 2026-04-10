@@ -35,9 +35,16 @@ class CalorieTracker {
         const workout = this._workouts[index];
         this._totalCalories += workout.calories;
         this._workout.splice(index, 1);
-        this._render;
+        this._render();
       }
     });
+  }
+
+  reset() {
+    this._totalCalories = 0;
+    this._meals = [];
+    this._workouts = [];
+    this._render();
   }
 
   removeMeal(id) {
