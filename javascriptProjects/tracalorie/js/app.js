@@ -204,6 +204,10 @@ class App {
     document
       .getElementById("filter-workouts")
       .addEventListener("keyup", this._filterItems.bind(this, "workout"));
+
+    document
+      .getElementById("reset")
+      .addEventListener("click", this._reset.bind(this));
   }
 
   _newItem(type, e) {
@@ -261,6 +265,10 @@ class App {
         item.style.display = "none";
       }
     });
+  }
+
+  _reset() {
+    this._tracker.reset();
   }
 }
 
