@@ -250,6 +250,11 @@ class App {
       }
     }
   }
+
+  _filterItems(type, e) {
+    const text = e.target.value.toLowerCase();
+    console.log(text);
+  }
 }
 
 const app = new App();
