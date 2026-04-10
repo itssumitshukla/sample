@@ -269,6 +269,10 @@ class App {
 
   _reset() {
     this._tracker.reset();
+    document.getElementById("meal-items").innerHTML = "";
+    document.getElementById("workout-items").innerHTML = "";
+    document.getElementById("filter-meals").value = "";
+    document.getElementById("filter-workouts").value = "";
   }
 }
 
