@@ -47,6 +47,12 @@ class CalorieTracker {
     this._render();
   }
 
+  setLimit(calorieLimit) {
+    this._calorieLimit = calorieLimit;
+    this._displayCaloriesLimit();
+    this._render();
+  }
+
   removeMeal(id) {
     const index = this._meals.findIndex((meal) => {
       meal.id === id;
@@ -294,7 +300,7 @@ class App {
       return;
     }
 
-    this._tracker._setLimit(+limit.value);
+    this._tracker.setLimit(+limit.value);
     limit.value = "";
 
     const modalEl = document.getElementById("limit-modal");
