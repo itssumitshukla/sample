@@ -293,6 +293,9 @@ class App {
       alert("Please add a limit");
       return;
     }
+
+    this._tracker._setLimit(+limit.value);
+    limit.value = "";
   }
 }
 
