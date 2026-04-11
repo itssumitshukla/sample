@@ -285,6 +285,15 @@ class App {
     document.getElementById("filter-meals").value = "";
     document.getElementById("filter-workouts").value = "";
   }
+
+  _setLimit(e) {
+    e.preventDefault();
+    const limit = document.getElementById("limit");
+    if (limit.value === "") {
+      alert("Please add a limit");
+      return;
+    }
+  }
 }
 
 const app = new App();
