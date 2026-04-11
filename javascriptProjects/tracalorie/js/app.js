@@ -215,6 +215,10 @@ class App {
     document
       .getElementById("reset")
       .addEventListener("click", this._reset.bind(this));
+
+    document
+      .getElementById("limit-form")
+      .addEventListener("submit", this._setLimit.bind(this));
   }
 
   _newItem(type, e) {
