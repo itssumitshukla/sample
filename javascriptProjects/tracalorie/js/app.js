@@ -296,6 +296,10 @@ class App {
 
     this._tracker._setLimit(+limit.value);
     limit.value = "";
+
+    const modalEl = document.getElementById("limit-modal");
+    const modal = bootstrap.Modal.getInstance(modalEl);
+    modal.hide;
   }
 }
 
