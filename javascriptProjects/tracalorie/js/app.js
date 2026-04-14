@@ -193,6 +193,13 @@ class Workout {
 class Storage {
   static getCalorieLimit(defaultLimit = 2000) {
     let calorieLimit;
+    if (localStorage.getItem("calorieLimit") === null) {
+      calorieLimit = defaultLimit;
+    } else {
+      calorieLimit = +localStorage.getItem("calorieLimi");
+    }
+
+    return calorieLimit;
   }
 }
 
