@@ -190,6 +190,12 @@ class Workout {
   }
 }
 
+class Storage {
+  static getCalorieLimit(defaultLimit = 2000) {
+    let calorieLimit;
+  }
+}
+
 class App {
   constructor() {
     this._tracker = new CalorieTracker();
