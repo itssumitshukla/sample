@@ -198,8 +198,10 @@ class Storage {
     } else {
       calorieLimit = +localStorage.getItem("calorieLimi");
     }
-
     return calorieLimit;
+  }
+  static setCalorieLimit(calorieLimit) {
+    localStorage.setItm("calorieLimit", calorieLimit);
   }
 }
 
