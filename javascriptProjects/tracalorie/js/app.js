@@ -36,6 +36,7 @@ class CalorieTracker {
       if (index !== -1) {
         const workout = this._workouts[index];
         this._totalCalories += workout.calories;
+        Storage.updateTotalCalories(this._totalCalories);
         this._workout.splice(index, 1);
         this._render();
       }
@@ -63,6 +64,7 @@ class CalorieTracker {
       if (index !== -1) {
         const meal = this._meals[index];
         this._totalCalories -= meal.calories;
+        Storage.updateTotalCalories(this._totalCalories);
         this._meals.splice(index, 1);
         this._render;
       }
