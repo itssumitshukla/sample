@@ -193,26 +193,26 @@ class Workout {
 
 class Storage {
   static getCalorieLimit(defaultLimit = 2000) {
-    let totalCalories;
-    if (localStorage.getItem("totalCalories") === null) {
-      totalCalories = defaultLimit;
+    let calorieLimit;
+    if (localStorage.getItem("calorieLimit") === null) {
+      calorieLimit = defaultLimit;
     } else {
-      totalCalories = +localStorage.getItem("calorieLimi");
+      calorieLimit = +localStorage.getItem("calorieLimit");
     }
-    return totalCalories;
+    return calorieLimit;
   }
   static setCalorieLimit(calorieLimit) {
     localStorage.setItm("calorieLimit", calorieLimit);
   }
 
   static getTotalCalories(defaultCalories = 0) {
-    let calorieLimit;
-    if (localStorage.getItem("calorieLimit") === null) {
-      calorieLimit = defaultCalories;
+    let totalCalories;
+    if (localStorage.getItem("totalCalories") === null) {
+      totalCalories = defaultCalories;
     } else {
-      calorieLimit = +localStorage.getItem("calorieLimi");
+      totalCalories = +localStorage.getItem("defaultCalories");
     }
-    return calorieLimit;
+    return totalCalories;
   }
 }
 
