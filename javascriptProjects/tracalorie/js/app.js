@@ -16,6 +16,7 @@ class CalorieTracker {
   addMeal(meal) {
     this._meals.push(meal);
     this._totalCalories += meal.calories;
+    Storage.updateTotalCalories(this._totalCalories);
     this._displayNewMeal(meal);
     this._render();
   }
@@ -23,6 +24,7 @@ class CalorieTracker {
   addWorkout(workout) {
     this._workouts.push(workout);
     this._totalCalories -= workout.calories;
+    Storage.updateTotalCalories(this._totalCalories);
     this._displayNewWorkout(workout);
     this._render();
   }
@@ -213,6 +215,10 @@ class Storage {
       totalCalories = +localStorage.getItem("defaultCalories");
     }
     return totalCalories;
+  }
+
+  static updateTotalCalories(calories) {
+    localStorage.setItem("totalCalories", calories);
   }
 }
 
