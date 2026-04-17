@@ -226,9 +226,9 @@ class Storage {
   static getMeals() {
     let meals;
     if (localStorage.getItem("meals") === null) {
-      meals = defaultCalories;
+      meals = [];
     } else {
-      meals = +localStorage.getItem("meals");
+      meals = JSON.parse(localStorage.getItem("meals"));
     }
     return meals;
   }
