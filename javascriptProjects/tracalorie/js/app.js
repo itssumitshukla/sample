@@ -232,6 +232,11 @@ class Storage {
     }
     return meals;
   }
+
+  static saveMeal(meal) {
+    const meals = Storage.getMeals();
+    meals.push();
+  }
 }
 
 class App {
