@@ -222,6 +222,16 @@ class Storage {
   static updateTotalCalories(calories) {
     localStorage.setItem("totalCalories", calories);
   }
+
+  static getMeals() {
+    let meals;
+    if (localStorage.getItem("meals") === null) {
+      meals = defaultCalories;
+    } else {
+      meals = +localStorage.getItem("meals");
+    }
+    return meals;
+  }
 }
 
 class App {
