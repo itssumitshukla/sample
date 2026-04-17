@@ -72,6 +72,13 @@ class CalorieTracker {
     });
   }
 
+  setLimit(calorieLimit) {
+    this._calorieLimit = calorieLimit;
+    Storage.setCalorieLimit(calorieLimit);
+    this._displayCaloriesLimit();
+    this._render();
+  }
+
   _displayCaloriesTotal() {
     const totalCaloriesEl = document.getElementById("calories-total");
     totalCaloriesEl.innerHTML = this._totalCalories;
