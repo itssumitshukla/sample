@@ -235,7 +235,8 @@ class Storage {
 
   static saveMeal(meal) {
     const meals = Storage.getMeals();
-    meals.push();
+    meals.push(meal);
+    localStorage.setItem("meals", JSON.stringify(meals));
   }
 }
 
