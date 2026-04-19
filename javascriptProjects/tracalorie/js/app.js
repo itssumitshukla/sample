@@ -51,13 +51,6 @@ class CalorieTracker {
     this._render();
   }
 
-  setLimit(calorieLimit) {
-    this._calorieLimit = calorieLimit;
-    Storage.setCalorieLimit(calorieLimit);
-    this._displayCaloriesLimit();
-    this._render();
-  }
-
   removeMeal(id) {
     const index = this._meals.findIndex((meal) => {
       meal.id === id;
