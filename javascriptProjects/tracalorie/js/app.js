@@ -282,6 +282,8 @@ class App {
     document
       .getElementById("limit-form")
       .addEventListener("submit", this._setLimit.bind(this));
+
+    this._tracker.loadItems();
   }
 
   _newItem(type, e) {
