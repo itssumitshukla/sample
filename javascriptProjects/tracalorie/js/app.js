@@ -72,6 +72,12 @@ class CalorieTracker {
     this._render();
   }
 
+  loadItems() {
+    this._meals.forEach((meal) => {
+      this._displayNewMeal(meal);
+    });
+  }
+
   _displayCaloriesTotal() {
     const totalCaloriesEl = document.getElementById("calories-total");
     totalCaloriesEl.innerHTML = this._totalCalories;
