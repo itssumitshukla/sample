@@ -276,6 +276,17 @@ class Storage {
     workouts.push(workout);
     localStorage.setItem("workouts", JSON.stringify(workouts));
   }
+
+  static removeWorkout(id) {
+    const workouts = Storage.getWorkouts();
+    workouts.forEach((workout, index) => {
+      if (workout.id === id) {
+        workouts.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem("workouts", JSON.stringify(workouts));
+  }
 }
 
 class App {
