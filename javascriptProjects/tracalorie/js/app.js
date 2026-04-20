@@ -293,7 +293,9 @@ class Storage {
     localStorage.setItem("workouts", JSON.stringify(workouts));
   }
 
-  clearAll() {}
+  static clearAll() {
+    localStorage.clear();
+  }
 }
 
 class App {
