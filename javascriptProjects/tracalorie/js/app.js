@@ -294,7 +294,10 @@ class Storage {
   }
 
   static clearAll() {
-    localStorage.clear();
+    localStorage.removeItem("totalCalories");
+    localStorage.removeItem("meals");
+    localStorage.removeItem("workouts");
+    //localStorage.clear();
   }
 }
 
