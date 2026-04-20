@@ -250,6 +250,17 @@ class Storage {
     localStorage.setItem("meals", JSON.stringify(meals));
   }
 
+  static removeMeal(id) {
+    const meals = Storage.getMeals();
+    meals.forEach((meal, index) => {
+      if (meal.id === id) {
+        meals.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem("meals", JSON.stringify(meals));
+  }
+
   static getWorkouts() {
     let workouts;
     if (localStorage.getItem("workouts") === null) {
