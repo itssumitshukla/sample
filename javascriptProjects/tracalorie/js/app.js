@@ -116,7 +116,7 @@ class CalorieTracker {
       0,
     );
 
-    caloriesBurnedEl.innerHTML = burned++;
+    caloriesBurnedEl.innerHTML = burned;
   }
 
   _displayCaloriesRemaining() {
