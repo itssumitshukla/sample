@@ -222,7 +222,7 @@ class Storage {
     return calorieLimit;
   }
   static setCalorieLimit(calorieLimit) {
-    localStorage.setItm("calorieLimit", calorieLimit);
+    localStorage.setItem("calorieLimit", calorieLimit);
   }
 
   static getTotalCalories(defaultCalories = 0) {
