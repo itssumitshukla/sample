@@ -273,7 +273,7 @@ class Storage {
     } else {
       workouts = JSON.parse(localStorage.getItem("workouts"));
     }
-    return meals;
+    return workouts;
   }
 
   static saveWorkout(workout) {
