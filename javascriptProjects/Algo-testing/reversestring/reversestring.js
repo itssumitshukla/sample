@@ -4,11 +4,16 @@
 // }
 
 //Solution 2
+// function reverseString(str) {
+//   let reversed = "";
+//   for (let char of str) {
+//     reversed = char + reversed;
+//   }
+// }
+
+//Solution 3
 function reverseString(str) {
-  let reversed = "";
-  for (let char of str) {
-    reversed = char + reversed;
-  }
+  return str.split("").reduce((reversed, char) => (char + reversed, ""));
 }
 
 module.exports = reverseString;
