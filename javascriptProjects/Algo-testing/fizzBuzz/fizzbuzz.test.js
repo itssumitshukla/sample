@@ -9,9 +9,9 @@ describe("fizzbuzz", () => {
     expect(fizzBuzz(13)).toEqual(13);
     expect(fizzBuzz(17)).toEqual(17);
   });
-  it("should return fizz if divisible by 3", () => {
-    expect(fizzBuzz(3)).toEqual("Fizz");
-    expect(fizzBuzz(6)).toEqual("Fizz");
-    expect(fizzBuzz(12)).toEqual("Fizz");
+  it("should return Buzz if divisible by 5", () => {
+    expect(fizzBuzz(5)).toEqual("Buzz");
+    expect(fizzBuzz(10)).toEqual("Buzz");
+    expect(fizzBuzz(20)).toEqual("Buzz");
   });
 });
