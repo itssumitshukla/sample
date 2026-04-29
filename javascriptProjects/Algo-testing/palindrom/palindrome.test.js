@@ -7,5 +7,14 @@ describe("Palindrome", () => {
   it("should return a string", () => {
     expect(typeof palindrome("hello")).toEqual("boolean");
   });
-  it("it should return a reversed string", () => {});
+  it("it should return a true if it is a palindrome", () => {
+    expect(palindrome("kayak")).toBeTruthy();
+    expect(palindrome("rotator")).toBeTruthy();
+    expect(palindrome("wow")).toBeTruthy();
+  });
+  it("it should return a false if it not a palindrome", () => {
+    expect(palindrome("hello")).toBeFalse();
+    expect(palindrome("world")).toBeFalse();
+    expect(palindrome("bye")).toBeFalse();
+  });
 });
