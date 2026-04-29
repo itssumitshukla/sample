@@ -13,11 +13,11 @@ describe("Palindrome", () => {
     expect(palindrome("wow")).toBeTruthy();
   });
   it("it should return a false if it not a palindrome", () => {
-    expect(palindrome("hello")).toBeFalse();
-    expect(palindrome("world")).toBeFalse();
-    expect(palindrome("bye")).toBeFalse();
+    expect(palindrome("hello")).toBeFalsy();
+    expect(palindrome("world")).toBeFalsy();
+    expect(palindrome("bye")).toBeFalsy();
   });
   it("it should return a false if it includes spaces ", () => {
-    expect(palindrome(" wow")).toBeFalse();
+    expect(palindrome(" wow")).toBeFalsy();
   });
 });
