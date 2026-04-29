@@ -17,4 +17,7 @@ describe("Palindrome", () => {
     expect(palindrome("world")).toBeFalse();
     expect(palindrome("bye")).toBeFalse();
   });
+  it("it should return a false if it includes spaces ", () => {
+    expect(palindrome(" wow")).toBeFalse();
+  });
 });
