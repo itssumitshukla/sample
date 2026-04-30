@@ -2,9 +2,16 @@ function anagram(str1, str2) {
   const aCharMap = buildCharMap(str1);
   const bCharMap = buildCharMap(str2);
 
-  if ((Object.keys(aCharMap).length !== Object, keys(bCharMap).length)) {
+  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
     return false;
   }
+
+  for (let char in aCharMap) {
+    if (aCharMap[char] !== bCharMap[char]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 function buildCharMap(str) {
@@ -16,4 +23,4 @@ function buildCharMap(str) {
   return charMap;
 }
 
-anagram("hello", "world");
+module.exports = anagram;

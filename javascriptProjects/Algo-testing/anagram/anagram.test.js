@@ -13,8 +13,8 @@ describe("Anagram", () => {
     expect(anagram("dog", "god")).toBeTruthy();
   });
   it("should return false if not anagram", () => {
-    expect(anagram("hello", "fello")).toBeFalse();
-    expect(anagram("world", "twirl")).toBeFalse();
-    expect(anagram("lost", "cost")).toBeFalse();
+    expect(anagram("hello", "fello")).toBeFalsy();
+    expect(anagram("world", "twirl")).toBeFalsy();
+    expect(anagram("lost", "cost")).toBeFalsy();
   });
 });
