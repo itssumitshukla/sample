@@ -13,4 +13,8 @@ function getElementsByTag(root, tagName) {
       result = result.concat(getElementsByTag());
     }
   }
+
+  return result;
 }
+
+module.exports = getElementsByTag;
