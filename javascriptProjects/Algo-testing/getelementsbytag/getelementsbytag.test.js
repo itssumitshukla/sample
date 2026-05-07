@@ -10,4 +10,8 @@ describe("Get Elements By Tag", () => {
   it("should return empty array if no root is passed in", () => {
     expect(getElementsByTag()).toEqual([]);
   });
+  it("should return only the root element if no tagName is passed in", () => {
+    const root = document.createElement("div");
+    expect(getElementsByTag(root)).toEqual([root]);
+  });
 });

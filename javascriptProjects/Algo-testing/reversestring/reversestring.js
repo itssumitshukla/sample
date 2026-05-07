@@ -13,7 +13,7 @@
 
 //Solution 3
 function reverseString(str) {
-  return str.split("").reduce((reversed, char) => (char + reversed, ""));
+  return str.split("").reduce((reversed, char) => char + reversed, "");
 }
 
 module.exports = reverseString;
