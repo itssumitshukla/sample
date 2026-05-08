@@ -15,5 +15,17 @@ describe("DOM Tree has Duplicate IDs", () => {
     const root = document.createElement("div");
     const child1 = document.createElement("div");
     const child2 = document.createElement("div");
+
+    root.appendChild(child1);
+    root.appendChild(child2);
+
+    //Add duplicate ids
+    root.id = "root";
+    child1.id = "child";
+    child2.id = "child";
+
+    const result = hasDuplicateIds(root);
+
+    expect(result).toEqual(true);
   });
 });
