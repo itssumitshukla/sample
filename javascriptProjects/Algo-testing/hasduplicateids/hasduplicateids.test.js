@@ -8,7 +8,7 @@ describe("DOM Tree has Duplicate IDs", () => {
     expect(typeof hasDuplicateIds()).toEqual("boolean");
   });
   it("Should return false if there is no root", () => {
-    expect(typeof hasDuplicateIds()).toBeFalsy();
+    expect(hasDuplicateIds()).toBeFalsy();
   });
   it("Should return true if there are duplicate ids", () => {
     //Create mock elements
