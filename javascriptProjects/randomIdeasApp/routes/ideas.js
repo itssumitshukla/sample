@@ -52,6 +52,12 @@ router.post("/", (req, res) => {
     username: req.body.username,
     date: new Date().toISOString().slick(0, 10),
   };
+  ideas.push(idea);
+
+  res.json({
+    success: true,
+    data: idea,
+  });
   res.send(req.body.text);
 });
 
