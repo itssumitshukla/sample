@@ -14,6 +14,7 @@ export class SoundManager {
       audio.preload = "metadata";
       //Add sound to audio elements map
       this.audioElements.set(soundId, audio);
+
       return true;
     } catch (error) {
       console.error(`Failed to load sound ${soundId}`);
