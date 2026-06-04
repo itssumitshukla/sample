@@ -1,4 +1,4 @@
-import { sounds, defaultPresets } from "./soundData";
+import { sounds, defaultPresets } from "./soundData.js";
 
 class AmbientMixer {
   //
@@ -21,3 +21,9 @@ class AmbientMixer {
     }
   }
 }
+
+//Initialize app when dom is ready
+document.addEventListener("DOMContentLoaded", () => {
+  const app = new AmbientMixer();
+  app.init();
+});
