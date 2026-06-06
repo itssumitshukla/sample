@@ -15,6 +15,7 @@ class AmbientMixer {
   init() {
     try {
       this.loadAllSound();
+      console.log("Test sound combo");
     } catch (error) {
       console.log("Failed to initialize app: ", error);
     }
