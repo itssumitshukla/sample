@@ -34,4 +34,13 @@ export class SoundManager {
       return play;
     }
   }
+
+  //Pause a specific sound
+  pauseSound(soundId) {
+    const audio = this.audioElements.get(soundId);
+    if (audio && !audio.paused) {
+      audio.pause();
+      console.log(`Paused : ${soundId}`);
+    }
+  }
 }
