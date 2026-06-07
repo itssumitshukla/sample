@@ -43,4 +43,15 @@ export class SoundManager {
       console.log(`Paused : ${soundId}`);
     }
   }
+
+  //Set volume
+  setVolume(soundId, volume) {
+    const audio = this.audioElements.get(soundId);
+    if (!audio) {
+      console.log(`Sound : ${soundId} is not found`);
+      return false;
+    }
+
+    //Convert 0-100 to 0-1
+  }
 }
