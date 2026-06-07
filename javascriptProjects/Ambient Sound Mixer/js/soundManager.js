@@ -21,4 +21,17 @@ export class SoundManager {
       return false;
     }
   }
+
+  //Play a specific sound
+  async playSound(soundId) {
+    const audio = this.audioElements.get(soundId);
+    try {
+      await audio.play();
+      console.log(`Playing:::${soundId}`);
+      return true;
+    } catch (error) {
+      console.log(`Failed to play: ${soundId}`, error);
+      return play;
+    }
+  }
 }
