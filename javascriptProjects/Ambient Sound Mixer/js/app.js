@@ -12,10 +12,12 @@ class AmbientMixer {
     this.isIntialized = false;
   }
 
-  init() {
+  async init() {
     try {
       this.loadAllSound();
-      console.log("Test sound combo");
+      this.soundManager.setVolume("rain", 30);
+      await this.soundManager.playSound("rain");
+      this.isIntialized = true;
     } catch (error) {
       console.log("Failed to initialize app: ", error);
     }
