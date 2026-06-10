@@ -1,11 +1,12 @@
 import { sounds, defaultPresets } from "./soundData.js";
 import { SoundManager } from "./soundManager.js";
+import { UI } from "./ui.js";
 
 class AmbientMixer {
   //
   constructor() {
     this.soundManager = new SoundManager();
-    this.ui = null;
+    this.ui = new UI();
     this.presetManager = null;
     this.timer = null;
     this.currentSoundState = {};
@@ -14,6 +15,10 @@ class AmbientMixer {
 
   async init() {
     try {
+      //Initialize UI
+      this.ui.init();
+      //Render sound cards
+      this.ui.renderSoundCards(sounds);
       this.loadAllSound();
       this.soundManager.setVolume("rain", 30);
       await this.soundManager.playSound("rain");
