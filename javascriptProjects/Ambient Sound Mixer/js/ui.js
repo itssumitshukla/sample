@@ -101,6 +101,10 @@ export class UI {
       icon.classList.remove("fa-play");
       icon.classList.add("fa-pause");
       card.classList.add("playing");
+    } else {
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-pause");
+      card.classList.remove("playing");
     }
   }
 }
