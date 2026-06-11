@@ -54,7 +54,18 @@ class AmbientMixer {
 
   //Toggle indiv sound
   async toggleSound(soundId) {
-    const audio = this.soundManager.audioElements();
+    const audio = this.soundManager.audioElements.get(soundId);
+    if (!audio) {
+      console.log(`Sound ${soundId} not found`);
+      return false;
+    }
+
+    if (audio.paused) {
+      //Sound is off so turn it on
+      this.soundManager.setVolume(soundId, 50);
+      await this.soundManager.playSound(soundId);
+      //Update play button
+    }
   }
 }
 
