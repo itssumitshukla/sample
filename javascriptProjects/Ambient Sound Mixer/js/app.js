@@ -19,6 +19,7 @@ class AmbientMixer {
       this.ui.init();
       //Render sound cards
       this.ui.renderSoundCards(sounds);
+      this.setupEventListeners();
       this.loadAllSound();
       this.soundManager.setVolume("rain", 30);
       await this.soundManager.playSound("rain");
@@ -31,11 +32,11 @@ class AmbientMixer {
   //Setup all event listeners
   setupEventListeners() {
     //Handle all clicks with event delegation
-    document.addEventListener("click", (e) => {
+    document.addEventListener("click", async (e) => {
       //Check if play btn was clicked
       if (e.target.closest(".play-btn")) {
         const soundId = e.target.closest(".play-btn").dataset.sound;
-        console.log(soundId);
+        await this.toggleSound(soundId);
       }
     });
   }
@@ -49,6 +50,11 @@ class AmbientMixer {
         console.warn(`Could not load sound: ${sound.name} from ${audioUrl}`);
       }
     });
+  }
+
+  //Toggle indiv sound
+  async toggleSound(soundId) {
+    const audio = this.soundManager.audioElements();
   }
 }
 
