@@ -65,6 +65,9 @@ class AmbientMixer {
       this.soundManager.setVolume(soundId, 50);
       await this.soundManager.playSound(soundId);
       //Update play button
+    } else {
+      this.soundManager.pauseSound(soundId);
+      //Update play button later
     }
   }
 }
