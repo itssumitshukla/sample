@@ -28,6 +28,18 @@ class AmbientMixer {
     }
   }
 
+  //Setup all event listeners
+  setupEventListeners() {
+    //Handle all clicks with event delegation
+    document.addEventListener("click", (e) => {
+      //Check if play btn was clicked
+      if (e.target.closest(".play-btn")) {
+        const soundId = e.target.closest(".play-btn").dataset.sound;
+        console.log(soundId);
+      }
+    });
+  }
+
   //Load all sound
   loadAllSound() {
     sounds.forEach((sound) => {
