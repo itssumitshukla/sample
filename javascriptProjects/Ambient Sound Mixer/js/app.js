@@ -45,6 +45,7 @@ class AmbientMixer {
       if (e.target.classList.contains("volume-slider")) {
         const soundId = e.target.dataset.sound;
         const volume = parseInt(e.target.value);
+        this.setSoundVolume(soundId, volume);
       }
     });
   }
