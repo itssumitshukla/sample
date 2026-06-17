@@ -86,7 +86,7 @@ class AmbientMixer {
     this.soundManager.setVolume(soundId, volume);
 
     //update visual display
-    this.ui.VolumeDisplay(soundId, volume);
+    this.ui.updateVolumeDispaly(soundId, volume);
   }
 }
 

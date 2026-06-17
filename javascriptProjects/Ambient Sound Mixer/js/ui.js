@@ -93,34 +93,44 @@ export class UI {
   //Update play/pause button
   updateSoundPlayButton(soundId, isPlaying) {
     const card = document.querySelector(`[data-sound="${soundId}"]`);
+
     if (card) {
       const playBtn = card.querySelector(".play-btn");
-      const icon = card.querySelector("i");
-    }
-    if (isPlaying) {
-      icon.classList.remove("fa-play");
-      icon.classList.add("fa-pause");
-      card.classList.add("playing");
-    } else {
-      icon.classList.remove("fa-pause");
-      icon.classList.add("fa-pause");
-      card.classList.remove("playing");
+      const icon = playBtn.querySelector("i");
+
+      if (isPlaying) {
+        icon.classList.remove("fa-play");
+        icon.classList.add("fa-pause");
+        card.classList.add("playing");
+      } else {
+        icon.classList.remove("fa-pause");
+        icon.classList.add("fa-play");
+        card.classList.remove("playing");
+      }
     }
   }
 
   //Update volume display
-  updateVolumeDispaly(soundId, volume) {
+  updateVolumeDisplay(soundId, volume) {
     const card = document.querySelector(`[data-sound="${soundId}"]`);
+
     if (card) {
+      // Update number display
       const volumeValue = card.querySelector(".volume-value");
       if (volumeValue) {
         volumeValue.textContent = volume;
       }
 
-      //Update vol bar vis
+      // Update volume bar visuals
       const volumeBarFill = card.querySelector(".volume-bar-fill");
       if (volumeBarFill) {
-        volumeBarFill.computedStyleMap.width = `${volume}%`;
+        volumeBarFill.style.width = `${volume}%`;
+      }
+
+      // Udpate slider position
+      const slider = card.querySelector(".volume-slider");
+      if (slider) {
+        slider.value = volume;
       }
     }
   }
