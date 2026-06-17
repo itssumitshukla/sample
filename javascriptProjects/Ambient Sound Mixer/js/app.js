@@ -79,6 +79,15 @@ class AmbientMixer {
       this.ui.updateSoundPlayButton(soundId, false);
     }
   }
+
+  //Set sound volume
+  setSoundVolume(soundId, volume) {
+    // Update sound volume in manager
+    this.soundManager.setVolume(soundId, volume);
+
+    //update visual display
+    this.ui.VolumeDisplay(soundId, volume);
+  }
 }
 
 //Initialize app when dom is ready
