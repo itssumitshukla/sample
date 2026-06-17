@@ -39,6 +39,14 @@ class AmbientMixer {
         await this.toggleSound(soundId);
       }
     });
+
+    //Handle volume slider changes
+    document.addEventListener("input", (e) => {
+      if (e.target.classList.contains("volume-slider")) {
+        const soundId = e.target.dataset.sound;
+        const volume = parseInt(e.target.value);
+      }
+    });
   }
 
   //Load all sound
