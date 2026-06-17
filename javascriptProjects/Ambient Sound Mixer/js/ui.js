@@ -92,7 +92,7 @@ export class UI {
 
   //Update play/pause button
   updateSoundPlayButton(soundId, isPlaying) {
-    const card = document.querySelector(`[data-sound="${soundIf}"]`);
+    const card = document.querySelector(`[data-sound="${soundId}"]`);
     if (card) {
       const playBtn = card.querySelector(".play-btn");
       const icon = card.querySelector("i");
@@ -109,4 +109,19 @@ export class UI {
   }
 
   //Update volume display
+  updateVolumeDispaly(soundId, volume) {
+    const card = document.querySelector(`[data-sound="${soundId}"]`);
+    if (card) {
+      const volumeValue = card.querySelector(".volume-value");
+      if (volumeValue) {
+        volumeValue.textContent = volume;
+      }
+
+      //Update vol bar vis
+      const volumeBarFill = card.querySelector(".volume-bar-fill");
+      if (volumeBarFill) {
+        volumeBarFill.computedStyleMap.width = `${volume}%`;
+      }
+    }
+  }
 }
