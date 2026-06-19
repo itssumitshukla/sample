@@ -70,6 +70,11 @@ class AmbientMixer {
     }
 
     if (audio.paused) {
+      //Get current slider value
+      const card = document.querySelector(`[data-sound="${soundId}"]`);
+      const slider = card.querySelector(".volume-slider");
+      let volume = parseInt(slider.value);
+
       //Sound is off so turn it on
       this.soundManager.setVolume(soundId, 50);
       await this.soundManager.playSound(soundId);
