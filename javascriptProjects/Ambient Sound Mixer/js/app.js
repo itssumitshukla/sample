@@ -125,6 +125,13 @@ class AmbientMixer {
   }
 
   //Apply mastervol to all sound
+  applyMasterVolumeToAll() {
+    for (const [soundId, audio] of this.soundManager.audioElements) {
+      if (!audio.paused) {
+        const card = document.querySelector(`[data-sound="${soundId}"]`);
+      }
+    }
+  }
 }
 
 //Initialize app when dom is ready
