@@ -129,6 +129,10 @@ class AmbientMixer {
     for (const [soundId, audio] of this.soundManager.audioElements) {
       if (!audio.paused) {
         const card = document.querySelector(`[data-sound="${soundId}"]`);
+        const slider = card?.querySelector(".volume-slider");
+        if (slider) {
+          const individualVolume = parseInt(slider.value);
+        }
       }
     }
   }
