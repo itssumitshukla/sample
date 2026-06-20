@@ -108,6 +108,9 @@ class AmbientMixer {
 
     //Update the sound vol with the scaled volu
     const audio = this.soundManager.audioElements.get(soundId);
+    if (audio) {
+      audio.volume = effectiveVolume / 100;
+    }
 
     //update visual display
     this.ui.updateVolumeDispaly(soundId, volume);
