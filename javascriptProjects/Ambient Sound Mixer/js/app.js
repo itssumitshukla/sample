@@ -132,6 +132,12 @@ class AmbientMixer {
         const slider = card?.querySelector(".volume-slider");
         if (slider) {
           const individualVolume = parseInt(slider.value);
+          //calculate the effective volume
+          const effectiveVolume =
+            (individualVolume * this.masterVolumeValue) / 100;
+
+          //Apply to actual audio element
+          audio.volume = effectiveVolume / 100;
         }
       }
     }
