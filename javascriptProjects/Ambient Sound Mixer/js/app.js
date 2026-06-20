@@ -48,6 +48,9 @@ class AmbientMixer {
         this.setSoundVolume(soundId, volume);
       }
     });
+
+    //Handle master volume slider
+    const masterVolumeSlider = document.getElementById("masterVolume");
   }
 
   //Load all sound
