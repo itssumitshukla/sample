@@ -115,7 +115,16 @@ class AmbientMixer {
     this.masterVolumeSlider = volume;
 
     //update the display
+    const masterVolumeValue = document.getElementById("masterVolumeValue");
+    if (masterVolumeValue) {
+      masterVolumeValue.textContent = `${volume} %`;
+    }
+
+    //Appl master volume to all currently playing sound
+    this.applyMasterVolumeToAll();
   }
+
+  //Apply mastervol to all sound
 }
 
 //Initialize app when dom is ready
