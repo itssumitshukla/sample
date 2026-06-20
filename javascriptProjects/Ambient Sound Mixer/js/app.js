@@ -23,6 +23,7 @@ class AmbientMixer {
       this.loadAllSound();
       this.soundManager.setVolume("rain", 30);
       await this.soundManager.playSound("rain");
+      this.masterVolumeSlider = 100;
       this.isIntialized = true;
     } catch (error) {
       console.log("Failed to initialize app: ", error);
@@ -108,6 +109,8 @@ class AmbientMixer {
     //update visual display
     this.ui.updateVolumeDispaly(soundId, volume);
   }
+
+  //Set master volume
 }
 
 //Initialize app when dom is ready
