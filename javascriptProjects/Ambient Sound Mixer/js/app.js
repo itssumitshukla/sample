@@ -111,6 +111,11 @@ class AmbientMixer {
   }
 
   //Set master volume
+  setMasterVolume(volume) {
+    this.masterVolumeSlider = volume;
+
+    //update the display
+  }
 }
 
 //Initialize app when dom is ready
