@@ -56,4 +56,14 @@ export class SoundManager {
     audio.volume = volume / 100;
     return true;
   }
+
+  //Play all sounds
+  playAll() {
+    for (const [soundId, audio] of this.audioElements) {
+      if (audio.paused) {
+        audio.play();
+      }
+    }
+    this.isPlaying = true;
+  }
 }
