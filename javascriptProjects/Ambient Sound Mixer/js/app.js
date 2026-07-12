@@ -101,6 +101,24 @@ class AmbientMixer {
     }
   }
 
+  //Toggle all sound
+  toggleAllSounds() {
+    if (this.soundManager.isPlaying) {
+      //Toggle sound off
+      this.soundManager.pauseAll();
+      this.ui.updateMainPlayButton(false);
+      sound.forEach((sound) => {
+        this.ui.updateSoundPlayButton(sound.id, false);
+      });
+    } else {
+      //Toggle sound on
+      for (const [soundId, audio] of this.SoundManager.audioElements) {
+        const card = document.querySelector(`[data-sound=${soundId}]`);
+        const slider = card?.querySelector(".volume-slider");
+      }
+    }
+  }
+
   //Set sound volume
   setSoundVolume(soundId, volume) {
     // Calculate effective volume with master volume
