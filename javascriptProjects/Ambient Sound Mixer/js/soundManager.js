@@ -66,4 +66,14 @@ export class SoundManager {
     }
     this.isPlaying = true;
   }
+
+  //pause all sounds
+  pauseAll() {
+    for (const [soundId, audio] of this.audioElements) {
+      if (!audio.paused) {
+        audio.pause();
+      }
+    }
+    this.isPlaying = false;
+  }
 }
