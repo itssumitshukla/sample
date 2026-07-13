@@ -58,6 +58,13 @@ class AmbientMixer {
         this.setMasterVolume(volume);
       });
     }
+
+    //Handle Master play pause button
+    if (this.ui.playPauseButton) {
+      this.ui.playPauseButton.addEventListener("click", () => {
+        this.toggleAllSounds();
+      });
+    }
   }
 
   //Load all sound
@@ -99,6 +106,9 @@ class AmbientMixer {
       this.soundManager.pauseSound(soundId);
       this.ui.updateSoundPlayButton(soundId, false);
     }
+
+    //Update main play button state
+    this.updateMainPlayButtonState();
   }
 
   //Toggle all sound
@@ -130,6 +140,10 @@ class AmbientMixer {
           this.ui.updateSoundPlayButton(soundId, true);
         }
       }
+
+      //Play all sounds
+      this.soundManager.playAll();
+      this.ui.updateMainPlayButton(true);
     }
   }
 
@@ -146,6 +160,9 @@ class AmbientMixer {
 
     //update visual display
     this.ui.updateVolumeDispaly(soundId, volume);
+
+    //Sync sounds
+    this.updateMainPlayButtonState();
   }
 
   //Set master volume
