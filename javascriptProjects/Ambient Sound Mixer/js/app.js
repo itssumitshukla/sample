@@ -123,6 +123,11 @@ class AmbientMixer {
             slider.value = 50;
             this.ui.updateVolumeDisplay(soundId, 50);
           }
+
+          this.currentSoundState[soundId] = volume;
+          const effectiveVolume = (volume * masterVolume) / 100;
+          audio.volume = effectiveVolume / 100;
+          this.ui.updateSoundPlayButton(soundId, true);
         }
       }
     }
