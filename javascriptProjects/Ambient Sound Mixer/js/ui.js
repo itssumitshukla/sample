@@ -164,5 +164,11 @@ export class UI {
       icon.classList.remove("fa-pause");
       icon.classList.add("fa-play");
     });
+
+    //remove playing class from cards
+    const cards = document.querySelectorAll(".sound-card");
+    cards.forEach((card) => {
+      card.classList.remove("fa-playing");
+    });
   }
 }
