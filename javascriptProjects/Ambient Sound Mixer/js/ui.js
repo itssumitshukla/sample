@@ -146,4 +146,15 @@ export class UI {
       icon.classList.add("fa-play");
     }
   }
+
+  //reset all ui elements to default
+  resetUI() {
+    //Reset sliders to 0
+    const sliders = document.querySelectorAll(".volume-slider");
+    sliders.forEach((slider) => {
+      slider.value = 0;
+      const soundId = slider.dataset.sound;
+      this.updateVolumeDisplay(soundId, 0);
+    });
+  }
 }
