@@ -170,5 +170,12 @@ export class UI {
     cards.forEach((card) => {
       card.classList.remove("fa-playing");
     });
+
+    //Remove main play/pause button
+    this.updateMainPlayButton(false);
+
+    //Reset master volume to 100
+    this.masterVolumeSlider.value = 100;
+    this.masterVolumeValue.textContent = "100%";
   }
 }
