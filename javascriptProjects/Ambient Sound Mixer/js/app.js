@@ -212,6 +212,18 @@ class AmbientMixer {
     this.soundManager.isPlaying = anySoundsPlaying;
     this.ui.updateMainPlayButton(anySoundsPlaying);
   }
+
+  //reset everything to default state
+  resetAll() {
+    //Stop all sounds
+    this.soundManager.stopAll();
+    //reset the master volume
+    this.masterVolume = 100;
+
+    //Reset UI
+    this.ui.resetUI();
+    console.log("All sounds and setting reset");
+  }
 }
 
 //Initialize app when dom is ready
