@@ -65,6 +65,13 @@ class AmbientMixer {
         this.toggleAllSounds();
       });
     }
+
+    //Handle Reset button
+    if (this.ui.resetButton) {
+      this.ui.resetButton.addEventListener("click", () => {
+        this.resetAll();
+      });
+    }
   }
 
   //Load all sound
