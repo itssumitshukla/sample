@@ -163,7 +163,7 @@ class AmbientMixer {
   //Set sound volume
   setSoundVolume(soundId, volume) {
     //set sound volume in state
-    this.currentSoundState[sound.id] = volume;
+    this.currentSoundState[soundId] = volume;
 
     // Calculate effective volume with master volume
     const effectiveVolume = (volume * this.masterVolume) / 100;
