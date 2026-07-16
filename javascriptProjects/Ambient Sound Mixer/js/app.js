@@ -258,6 +258,19 @@ class AmbientMixer {
     });
 
     //Apply the preset volume
+    for (const [soundId, volume] of Object.entries(preset, sounds)) {
+      //set volume state
+      this.currentSoundState[soundId] = volume;
+
+      //updatre UI
+      this.ui.updateVolumeDisplay(soundId, volume);
+
+      //calc effective volume
+      const effectiveVOlume = (volme * this.masterVolume) / 100;
+
+      //get audio element
+      const audio = this.soundManager.audioElements.get(soundId);
+    }
   }
 }
 
