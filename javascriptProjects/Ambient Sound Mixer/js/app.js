@@ -246,6 +246,18 @@ class AmbientMixer {
       console.error(`Preset ${presetKey} not found`);
       return;
     }
+
+    //First stop all sound
+    this.soundManager.stopAll();
+
+    //reset all volume to 0
+    sounds.forEach((sound) => {
+      this.currentSoundState[sound.id] = 0;
+      this.ui.updateVolumeDisplay(sound.id, 0);
+      this.ui.updateSoundPlayButton(sound.id, false);
+    });
+
+    //Apply the preset volume
   }
 }
 
