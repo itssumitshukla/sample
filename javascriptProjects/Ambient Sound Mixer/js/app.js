@@ -266,11 +266,23 @@ class AmbientMixer {
       this.ui.updateVolumeDisplay(soundId, volume);
 
       //calc effective volume
-      const effectiveVOlume = (volme * this.masterVolume) / 100;
+      const effectiveVolume = (volme * this.masterVolume) / 100;
 
       //get audio element
       const audio = this.soundManager.audioElements.get(soundId);
+
+      if (audio) {
+        audio.volume = effectiveVolume / 100;
+
+        //Play sound
+        audio.play();
+        this.ui.updateSoundPlayButton(soundId, truse);
+      }
     }
+
+    //update main play button and state
+    this.soundManager.isPlaying = true;
+    this.ui.updateMainPlayButton = true;
   }
 }
 
