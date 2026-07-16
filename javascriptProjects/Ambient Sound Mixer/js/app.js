@@ -238,7 +238,14 @@ class AmbientMixer {
 
     //Reset UI
     this.ui.resetUI();
-    console.log("All sounds and setting reset");
+  }
+  //Load a preset config
+  loadPreset(presetKey) {
+    const preset = defaultPresets[presetKey];
+    if (!preset) {
+      console.error(`Preset ${presetKey} not found`);
+      return;
+    }
   }
 }
 
