@@ -24,6 +24,12 @@ class AmbientMixer {
       this.soundManager.setVolume("rain", 30);
       await this.soundManager.playSound("rain");
       this.masterVolumeSlider = 100;
+
+      //Initialize sound state
+      sound.forEach((sound) => {
+        this.currentSoundState[sound.id] = 0;
+      });
+
       this.isIntialized = true;
     } catch (error) {
       console.log("Failed to initialize app: ", error);
@@ -156,6 +162,9 @@ class AmbientMixer {
 
   //Set sound volume
   setSoundVolume(soundId, volume) {
+    //set sound volume in state
+    this.currentSoundState[sound.id] = volume;
+
     // Calculate effective volume with master volume
     const effectiveVolume = (volume * this.masterVolume) / 100;
 
