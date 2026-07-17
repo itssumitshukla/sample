@@ -45,6 +45,12 @@ class AmbientMixer {
         const soundId = e.target.closest(".play-btn").dataset.sound;
         await this.toggleSound(soundId);
       }
+
+      //Check if a default preset btn was clicked
+      if (e.target.closest(".preset-btn")) {
+        const presetKey = e.target.closest(".preset-btn").dataset.preset;
+        await this.toggleSound(soundId);
+      }
     });
 
     //Handle volume slider changes
