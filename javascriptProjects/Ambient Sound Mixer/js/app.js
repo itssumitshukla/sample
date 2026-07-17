@@ -49,7 +49,7 @@ class AmbientMixer {
       //Check if a default preset btn was clicked
       if (e.target.closest(".preset-btn")) {
         const presetKey = e.target.closest(".preset-btn").dataset.preset;
-        await this.toggleSound(soundId);
+        await this.loadPreset(presetKey);
       }
     });
 
