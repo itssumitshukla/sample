@@ -10,4 +10,10 @@ export class PresetManger {
   }
 
   //save custom presets to global storage
+  saveCustomPresets() {
+    localStorage.setItem(
+      "ambientMixersPresets",
+      JSON.stringify(this.customPresets),
+    );
+  }
 }
