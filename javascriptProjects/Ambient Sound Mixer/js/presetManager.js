@@ -27,5 +27,14 @@ export class PresetManger {
       name,
       sounds,
     };
+
+    for (const [soundId, volume] of Object.entries(soundStates)) {
+      if (volume > 0) {
+        preset.sounds[soundId] = volume;
+      }
+    }
+
+    this.customPresets[presetId] = preset;
+    this.saveCustomPresets();
   }
 }
