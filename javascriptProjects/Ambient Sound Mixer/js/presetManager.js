@@ -36,5 +36,7 @@ export class PresetManger {
 
     this.customPresets[presetId] = preset;
     this.saveCustomPresets();
+
+    return presetId;
   }
 }
