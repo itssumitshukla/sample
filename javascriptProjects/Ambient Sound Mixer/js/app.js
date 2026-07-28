@@ -25,9 +25,6 @@ class AmbientMixer {
 
       this.setupEventListeners();
 
-      // Load custom presets in UI
-      this.loadCustomPresetsUI();
-
       // Load all sound files
       this.loadAllSounds();
 
@@ -125,8 +122,8 @@ class AmbientMixer {
     }
   }
 
-  //Load all sound
-  loadAllSound() {
+  // Load all sound files
+  loadAllSounds() {
     sounds.forEach((sound) => {
       const audioUrl = `audio/${sound.file}`;
       const success = this.soundManager.loadSound(sound.id, audioUrl);

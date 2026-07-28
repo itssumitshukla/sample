@@ -192,4 +192,10 @@ export class UI {
     this.modal.classList.remove("flex");
     document.getElementById("presetName").value = "";
   }
+
+  // Add custom preset to UI
+  addCustomPreset(name, presetId) {
+    const button = this.createCustomPresetButton(name, presetId);
+    this.customPresetsContainer.appendChild(button);
+  }
 }

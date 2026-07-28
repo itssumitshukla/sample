@@ -1,4 +1,4 @@
-import { sounds } from "./soundData";
+import { sounds } from "./soundData.js";
 
 export class PresetManger {
   constructor() {
