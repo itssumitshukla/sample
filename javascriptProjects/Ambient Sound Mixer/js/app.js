@@ -1,3 +1,4 @@
+import { PresetManger } from "./presetManager.js";
 import { sounds, defaultPresets } from "./soundData.js";
 import { SoundManager } from "./soundManager.js";
 import { UI } from "./ui.js";
@@ -7,7 +8,7 @@ class AmbientMixer {
   constructor() {
     this.soundManager = new SoundManager();
     this.ui = new UI();
-    this.presetManager = null;
+    this.presetManager = new PresetManger();
     this.timer = null;
     this.currentSoundState = {};
     this.isIntialized = false;
@@ -358,6 +359,17 @@ class AmbientMixer {
       alert("Please enter a preset name");
       return;
     }
+
+    if (this.presetManager.presetNameExists(name)) {
+      alert(`A Preset with the name ${name} already exists`);
+      return;
+    }
+
+    const presetId = this.presetManager.savePreset(
+      name,
+      this.currentSoundState,
+    );
+    this.ui.hideModal();
   }
 }
 
