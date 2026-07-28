@@ -2,19 +2,18 @@ export class SoundManager {
   constructor() {
     this.audioElements = new Map();
     this.isPlaying = false;
-    console.log("Soundmanager Created");
   }
 
-  //Load a sound file
+  // Load a sound file
   loadSound(soundId, filePath) {
     try {
       const audio = new Audio();
       audio.src = filePath;
       audio.loop = true;
       audio.preload = "metadata";
-      //Add sound to audio elements map
-      this.audioElements.set(soundId, audio);
 
+      // Add sound to audio elements map
+      this.audioElements.set(soundId, audio);
       return true;
     } catch (error) {
       console.error(`Failed to load sound ${soundId}`);
@@ -22,42 +21,45 @@ export class SoundManager {
     }
   }
 
-  //Play a specific sound
+  // Play a specific sound
   async playSound(soundId) {
     const audio = this.audioElements.get(soundId);
-    try {
-      await audio.play();
-      console.log(`Playing:::${soundId}`);
-      return true;
-    } catch (error) {
-      console.log(`Failed to play: ${soundId}`, error);
-      return play;
+
+    if (audio) {
+      try {
+        await audio.play();
+        return true;
+      } catch (error) {
+        console.error(`Failed to play ${soundId}`, error);
+        return false;
+      }
     }
   }
 
-  //Pause a specific sound
+  // Pause a sepecific sound
   pauseSound(soundId) {
     const audio = this.audioElements.get(soundId);
+
     if (audio && !audio.paused) {
       audio.pause();
-      console.log(`Paused : ${soundId}`);
     }
   }
 
-  //Set volume
+  // Set volume for a specific sound (0-100)
   setVolume(soundId, volume) {
     const audio = this.audioElements.get(soundId);
+
     if (!audio) {
-      console.log(`Sound : ${soundId} is not found`);
+      console.error(`Sound ${soundId} not found`);
       return false;
     }
 
-    //Convert 0-100 to 0-1
+    // Convert 0-100. to 0-1
     audio.volume = volume / 100;
     return true;
   }
 
-  //Play all sounds
+  // Play all sounds
   playAll() {
     for (const [soundId, audio] of this.audioElements) {
       if (audio.paused) {
@@ -67,7 +69,7 @@ export class SoundManager {
     this.isPlaying = true;
   }
 
-  //pause all sounds
+  // Pause all sounds
   pauseAll() {
     for (const [soundId, audio] of this.audioElements) {
       if (!audio.paused) {
@@ -77,13 +79,13 @@ export class SoundManager {
     this.isPlaying = false;
   }
 
-  //Stop all sounds
+  // Stop all sounds
   stopAll() {
     for (const [soundId, audio] of this.audioElements) {
       if (!audio.paused) {
         audio.pause();
       }
-      audio.currentTime = 0;
+      audio.currentTime = 0; // Reset to beginning
     }
     this.isPlaying = false;
   }
