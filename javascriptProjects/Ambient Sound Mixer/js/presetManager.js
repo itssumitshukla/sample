@@ -5,27 +5,33 @@ export class PresetManger {
     this.customPresets = this.loadCustomPresets();
   }
 
-  //Load Presets from local storage
+  // Load presets from localStorage
   loadCustomPresets() {
     const stored = localStorage.getItem("ambientMixerPresets");
     return stored ? JSON.parse(stored) : {};
   }
 
-  //save custom presets to global storage
+  // Load custom preset by ID
+  loadPreset(presetId) {
+    return this.customPresets[presetId] || null;
+  }
+
+  // Save custom presets to localStorage
   saveCustomPresets() {
     localStorage.setItem(
-      "ambientMixersPresets",
+      "ambientMixerPresets",
       JSON.stringify(this.customPresets),
     );
   }
 
-  //Save current mix as preset
+  // Save current mix as preset
   savePreset(name, soundStates) {
     const presetId = `custom-${Date.now()}`;
-    //Create preset object with only active sound
+
+    // Create preset object with only active sounds
     const preset = {
       name,
-      sounds,
+      sounds: {},
     };
 
     for (const [soundId, volume] of Object.entries(soundStates)) {
@@ -40,7 +46,7 @@ export class PresetManger {
     return presetId;
   }
 
-  //check if preset name already exists
+  // Check if preset name already exists
   presetNameExists(name) {
     return Object.values(this.customPresets).some(
       (preset) => preset.name === name,
