@@ -185,4 +185,11 @@ export class UI {
     this.modal.classList.add("flex");
     document.getElementById("presetName").focus();
   }
+
+  //Hide save preset modal
+  hideModal() {
+    this.modal.classList.add("hidden");
+    this.modal.classList.remove("flex");
+    document.getElementById("presetName").value = "";
+  }
 }
