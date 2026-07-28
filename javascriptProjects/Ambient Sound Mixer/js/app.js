@@ -117,6 +117,9 @@ class AmbientMixer {
         this.ui.updateVolumeDisplay(soundId, volume);
       }
 
+      //Set current sound state
+      this.currentSoundState[soundId] = volume;
+
       //Sound is off so turn it on
       this.soundManager.setVolume(soundId, volume);
       await this.soundManager.playSound(soundId);
@@ -124,6 +127,9 @@ class AmbientMixer {
     } else {
       this.soundManager.pauseSound(soundId);
       this.ui.updateSoundPlayButton(soundId, false);
+
+      //Set current sound state to 0
+      this.currentSoundState[soundId] = 0;
     }
 
     //Update main play button state
