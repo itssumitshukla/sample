@@ -93,6 +93,14 @@ class AmbientMixer {
       });
     }
 
+    //Confirm Save preset button
+    const confirmSaveButton = document.getElementById("confirmSave");
+    if (confirmSaveButton) {
+      confirmSaveButton.addEventListener("click", () => {
+        this.saveCurrentPreset();
+      });
+    }
+
     //Cancel Save preset button
     const cancelSaveButton = document.getElementById("cancelSave");
     if (cancelSaveButton) {
@@ -339,6 +347,17 @@ class AmbientMixer {
     }
 
     this.ui.showModal();
+  }
+
+  //save current preset
+  saveCurrentPreset() {
+    const nameInput = document.getElementById("presetName");
+    const name = nameInput.value.trim();
+
+    if (!name) {
+      alert("Please enter a preset name");
+      return;
+    }
   }
 }
 
