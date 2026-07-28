@@ -84,6 +84,14 @@ class AmbientMixer {
         this.resetAll();
       });
     }
+
+    //Save preset button
+    const saveButton = document.getElementById("savePreset");
+    if (saveButton) {
+      saveButton.addEventListener("click", () => {
+        this.showSavePresetModal();
+      });
+    }
   }
 
   //Load all sound
@@ -300,6 +308,20 @@ class AmbientMixer {
     //update main play button and state
     this.soundManager.isPlaying = true;
     this.ui.updateMainPlayButton = true;
+  }
+
+  //Show save preset modal
+  showSavePresetModal() {
+    //Check if any sounds are active
+    const hasActiveSounds = Object.values(this.currentSoundState).some(
+      (v) => v > 0,
+    );
+
+    if (!hasActiveSounds) {
+      alert("No active sounds for preset");
+    }
+
+    this.ui.showModal();
   }
 }
 
