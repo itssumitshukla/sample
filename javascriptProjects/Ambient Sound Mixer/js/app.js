@@ -92,6 +92,14 @@ class AmbientMixer {
         this.showSavePresetModal();
       });
     }
+
+    //Cancel Save preset button
+    const cancelSaveButton = document.getElementById("cancelSave");
+    if (cancelSaveButton) {
+      cancelSaveButton.addEventListener("click", () => {
+        this.ui.hideModal();
+      });
+    }
   }
 
   //Load all sound
