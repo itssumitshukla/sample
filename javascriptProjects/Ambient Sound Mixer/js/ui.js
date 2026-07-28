@@ -178,4 +178,11 @@ export class UI {
     this.masterVolumeSlider.value = 100;
     this.masterVolumeValue.textContent = "100%";
   }
+
+  //Show save preset modal
+  showModal() {
+    this.modal.classList.remove("hidden");
+    this.modal.classList.add("flex");
+    document.getElementById("presetName").focus();
+  }
 }
