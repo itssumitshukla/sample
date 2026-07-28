@@ -103,7 +103,7 @@ class AmbientMixer {
 
     //Close modal if backdrop is clicked
     if (this.ui.modal) {
-      this.ui.modal.addEventListener((e) => {
+      this.ui.modal.addEventListener("click", (e) => {
         if (e.target === this.ui.modal) {
           this.ui.hideModal();
         }
