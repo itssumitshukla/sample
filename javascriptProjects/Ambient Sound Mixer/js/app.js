@@ -11,29 +11,34 @@ class AmbientMixer {
     this.presetManager = new PresetManger();
     this.timer = null;
     this.currentSoundState = {};
-    this.isIntialized = false;
+    this.masterVolume = 100;
+    this.isInitialized = false;
   }
 
   async init() {
     try {
-      //Initialize UI
+      // Initialize UI
       this.ui.init();
-      //Render sound cards
-      this.ui.renderSoundCards(sounds);
-      this.setupEventListeners();
-      this.loadAllSound();
-      this.soundManager.setVolume("rain", 30);
-      await this.soundManager.playSound("rain");
-      this.masterVolumeSlider = 100;
 
-      //Initialize sound state
-      sound.forEach((sound) => {
+      // Render sound cards using our sound data
+      this.ui.renderSoundCards(sounds);
+
+      this.setupEventListeners();
+
+      // Load custom presets in UI
+      this.loadCustomPresetsUI();
+
+      // Load all sound files
+      this.loadAllSounds();
+
+      // Initialize sound states after loading sounds
+      sounds.forEach((sound) => {
         this.currentSoundState[sound.id] = 0;
       });
 
-      this.isIntialized = true;
+      this.isInitialized = true;
     } catch (error) {
-      console.log("Failed to initialize app: ", error);
+      console.error("Failed to initialize app: ", error);
     }
   }
 
