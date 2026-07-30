@@ -296,11 +296,12 @@ class AmbientMixer {
     this.ui.resetUI();
   }
   //Load a preset config
-  loadPreset(presetKey) {
-    const preset = defaultPresets[presetKey];
-    if (!preset) {
-      console.error(`Preset ${presetKey} not found`);
-      return;
+  loadPreset(presetKey, custom = false) {
+    let preset;
+    if (custom) {
+      preset.this.presetManager.loadPreset(presetKey);
+    } else {
+      preset = defaultPresets[presetKey];
     }
 
     //First stop all sound
