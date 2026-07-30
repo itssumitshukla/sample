@@ -57,6 +57,11 @@ class AmbientMixer {
         const presetKey = e.target.closest(".preset-btn").dataset.preset;
         await this.loadPreset(presetKey);
       }
+      //Check if a default preset btn was clicked
+      if (e.target.closest(".custom-preset-btn")) {
+        const presetKey = e.target.closest(".custom-preset-btn").dataset.preset;
+        await this.loadPreset(presetKey, true);
+      }
     });
 
     //Handle volume slider changes
@@ -165,6 +170,7 @@ class AmbientMixer {
       this.ui.updateSoundPlayButton(soundId, true);
     } else {
       this.soundManager.pauseSound(soundId);
+      this.currentSoundState[soundId] = 0;
       this.ui.updateSoundPlayButton(soundId, false);
 
       //Set current sound state to 0
