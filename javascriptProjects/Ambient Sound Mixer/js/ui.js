@@ -207,5 +207,12 @@ export class UI {
       .forEach((btn) => {
         btn.classList.remove("preset-active");
       });
+    //Add active class
+    const activeButton = document.querySelector(
+      `.preset-btn[data-preset="${repsetKey}"], .custom-btn[data-preset="${repsetKey}"]`,
+    );
+    if (activeButton) {
+      activeButton.classList.add("preset-active");
+    }
   }
 }
