@@ -198,4 +198,14 @@ export class UI {
     const button = this.createCustomPresetButton(name, presetId);
     this.customPresetsContainer.appendChild(button);
   }
+
+  //Highlight active preset
+  setActivePreset(presetKey) {
+    //Remove active class from all buttons
+    document
+      .querySelectorAll(".preset-btn, custom-preset-btn")
+      .forEach((btn) => {
+        btn.classList.remove("preset-active");
+      });
+  }
 }
