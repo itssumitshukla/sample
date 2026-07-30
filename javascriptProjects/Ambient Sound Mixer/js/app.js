@@ -25,6 +25,9 @@ class AmbientMixer {
 
       this.setupEventListeners();
 
+      //Load custom prests in ui
+      this.loadCustomPresetsUI();
+
       // Load all sound files
       this.loadAllSounds();
 
@@ -372,6 +375,14 @@ class AmbientMixer {
       this.currentSoundState,
     );
     this.ui.hideModal();
+  }
+
+  //Load custom preset buttons in UI
+  loadCustomPresetsUI() {
+    const customPresets = this.presetManager.customPresets;
+    for (const [presetId, preset] of Object.entries(customPresets)) {
+      this.ui.addCustomPreset(preset.name, presetId);
+    }
   }
 }
 
