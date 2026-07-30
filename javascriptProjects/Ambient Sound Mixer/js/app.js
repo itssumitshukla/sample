@@ -346,6 +346,11 @@ class AmbientMixer {
     //update main play button and state
     this.soundManager.isPlaying = true;
     this.ui.updateMainPlayButton = true;
+
+    //Set active preset
+    if (presetKey) {
+      this.ui.setActivePreset(presetKey);
+    }
   }
 
   //Show save preset modal
