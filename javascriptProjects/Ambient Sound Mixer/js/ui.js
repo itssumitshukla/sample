@@ -203,7 +203,7 @@ export class UI {
   setActivePreset(presetKey) {
     //Remove active class from all buttons
     document
-      .querySelectorAll(".preset-btn, custom-preset-btn")
+      .querySelectorAll(".preset-btn, .custom-preset-btn")
       .forEach((btn) => {
         btn.classList.remove("preset-active");
       });
