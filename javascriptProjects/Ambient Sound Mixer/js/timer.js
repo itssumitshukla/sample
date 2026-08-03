@@ -35,4 +35,24 @@ export class Timer {
       }
     }, 1000);
   }
+
+  //Stop Timer
+  stop() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+    this.duration = 0;
+    this.remaining = 0;
+    this.isRunning = false;
+    this.updateDisplay();
+  }
+
+  //Timer completed
+  complte() {
+    this.stop();
+    if (this.onComplete) {
+      this.onComplete();
+    }
+  }
 }
