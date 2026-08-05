@@ -1,5 +1,3 @@
-import { sounds } from "./soundData.js";
-
 export class PresetManager {
   constructor() {
     this.customPresets = this.loadCustomPresets();
@@ -53,7 +51,7 @@ export class PresetManager {
     );
   }
 
-  //Delete a custom preset
+  // Delete a custom preset
   deletePreset(presetId) {
     if (this.customPresets[presetId]) {
       delete this.customPresets[presetId];
