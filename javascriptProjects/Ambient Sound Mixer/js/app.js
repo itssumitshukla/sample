@@ -2,7 +2,7 @@ import { PresetManger } from "./presetManager.js";
 import { sounds, defaultPresets } from "./soundData.js";
 import { SoundManager } from "./soundManager.js";
 import { UI } from "./ui.js";
-import { timer } from "./timer.js";
+import { Timer } from "./timer.js";
 
 class AmbientMixer {
   //
@@ -318,6 +318,12 @@ class AmbientMixer {
     this.soundManager.stopAll();
     //reset the master volume
     this.masterVolume = 100;
+
+    //Reset timer
+    this.timer.stop();
+    if (this.ui.timerSelect) {
+      this.ui.timerSelect.value = "0";
+    }
 
     //reset active preset
     this.ui.setActivePreset(null);
