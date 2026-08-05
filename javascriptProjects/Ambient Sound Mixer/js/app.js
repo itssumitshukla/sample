@@ -418,6 +418,18 @@ class AmbientMixer {
       this.ui.removeCustomPreset(presetId);
     }
   }
+
+  //Timer complete callback
+  onTimerComplete() {
+    //Stop all sounds
+    this.soundManager.pauseAll();
+    this.ui.updateMainPlayButton(false);
+
+    //Update inidividuals sounds
+    sounds.forEach((sound) => {
+      this.ui.updateSoundPlayButton(sound.id, false);
+    });
+  }
 }
 
 //Initialize app when dom is ready
