@@ -429,6 +429,18 @@ class AmbientMixer {
     sounds.forEach((sound) => {
       this.ui.updateSoundPlayButton(sound.id, false);
     });
+
+    //Reset Timer dropdown
+    const timerSelect = document.getElementById("timerSelect");
+    if (timerSelect) {
+      timerSelect.value = "0";
+    }
+
+    //Clear and hide timer display
+    if (this.ui.timerDisplay) {
+      this.ui.timerDisplay.textContent = "";
+      this.ui.timerDisplay.classList.add("hidden");
+    }
   }
 }
 
