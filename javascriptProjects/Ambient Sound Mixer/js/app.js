@@ -2,6 +2,7 @@ import { PresetManger } from "./presetManager.js";
 import { sounds, defaultPresets } from "./soundData.js";
 import { SoundManager } from "./soundManager.js";
 import { UI } from "./ui.js";
+import { timer } from "./timer.js";
 
 class AmbientMixer {
   //
@@ -9,7 +10,10 @@ class AmbientMixer {
     this.soundManager = new SoundManager();
     this.ui = new UI();
     this.presetManager = new PresetManger();
-    this.timer = null;
+    this.timer = new Timer(
+      () => this.onTimerComplete(),
+      (minutes, seconds) => this.ui.updateTimerDisplay(minutes, seconds),
+    );
     this.currentSoundState = {};
     this.masterVolume = 100;
     this.isInitialized = false;
