@@ -140,6 +140,20 @@ class AmbientMixer {
         }
       });
     }
+
+    //Timer select
+    const timerSelect = document.getElementById("timerSelect");
+    if (timerSelect) {
+      timerSelect.addEventListener("change", (e) => {
+        const minutes = parseInt(e.target.value);
+        if (minutes > 0) {
+          this.timer.start(minutes);
+          console.log(`Timer started for ${minutes} min`);
+        } else {
+          this.timer.stop();
+        }
+      });
+    }
   }
 
   // Load all sound files
