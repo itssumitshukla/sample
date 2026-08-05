@@ -1,6 +1,6 @@
 import { sounds } from "./soundData.js";
 
-export class PresetManger {
+export class PresetManager {
   constructor() {
     this.customPresets = this.loadCustomPresets();
   }

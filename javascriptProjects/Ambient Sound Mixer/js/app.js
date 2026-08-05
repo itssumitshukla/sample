@@ -1,4 +1,4 @@
-import { PresetManger } from "./presetManager.js";
+import { PresetManager } from "./presetManager.js";
 import { sounds, defaultPresets } from "./soundData.js";
 import { SoundManager } from "./soundManager.js";
 import { UI } from "./ui.js";
@@ -9,7 +9,7 @@ class AmbientMixer {
   constructor() {
     this.soundManager = new SoundManager();
     this.ui = new UI();
-    this.presetManager = new PresetManger();
+    this.presetManager = new PresetManager();
     this.timer = new Timer(
       () => this.onTimerComplete(),
       (minutes, seconds) => this.ui.updateTimerDisplay(minutes, seconds),
@@ -218,7 +218,7 @@ class AmbientMixer {
       });
     } else {
       //Toggle sound on
-      for (const [soundId, audio] of this.SoundManager.audioElements) {
+      for (const [soundId, audio] of this.soundManager.audioElements) {
         const card = document.querySelector(`[data-sound=${soundId}]`);
         const slider = card?.querySelector(".volume-slider");
 
