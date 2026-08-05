@@ -238,4 +238,6 @@ export class UI {
       }
     }
   }
+
+  // Toogle theme
 }
