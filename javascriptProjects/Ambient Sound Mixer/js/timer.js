@@ -55,4 +55,10 @@ export class Timer {
       this.onComplete();
     }
   }
+
+  //Update display
+  updateDisplay() {
+    const minutes = Math.floor(this.remaining / 60);
+    const seconds = this.remaining % 60;
+  }
 }
