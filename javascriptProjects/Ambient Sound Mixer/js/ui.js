@@ -90,7 +90,7 @@ export class UI {
     });
   }
 
-  //Update play/pause button
+  // Update play/pause button for individual sound
   updateSoundPlayButton(soundId, isPlaying) {
     const card = document.querySelector(`[data-sound="${soundId}"]`);
 
@@ -110,7 +110,7 @@ export class UI {
     }
   }
 
-  //Update volume display
+  // Update volume display for a sound
   updateVolumeDisplay(soundId, volume) {
     const card = document.querySelector(`[data-sound="${soundId}"]`);
 
@@ -135,9 +135,10 @@ export class UI {
     }
   }
 
-  //Update main play/pause button
+  // Update main play/pause button
   updateMainPlayButton(isPlaying) {
     const icon = this.playPauseButton.querySelector("i");
+
     if (isPlaying) {
       icon.classList.remove("fa-play");
       icon.classList.add("fa-pause");
@@ -147,9 +148,9 @@ export class UI {
     }
   }
 
-  //reset all ui elements to default
+  // Reset all UI elements to default state
   resetUI() {
-    //Reset sliders to 0
+    // Reset sliders to 0
     const sliders = document.querySelectorAll(".volume-slider");
     sliders.forEach((slider) => {
       slider.value = 0;
@@ -157,7 +158,7 @@ export class UI {
       this.updateVolumeDisplay(soundId, 0);
     });
 
-    //reset all play buttons to play state
+    // Reset all play buttons to play state
     const playButtons = document.querySelectorAll(".play-btn");
     playButtons.forEach((btn) => {
       const icon = btn.querySelector("i");
@@ -165,28 +166,28 @@ export class UI {
       icon.classList.add("fa-play");
     });
 
-    //remove playing class from cards
+    // Remove playing class from cards
     const cards = document.querySelectorAll(".sound-card");
     cards.forEach((card) => {
       card.classList.remove("fa-playing");
     });
 
-    //Remove main play/pause button
+    // Reset main play/pause button
     this.updateMainPlayButton(false);
 
-    //Reset master volume to 100
+    // Reset master volume to 100%
     this.masterVolumeSlider.value = 100;
     this.masterVolumeValue.textContent = "100%";
   }
 
-  //Show save preset modal
+  // Show save preset modal
   showModal() {
     this.modal.classList.remove("hidden");
     this.modal.classList.add("flex");
     document.getElementById("presetName").focus();
   }
 
-  //Hide save preset modal
+  // Hide save preset modal
   hideModal() {
     this.modal.classList.add("hidden");
     this.modal.classList.remove("flex");
@@ -199,38 +200,42 @@ export class UI {
     this.customPresetsContainer.appendChild(button);
   }
 
-  //Highlight active preset
+  // Highlight active preset
   setActivePreset(presetKey) {
-    //Remove active class from all buttons
+    // Remove active class from all buttons
     document
       .querySelectorAll(".preset-btn, .custom-preset-btn")
       .forEach((btn) => {
         btn.classList.remove("preset-active");
       });
-    //Add active class
+
+    // Add active class to selected presets
     const activeButton = document.querySelector(
-      `.preset-btn[data-preset="${repsetKey}"], .custom-btn[data-preset="${repsetKey}"]`,
+      `.preset-btn[data-preset="${presetKey}"], .custom-preset-btn[data-preset="${presetKey}"]`,
     );
+
     if (activeButton) {
       activeButton.classList.add("preset-active");
     }
   }
 
-  //Remove custom preset from UI
+  // Remove custom preset from UI
   removeCustomPreset(presetId) {
     const button = document.querySelector(
-      `.custom-preset-btn[data-preset ="${presetId}"]`,
+      `.custom-preset-btn[data-preset="${presetId}"]`,
     );
     if (button) {
       button.remove();
     }
   }
 
-  //Update timer display
+  // Update timer display
   updateTimerDisplay(minutes, seconds) {
     if (this.timerDisplay) {
       if (minutes > 0 || seconds > 0) {
-        const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+        const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
         this.timerDisplay.textContent = formattedTime;
         this.timerDisplay.classList.remove("hidden");
       } else {
@@ -239,5 +244,17 @@ export class UI {
     }
   }
 
-  // Toogle theme
+  // Toggle theme
+  toggleTheme() {
+    const body = document.body;
+    const icon = this.themeToggle.querySelector("i");
+
+    if (body.classList.contains("light-theme")) {
+      body.classList.remove("light-theme");
+      icon.classList.replace("fa-moon", "fa-sun");
+    } else {
+      body.classList.add("light-theme");
+      icon.classList.replace("fa-sun", "fa-moon");
+    }
+  }
 }
