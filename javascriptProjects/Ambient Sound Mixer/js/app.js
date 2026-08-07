@@ -151,7 +151,6 @@ class AmbientMixer {
         const minutes = parseInt(e.target.value);
         if (minutes > 0) {
           this.timer.start(minutes);
-          console.log(`Timer started for ${minutes} minutes`);
         } else {
           this.timer.stop();
         }
@@ -450,10 +449,7 @@ class AmbientMixer {
 
     // Add custom preset button to UI
     this.ui.addCustomPreset(name, presetId);
-
     this.ui.hideModal();
-
-    console.log(`Preset "${name}" saved successfully with ID: ${presetId}`);
   }
 
   // Load custom preset buttons in UI
@@ -468,7 +464,6 @@ class AmbientMixer {
   deleteCustomPreset(presetId) {
     if (this.presetManager.deletePreset(presetId)) {
       this.ui.removeCustomPreset(presetId);
-      console.log(`Preset ${presetId} deleted`);
     }
   }
 
